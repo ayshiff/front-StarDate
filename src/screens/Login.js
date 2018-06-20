@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Page, Toolbar, Tab, Tabbar } from 'react-onsenui';
 
-class Profile extends Component {
+class Login extends Component {
 
   render() {
     return (
@@ -16,4 +16,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default Login;
