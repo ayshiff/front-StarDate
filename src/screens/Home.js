@@ -6,7 +6,6 @@ class Home extends Component {
   render() {
     return (
         <Page>
-
           <p>
               Home page
           </p>

@@ -46,15 +46,15 @@ class Main extends Component {
         ];
     }
 
-    /*
+
     pushPageComponent (page) {
         this.props.navigator.pushPage({ component: page })
-    } */
+    }
 
     render() {
         return (
             <MediaQuery query="(max-device-width: 400px)">
-                <Page r>
+                <Page>
                     <Tabbar
                         autogrow
                         swipeable={true}
