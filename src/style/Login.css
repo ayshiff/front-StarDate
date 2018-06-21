@@ -1,40 +1,98 @@
-.carousel {
-  height: 55vh; }
-
-.textLogin {
-  color: white;
-  text-align: center; }
-
 .LoginPage .page__background {
   background-color: #0a073f; }
 
-.formLogin {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  padding-top: 10px; }
+.LoginPage_carousel {
+  margin-top: 40px;
+  height: 40%; }
+  .LoginPage_carousel_div {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto; }
+    .LoginPage_carousel_div_img2 {
+      margin: 0 auto; }
+  .LoginPage_carousel_textLogin {
+    color: white;
+    text-align: center; }
+    .LoginPage_carousel_textLogin_textLoginContainer {
+      display: inline-block;
+      text-align: left;
+      font-size: 1.1em; }
+      .LoginPage_carousel_textLogin_textLoginContainer span {
+        color: #ed5a5a;
+        font-weight: bold; }
+  .LoginPage_carousel_logo {
+    margin: 10px auto; }
+  .LoginPage_carousel_stars1 {
+    float: right;
+    margin-right: 20px; }
+  .LoginPage_carousel_stars2 {
+    float: left;
+    margin-left: 20px; }
+  .LoginPage_carousel_planet {
+    margin-top: 20px;
+    margin-right: 7px; }
 
 .containerLogin {
   background-color: white;
   height: 32%;
-  margin: 10px 10px;
-  border-radius: 10px; }
-
-.logo {
-  margin: 0 auto; }
-
-.stars1 {
-  float: right;
-  margin-right: 20px; }
-
-.stars2 {
-  float: left;
-  margin-left: 20px; }
-
-.textLoginContainer {
-  display: inline-block;
-  text-align: left; }
-
-.textLoginContainer span {
-  color: #ed5a5a;
-  font-weight: bold; }
+  margin: 10px 20px;
+  border-radius: 10px;
+  position: relative; }
+  .containerLogin_params {
+    display: flex;
+    color: black;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    padding-top: 0; }
+    .containerLogin_params_checkbox {
+      display: flex;
+      color: black;
+      top: 0;
+      align-items: flex-start; }
+      .containerLogin_params_checkbox input {
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+        margin-left: 0 !important; }
+    .containerLogin_params p {
+      padding-top: -30px; }
+  .containerLogin_formLogin {
+    color: white;
+    display: flex;
+    flex-direction: column; }
+    .containerLogin_formLogin input {
+      margin-top: 10px;
+      height: 38px;
+      border-style: none;
+      background-color: #F3F3F3;
+      margin: 15px;
+      line-height: 20px; }
+    .containerLogin_formLogin_buttons {
+      display: flex;
+      align-content: center;
+      font-size: 2em;
+      margin-top: 5px; }
+      .containerLogin_formLogin_buttons_connect {
+        background-color: #ed5a5a;
+        border-style: none;
+        padding: 3% 10%;
+        border-bottom-right-radius: 10px;
+        position: absolute;
+        width: 50%;
+        bottom: 0;
+        right: 0;
+        font-size: 12px;
+        font-weight: bold; }
+      .containerLogin_formLogin_buttons_create {
+        background-color: #F3F3F3;
+        border-style: none;
+        padding: 3% 10%;
+        width: 50%;
+        border-bottom-left-radius: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 12px;
+        white-space: nowrap; }

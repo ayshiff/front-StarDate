@@ -1,50 +1,128 @@
 $primary-color: #ed5a5a;
 $secondary-color: #0a073f;
 
-.carousel {
-    height: 55vh;
-}
-
-
-.textLogin {
-    color: white;
-    text-align: center;
-}
-
-.LoginPage .page__background { background-color: $secondary-color}
-
-.formLogin {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding-top: 10px;
+.LoginPage {
+    .page__background { background-color: $secondary-color}
+    &_carousel {
+        margin-top: 40px;
+        height: 40%;
+        &_div {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            &_img2 {
+                margin: 0 auto;
+            }
+        }
+        &_textLogin {
+            color: white;
+            text-align: center;
+            &_textLoginContainer {
+                display: inline-block;
+                text-align: left;
+                font-size: 1.1em;
+                span {
+                    color: $primary-color;
+                    font-weight: bold;
+                }
+            }
+        }
+        &_logo {
+            margin: 10px auto;
+        }
+        &_stars1 {
+            float: right;
+            margin-right: 20px;
+        }
+        &_stars2 {
+            float: left;
+            margin-left: 20px;
+        }
+        &_planet {
+            margin-top: 20px;
+            margin-right: 7px;
+        }
+    }
 }
 
 .containerLogin {
     background-color: white;
     height: 32%;
-    margin: 10px 10px;
+    margin: 10px 20px;
     border-radius: 10px;
+    position: relative;
+    &_params {
+        display: flex;
+        color: black;
+        justify-content: space-between;
+        font-size: 12px;
+        margin-right: 15px;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        padding-top: 0;
+        &_checkbox {
+            display: flex;
+            color: black;
+            top: 0;
+            align-items: flex-start;
+            input {
+                margin-bottom: 0 !important;
+                margin-top: 0 !important;
+                margin-left: 0 !important;
+            }
+        }
+        p {
+            padding-top: -30px;
+        }
+    }
+    &_formLogin {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        ::placeholder {
+            padding-left: 10px;
+        }
+        input {
+            padding-left: 10px;
+            margin-top: 10px;
+            height: 38px;
+            border-style: none;
+            background-color: #F3F3F3;
+            margin: 15px;
+            line-height: 20px;
+        }
+        &_buttons {
+            display: flex;
+            align-content: center;
+            font-size: 2em;
+            margin-top: 5px;
+            &_connect {
+                background-color: $primary-color;
+                border-style: none;
+                padding: 3% 10%;
+                border-bottom-right-radius: 10px;
+                position: absolute;
+                width: 50%;
+                bottom: 0;
+                right: 0;
+                font-size: 12px;
+                font-weight: bold;
+            }
+            &_create {
+                background-color: #F3F3F3;
+                border-style: none;
+                padding: 3% 10%;
+                width: 50%;
+                border-bottom-left-radius: 10px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-size: 12px;
+                white-space:nowrap;
+
+            }
+        }
+    }
+
 }
 
-.logo {
-    margin: 0 auto;
-}
-
-.stars1 {
-    float: right;
-    margin-right: 20px;
-}
-.stars2 {
-    float: left;
-    margin-left: 20px;
-}
-
-.textLoginContainer {
-    display: inline-block;
-    text-align: left;
-}
-.textLoginContainer span {
-    color: $primary-color;
-    font-weight: bold;
-}
