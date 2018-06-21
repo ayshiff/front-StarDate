@@ -4,14 +4,21 @@ $secondary-color: #0a073f;
 .LoginPage {
     .page__background { background-color: $secondary-color}
     &_carousel {
-        margin-top: 40px;
+        position:relative;
+        overflow:auto;
+        margin-top: 16%;
         height: 40%;
         &_div {
             display: flex;
             flex-direction: column;
             margin: 0 auto;
+            &_img3 {
+                margin: 0 auto;
+                height: 40%;
+            }
             &_img2 {
                 margin: 0 auto;
+                width: 65%;
             }
         }
         &_textLogin {
@@ -28,27 +35,33 @@ $secondary-color: #0a073f;
             }
         }
         &_logo {
-            margin: 10px auto;
+            margin: 36px 13px;
         }
         &_stars1 {
             float: right;
-            margin-right: 20px;
+            margin-right: 30px;
         }
         &_stars2 {
             float: left;
-            margin-left: 20px;
+            margin-top: 25%;
+            margin-left: -20px;
         }
         &_planet {
-            margin-top: 20px;
-            margin-right: 7px;
+
+
+            float: left;
+            margin-left: 30px;
         }
     }
 }
 
 .containerLogin {
     background-color: white;
+    min-height: 200px;
+    max-width: 400px;
+    min-width: 280px;
     height: 32%;
-    margin: 10px 20px;
+    margin: 48px 20px;
     border-radius: 10px;
     position: relative;
     &_params {
@@ -60,9 +73,11 @@ $secondary-color: #0a073f;
         margin-left: 15px;
         margin-bottom: 20px;
         padding-top: 0;
+        white-space: nowrap;
         &_checkbox {
             display: flex;
             color: black;
+            white-space: nowrap;
             top: 0;
             align-items: flex-start;
             input {
@@ -79,16 +94,17 @@ $secondary-color: #0a073f;
         color: white;
         display: flex;
         flex-direction: column;
-        ::placeholder {
-            padding-left: 10px;
-        }
+        margin-top: 10px;
         input {
+            font-size: 14px;
             padding-left: 10px;
-            margin-top: 10px;
+            margin-top: 15px;
             height: 38px;
             border-style: none;
             background-color: #F3F3F3;
-            margin: 15px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 5px;
             line-height: 20px;
         }
         &_buttons {
@@ -99,25 +115,26 @@ $secondary-color: #0a073f;
             &_connect {
                 background-color: $primary-color;
                 border-style: none;
-                padding: 3% 10%;
+                padding: 3.5% 10%;
                 border-bottom-right-radius: 10px;
                 position: absolute;
                 width: 50%;
                 bottom: 0;
                 right: 0;
-                font-size: 12px;
+                font-size: 14px;
                 font-weight: bold;
+                white-space: nowrap;
             }
             &_create {
                 background-color: #F3F3F3;
                 border-style: none;
-                padding: 3% 10%;
+                padding: 3.5% 10%;
                 width: 50%;
                 border-bottom-left-radius: 10px;
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                font-size: 12px;
+                font-size: 14px;
                 white-space:nowrap;
 
             }

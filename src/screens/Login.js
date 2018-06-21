@@ -23,7 +23,7 @@ class Login extends Component {
     }
 
     pushPage(e) {
-        e.preventDefault()
+        e.preventDefault();
         this.props.navigator.pushPage({component: Main})
     }
 
@@ -59,19 +59,19 @@ class Login extends Component {
                     <div className="LoginPage_carousel_textLogin">
                         <p className="LoginPage_carousel_textLogin_textLoginContainer">
                         Découvrez des profiles <br/>
-                        dans tous l’univers.
+                            <span>dans tous l’univers.</span>
                         </p>
                     </div>
-                    <img src={placeholder} alt="logo" className="LoginPage_carousel_img2"/>
+                    <img src={placeholder} alt="logo" className="LoginPage_carousel_div_img2"/>
                 </div>
                 <div className="LoginPage_carousel_div">
                     <div className="LoginPage_carousel_textLogin">
                         <p className="LoginPage_carousel_textLogin_textLoginContainer">
                         Trouvez celui qui <br/>
-                        vous complète.
+                            <span>vous complète.</span>
                         </p>
                     </div>
-                    <img src={placeholder2} alt="logo" className="LoginPage_carousel_img2"/>
+                    <img src={placeholder2} alt="logo" className="LoginPage_carousel_div_img3"/>
                 </div>
             </ReactSwipe>
 
