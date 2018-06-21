@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Page, Toolbar, Tab, Tabbar } from 'react-onsenui';
-import '../App.css';
-
+import '../style/Profile.css'
 
 class Profile extends Component {
 
   render() {
     return (
-        <Page>
+        <Page className="ProfilePage">
 
           <p>
               Profile page

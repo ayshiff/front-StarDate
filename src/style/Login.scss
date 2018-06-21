@@ -1,0 +1,159 @@
+$primary-color: #ed5a5a;
+$secondary-color: #0a073f;
+
+.LoginPage {
+    &_index {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 35%;
+        margin-right: 35%;
+        margin-top: 20px;
+        img {
+
+        }
+    }
+    .page__background { background-color: $secondary-color}
+    &_carousel {
+        position:relative;
+        overflow:auto;
+        margin-top: 16%;
+        height: 40%;
+        &_div {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            &_img3 {
+                margin: 0 auto;
+                height: 40%;
+            }
+            &_img2 {
+                margin: 0 auto;
+                width: 65%;
+            }
+        }
+        &_textLogin {
+            color: white;
+            text-align: center;
+            &_textLoginContainer {
+                display: inline-block;
+                text-align: left;
+                font-size: 1.1em;
+                span {
+                    color: $primary-color;
+                    font-weight: bold;
+                }
+            }
+        }
+        &_logo {
+            margin: 36px 13px;
+        }
+        &_stars1 {
+            float: right;
+            margin-right: 30px;
+        }
+        &_stars2 {
+            float: left;
+            margin-top: 25%;
+            margin-left: -20px;
+        }
+        &_planet {
+
+
+            float: left;
+            margin-left: 30px;
+        }
+    }
+}
+
+.containerLogin {
+    background-color: white;
+    min-height: 200px;
+    max-width: 400px;
+    min-width: 280px;
+    height: 32%;
+    margin-bottom: 38px;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    position: relative;
+    &_params {
+        display: flex;
+        color: black;
+        justify-content: space-between;
+        font-size: 12px;
+        margin-right: 15px;
+        margin-left: 15px;
+        margin-bottom: 20px;
+        padding-top: 0;
+        white-space: nowrap;
+        &_checkbox {
+            display: flex;
+            color: black;
+            white-space: nowrap;
+            top: 0;
+            align-items: flex-start;
+            input {
+                margin-bottom: 0 !important;
+                margin-top: 0 !important;
+                margin-left: 0 !important;
+            }
+        }
+        p {
+            padding-top: -30px;
+        }
+    }
+    &_formLogin {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        input {
+            font-size: 14px;
+            padding-left: 10px;
+            margin-top: 15px;
+            height: 38px;
+            border-style: none;
+            background-color: #F3F3F3;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 5px;
+            line-height: 20px;
+        }
+        &_buttons {
+            display: flex;
+            align-content: center;
+            font-size: 2em;
+            margin-top: 5px;
+            &_connect {
+                background-color: $primary-color;
+                border-style: none;
+                padding: 3.5% 10%;
+                border-bottom-right-radius: 10px;
+                position: absolute;
+                width: 50%;
+                bottom: 0;
+                right: 0;
+                font-size: 14px;
+                font-weight: bold;
+                white-space: nowrap;
+            }
+            &_create {
+                background-color: #F3F3F3;
+                border-style: none;
+                padding: 3.5% 10%;
+                width: 50%;
+                border-bottom-left-radius: 10px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-size: 14px;
+                white-space:nowrap;
+
+            }
+        }
+    }
+
+}
+
