@@ -1,0 +1,47 @@
+.carousel {
+    height: 55vh;
+}
+
+
+.textLogin {
+    color: white;
+    text-align: center;
+}
+
+.LoginPage .page__background { background-color: #0a073f}
+
+.formLogin {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.containerLogin {
+    background-color: white;
+    height: 32%;
+    margin: 10px 10px;
+    border-radius: 10px;
+}
+
+.logo {
+    margin: 0 auto;
+}
+
+.stars1 {
+    float: right;
+    margin-right: 20px;
+}
+.stars2 {
+    float: left;
+    margin-left: 20px;
+}
+
+.textLoginContainer {
+    display: inline-block;
+    text-align: left;
+}
+.textLoginContainer span {
+    color: #ed5a5a;
+    font-weight: bold;
+}
