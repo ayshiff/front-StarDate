@@ -28,6 +28,6 @@
   color: white !important; }
 
 :checked + .tabbar__button {
-  color: darkred !important;
+  color: #F04240 !important;
   transition: all .2s ease-in-out;
-  transform: scale(1.3); }
+  transform: scale(1.2); }

@@ -11,6 +11,7 @@ import placeholder from '../icons/placeholder.png';
 import placeholder2 from '../icons/placeholder2.png';
 import oval from '../icons/oval.png';
 import OvalToggle from '../icons/OvalToggle.png';
+import Inscription from './Inscription';
 
 
 class Login extends Component {
@@ -20,13 +21,19 @@ class Login extends Component {
         this.state = {
             index: 0
         };
-        this.pushPage = this.pushPage.bind(this);
+        this.pushPageMain = this.pushPageMain.bind(this);
+        this.pushPageInscription = this.pushPageInscription.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    pushPage(e) {
+    pushPageMain(e) {
         e.preventDefault();
         this.props.navigator.pushPage({component: Main})
+    }
+
+    pushPageInscription(e) {
+        e.preventDefault();
+        this.props.navigator.pushPage({component: Inscription})
     }
 
     handleInputChange(event) {
@@ -39,8 +46,6 @@ class Login extends Component {
         });
     }
 
-
-
   render() {
         let that = this;
       function setIndex(index) {
@@ -49,32 +54,18 @@ class Login extends Component {
           });
       }
     function renderSwitch(index) {
-        switch (index) {
-            case 0 :
-                return (
-                    <div className="LoginPage_index">
-                        <img src={OvalToggle} alt="oval" className="oval0"/>
-                        <img src={oval} alt="oval" className="oval1"/>
-                        <img src={oval} alt="oval" className="oval2"/>
-                    </div>
-                );
-            case 1:
-                return (
-                    <div className="LoginPage_index">
-                        <img src={oval} alt="oval" className="oval0"/>
-                        <img src={OvalToggle} alt="oval" className="oval1"/>
-                        <img src={oval} alt="oval" className="oval2"/>
-                    </div>
-                );
-            case 2:
-                return (
-                    <div className="LoginPage_index">
-                        <img src={oval} alt="oval" className="oval0"/>
-                        <img src={oval} alt="oval" className="oval1"/>
-                        <img src={OvalToggle} alt="oval" className="oval2"/>
-                    </div>
-                )
+          let tab = [];
+
+        for(let i = 0; i<3;i++) {
+            let classe = "oval"+i;
+              if(index === i) {
+                  tab.push(<img src={OvalToggle} alt="oval" className={classe} />)
+              } else {
+                  tab.push(<img src={oval} alt="oval" className={classe}/>)
+              }
+
         }
+        return tab
     }
     return (
         <Page className="LoginPage">
@@ -123,11 +114,13 @@ class Login extends Component {
 
             </div>
 
+            <div className="LoginPage_index">
             {renderSwitch(this.state.index)}
+            </div>
             <div className="containerLogin">
                 <form action="" method="post" className="containerLogin_formLogin">
                     <input type="email" name="email" id="email" placeholder="Email"/>
-                    <input type="password" name="password" id="password" placeholder="Password"/>
+                    <input type="password" name="password" id="password" placeholder="Mot de passe"/>
                     <div className="containerLogin_params">
                         <div className="containerLogin_params_checkbox">
                         <input
@@ -140,7 +133,8 @@ class Login extends Component {
                         <p> Mot de passe oublié ? </p>
                     </div>
                     <div className="containerLogin_formLogin_buttons">
-                    <button className="containerLogin_formLogin_buttons_create" type="submit" onClick={this.pushPage}>Créer un compte</button><button className="containerLogin_formLogin_buttons_connect" type="submit">Se connecter </button>
+                    <button className="containerLogin_formLogin_buttons_create" type="submit" onClick={this.pushPageInscription}>Créer un compte</button>
+                    <button className="containerLogin_formLogin_buttons_connect" type="submit" onClick={this.pushPageMain}>Se connecter </button>
                     </div>
                 </form>
             </div>
