@@ -9,6 +9,8 @@ import stars1 from '../icons/stars1.png';
 import stars2 from '../icons/stars2.png';
 import placeholder from '../icons/placeholder.png';
 import placeholder2 from '../icons/placeholder2.png';
+import oval from '../icons/oval.png';
+import OvalToggle from '../icons/OvalToggle.png';
 
 
 class Login extends Component {
@@ -16,7 +18,7 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            index: 0
         };
         this.pushPage = this.pushPage.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -37,10 +39,52 @@ class Login extends Component {
         });
     }
 
+
+
   render() {
+        let that = this;
+      function setIndex(index) {
+          that.setState({
+              index
+          });
+      }
+    function renderSwitch(index) {
+        switch (index) {
+            case 0 :
+                return (
+                    <div className="LoginPage_index">
+                        <img src={OvalToggle} alt="oval" className="oval0"/>
+                        <img src={oval} alt="oval" className="oval1"/>
+                        <img src={oval} alt="oval" className="oval2"/>
+                    </div>
+                );
+            case 1:
+                return (
+                    <div className="LoginPage_index">
+                        <img src={oval} alt="oval" className="oval0"/>
+                        <img src={OvalToggle} alt="oval" className="oval1"/>
+                        <img src={oval} alt="oval" className="oval2"/>
+                    </div>
+                );
+            case 2:
+                return (
+                    <div className="LoginPage_index">
+                        <img src={oval} alt="oval" className="oval0"/>
+                        <img src={oval} alt="oval" className="oval1"/>
+                        <img src={OvalToggle} alt="oval" className="oval2"/>
+                    </div>
+                )
+        }
+    }
     return (
         <Page className="LoginPage">
-            <ReactSwipe className="LoginPage_carousel" swipeOptions={{continuous: false}} key={3}>
+            <ReactSwipe className="LoginPage_carousel" swipeOptions={{
+                continuous: false,
+                speed: 400,
+                transitionEnd: function(index, elem) {
+                   setIndex(index)
+                }
+            }} key={3}>
                 <div>
                     <div className="LoginPage_carousel_textLogin">
                             <p className="LoginPage_carousel_textLogin_textLoginContainer">
@@ -79,7 +123,7 @@ class Login extends Component {
 
             </div>
 
-
+            {renderSwitch(this.state.index)}
             <div className="containerLogin">
                 <form action="" method="post" className="containerLogin_formLogin">
                     <input type="email" name="email" id="email" placeholder="Email"/>

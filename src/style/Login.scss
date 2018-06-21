@@ -2,6 +2,17 @@ $primary-color: #ed5a5a;
 $secondary-color: #0a073f;
 
 .LoginPage {
+    &_index {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 35%;
+        margin-right: 35%;
+        margin-top: 20px;
+        img {
+
+        }
+    }
     .page__background { background-color: $secondary-color}
     &_carousel {
         position:relative;
@@ -61,7 +72,10 @@ $secondary-color: #0a073f;
     max-width: 400px;
     min-width: 280px;
     height: 32%;
-    margin: 48px 20px;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
     border-radius: 10px;
     position: relative;
     &_params {
