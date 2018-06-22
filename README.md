@@ -1,6 +1,6 @@
 # StarDate
 
-![Logo]("./src/icons/logo.png")
+![Logo](/src/icons/logo.png)
 
 ## Step 1
 Run ```git clone https://github.com/ayshiff/front-StarDate.git ```
