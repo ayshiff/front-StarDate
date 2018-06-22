@@ -13,10 +13,10 @@ class Inscription extends Component {
 
     render() {
         return (
-            <Page className="InscriptionPage">
+            <Page key="InscriptionPage" className="InscriptionPage">
             <div className="InscriptionPage_containerInscription">
                 <form action="" method="post" className="InscriptionPage_containerInscription_formInscription">
-                <div class="InscriptionPage_containerInscription_formInscription_flexName">
+                <div className="InscriptionPage_containerInscription_formInscription_flexName">
                 <input type="text" name="email" id="nom" placeholder="Nom"/>
                 <input type="text" name="email" id="prenom" placeholder="Prénom"/>
             </div>

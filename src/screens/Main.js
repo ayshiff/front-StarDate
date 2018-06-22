@@ -109,7 +109,7 @@ class Main extends Component {
 
         return (
             <MediaQuery query="(max-device-width: 400px)">
-                <Page className="MainPage">
+                <Page key="MainPage" className="MainPage">
 
                     {this.state.display ? tabDisplay: loading}
                 </Page>

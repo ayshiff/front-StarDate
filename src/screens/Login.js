@@ -59,9 +59,9 @@ class Login extends Component {
         for(let i = 0; i<3;i++) {
             let classe = "oval"+i;
               if(index === i) {
-                  tab.push(<img src={OvalToggle} alt="oval" className={classe} />)
+                  tab.push(<img key={i} src={OvalToggle} alt="oval" className={classe} />)
               } else {
-                  tab.push(<img src={oval} alt="oval" className={classe}/>)
+                  tab.push(<img key={i} src={oval} alt="oval" className={classe}/>)
               }
 
         }

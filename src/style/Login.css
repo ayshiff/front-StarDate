@@ -1,51 +1,51 @@
-.LoginPage_index {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: 35%;
-  margin-right: 35%;
-  margin-top: 20px; }
-
-.LoginPage .page__background {
-  background-color: #0a073f; }
-
-.LoginPage_carousel {
-  position: relative;
-  overflow: auto;
-  margin-top: 16%;
-  height: 40%; }
-  .LoginPage_carousel_div {
+.LoginPage {
+  font-family: Comfortaa; }
+  .LoginPage_index {
     display: flex;
-    flex-direction: column;
-    margin: 0 auto; }
-    .LoginPage_carousel_div_img3 {
-      margin: 0 auto;
-      height: 40%; }
-    .LoginPage_carousel_div_img2 {
-      margin: 0 auto;
-      width: 65%; }
-  .LoginPage_carousel_textLogin {
-    color: white;
-    text-align: center; }
-    .LoginPage_carousel_textLogin_textLoginContainer {
-      display: inline-block;
-      text-align: left;
-      font-size: 1.1em; }
-      .LoginPage_carousel_textLogin_textLoginContainer span {
-        color: #ed5a5a;
-        font-weight: bold; }
-  .LoginPage_carousel_logo {
-    margin: 36px 13px; }
-  .LoginPage_carousel_stars1 {
-    float: right;
-    margin-right: 30px; }
-  .LoginPage_carousel_stars2 {
-    float: left;
-    margin-top: 25%;
-    margin-left: -20px; }
-  .LoginPage_carousel_planet {
-    float: left;
-    margin-left: 30px; }
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 20px; }
+  .LoginPage .page__background {
+    background-color: #0a073f; }
+  .LoginPage_carousel {
+    position: relative;
+    overflow: auto;
+    margin-top: 16%;
+    height: 40%; }
+    .LoginPage_carousel_div {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto; }
+      .LoginPage_carousel_div_img3 {
+        margin: 0 auto;
+        height: 40%; }
+      .LoginPage_carousel_div_img2 {
+        margin: 0 auto;
+        width: 65%; }
+    .LoginPage_carousel_textLogin {
+      color: white;
+      text-align: center; }
+      .LoginPage_carousel_textLogin_textLoginContainer {
+        display: inline-block;
+        text-align: left;
+        font-size: 1.1em; }
+        .LoginPage_carousel_textLogin_textLoginContainer span {
+          color: #ed5a5a;
+          font-weight: bold; }
+    .LoginPage_carousel_logo {
+      margin: 36px 13px; }
+    .LoginPage_carousel_stars1 {
+      float: right;
+      margin-right: 30px; }
+    .LoginPage_carousel_stars2 {
+      float: left;
+      margin-top: 25%;
+      margin-left: -20px; }
+    .LoginPage_carousel_planet {
+      float: left;
+      margin-left: 30px; }
 
 .containerLogin {
   background-color: white;

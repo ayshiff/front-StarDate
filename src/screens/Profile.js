@@ -8,7 +8,7 @@ class Profile extends Component {
 
   render() {
     return (
-        <Page className="ProfilePage">
+        <Page key="ProfilePage" className="ProfilePage">
             <div className="ProfilePage_image"></div>
             <div className="ProfilePage_description">
                 <div className="ProfilePage_description_header">
