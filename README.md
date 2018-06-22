@@ -1,4 +1,4 @@
-# StarDate ![Logo](/src/icons/logo.png)
+# StarDate <img src="/src/icons/imageProfile.png" alt="logo" width="60px" height="60px">
 
 ## Step 1
 Run ```git clone https://github.com/ayshiff/front-StarDate.git ```
