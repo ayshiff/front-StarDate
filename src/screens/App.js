@@ -20,6 +20,7 @@ class App extends Component {
         <Provider store={store}>
             <Navigator
                 key={"Navigator"}
+                animation='slide'
                 initialRoute={{ component: Login }}
                 renderPage={this.renderPage}
             />

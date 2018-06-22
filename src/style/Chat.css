@@ -1,2 +1,29 @@
 .ChatPage .page__background {
   background-color: #0a073f; }
+
+.ChatPage_image {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, #0a073f), url("../icons/imageProfile.png"); }
+
+.ChatPage_description {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  color: white; }
+  .ChatPage_description_description {
+    overflow-wrap: break-word;
+    margin-top: -10px !important; }
+  .ChatPage_description_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .ChatPage_description_about {
+    color: #ed5a5a; }
+  .ChatPage_description_response {
+    color: #ed5a5a; }
+  .ChatPage_description_place {
+    margin-top: -10px !important; }
