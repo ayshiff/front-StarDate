@@ -5,7 +5,7 @@ Find love in space.
 ## What it will look like ?
 
 <p align="center">
-<img src="./references/ScreenShot.jpg"
+<img src="./reference/ScreenShot.jpg"
 width="200px">
 </p>
 
