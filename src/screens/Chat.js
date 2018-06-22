@@ -14,7 +14,7 @@ class Chat extends Component {
 
     render() {
         return(
-            <Page className="ChatPage">
+            <Page key="ChatPage" className="ChatPage">
                 <div className="ChatPage_image"></div>
                 <div className="ChatPage_description">
                     <div className="ChatPage_description_header">
