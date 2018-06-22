@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import '../style/Main.css';
 import { Page, Toolbar, Tab, Tabbar, SplitterSide, Splitter, SplitterContent, List, ListItem } from 'react-onsenui';
 import 'onsenui/css/onsenui.css';
-import ReactSwipe from 'react-swipe';
 import 'onsenui/css/onsen-css-components.css';
 import Home from './Home'
 import Profile from './Profile'
 import Chat from './Chat'
 import MediaQuery from 'react-responsive'
-import loading from '../icons/loading.png';
 
 import mask1 from '../icons/mask1.svg';
 import mask2 from '../icons/mask2.svg';
