@@ -39,3 +39,83 @@ $primary-color: #222;
     transition: all .2s ease-in-out;
     transform: scale(1.2);
 }
+
+.loading {
+  display: block;
+  margin: 0 auto;
+  margin-top: 55% !important;
+}
+
+.MainPage {
+  &_loading {
+    margin-top: 50%;
+    margin-left: 25%;
+    &_mask1 {
+      margin-left: 75px;
+      margin-top: 75px;
+      position: absolute;
+      z-index: 4;
+
+      -webkit-animation: fade 0.4s infinite; /* Safari 4+ */
+      -moz-animation:    fade 0.4s infinite; /* Fx 5+ */
+      -o-animation:      fade 0.4s infinite; /* Opera 12+ */
+      animation:         fade 0.4s infinite;
+    }
+    &_mask2 {
+      margin-left: 50px;
+      margin-top: 50px;
+      position: absolute;
+
+      z-index: 3;
+
+
+
+      -webkit-animation: fade 0.5s infinite; /* Safari 4+ */
+      -moz-animation:    fade 0.5s infinite; /* Fx 5+ */
+      -o-animation:      fade 0.5s infinite; /* Opera 12+ */
+      animation:         fade 0.5s infinite;
+    }
+    &_mask3 {
+      margin-left: 25px;
+      margin-top: 25px;
+      position: absolute;
+      z-index: 2;
+
+
+
+      -webkit-animation: fade 0.7s infinite; /* Safari 4+ */
+      -moz-animation:    fade 0.7s infinite; /* Fx 5+ */
+      -o-animation:      fade 0.7s infinite; /* Opera 12+ */
+      animation:         fade 0.7s infinite;
+    }
+    &_mask4 {
+
+      position: absolute;
+      z-index: 1;
+
+
+
+      -webkit-animation: fade 1s infinite; /* Safari 4+ */
+      -moz-animation:    fade 1s infinite; /* Fx 5+ */
+      -o-animation:      fade 1s infinite; /* Opera 12+ */
+      animation:         fade 1s infinite;
+    }
+  }
+}
+
+@-webkit-keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
