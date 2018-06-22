@@ -68,7 +68,8 @@
     margin-left: 15px;
     margin-bottom: 20px;
     padding-top: 0;
-    white-space: nowrap; }
+    white-space: nowrap;
+    font-family: Comfortaa; }
     .containerLogin_params_checkbox {
       display: flex;
       color: black;
@@ -96,7 +97,8 @@
       margin-left: 15px;
       margin-right: 15px;
       margin-bottom: 5px;
-      line-height: 20px; }
+      line-height: 20px;
+      font-family: Comfortaa; }
     .containerLogin_formLogin_buttons {
       display: flex;
       align-content: center;
@@ -113,15 +115,17 @@
         right: 0;
         font-size: 14px;
         font-weight: bold;
-        white-space: nowrap; }
+        white-space: nowrap;
+        font-family: Comfortaa; }
       .containerLogin_formLogin_buttons_create {
         background-color: #F3F3F3;
         border-style: none;
-        padding: 3.5% 10%;
+        padding: 3.5% 7%;
         width: 50%;
         border-bottom-left-radius: 10px;
         position: absolute;
         bottom: 0;
         left: 0;
         font-size: 14px;
-        white-space: nowrap; }
+        white-space: nowrap;
+        font-family: Comfortaa; }

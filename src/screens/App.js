@@ -3,6 +3,7 @@ import Login from './Login'
 import { store } from "../redux/reducers";
 import {Provider} from 'react-redux'
 import { Navigator } from 'react-onsenui';
+import MediaQuery from 'react-responsive'
 
 class App extends Component {
 
@@ -16,7 +17,7 @@ class App extends Component {
 
   render() {
     return (
-
+        <MediaQuery query="(max-device-width: 400px)">
         <Provider store={store}>
             <Navigator
                 key={"Navigator"}
@@ -25,6 +26,7 @@ class App extends Component {
                 renderPage={this.renderPage}
             />
         </Provider>
+        </MediaQuery>
 
     );
   }

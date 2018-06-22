@@ -6,6 +6,8 @@
 
 .HomePage_carousel2 {
   background-image: url("../icons/background.png"); }
+  .HomePage_carousel2_profile {
+    position: absolute; }
   .HomePage_carousel2_loading {
     margin-top: 50%;
     margin-left: 23%; }

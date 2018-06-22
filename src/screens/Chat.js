@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Page} from 'react-onsenui';
 import '../style/Chat.css';
 import settings from '../icons/settings.png';
+import profilePic from '../icons/profilePic.png';
 
 class Chat extends Component {
 
@@ -15,17 +16,12 @@ class Chat extends Component {
     render() {
         return(
             <Page key="ChatPage" className="ChatPage">
-                <div className="ChatPage_image"></div>
-                <div className="ChatPage_description">
-                    <div className="ChatPage_description_header">
-                        <h1 className="ChatPage_description_header_Name"> DarkVador, 50</h1>
-                        <img src={settings} alt="settings" className="ChatPage_description_header_settings"/>
+                <div className="ChatPage_div">
+                    <img className="ChatPage_div_image" src={profilePic} alt=""/>
+                    <div className="ChatPage_div_container">
+                        <h3 className="ChatPage_div_container_title">Chewbaca</h3>
+                        <p className="ChatPage_div_container_message">Hello :)</p>
                     </div>
-                    <h3 className="ChatPage_description_place">Terraria</h3>
-                    <p className="ChatPage_description_about"> A propos</p>
-                    <p className="ChatPage_description_description"> ezfezfezfzefzefzfefsdfssdfsdfsdfsdfsdgfdsgdfgdgezfeezefz</p>
-                    <p className="ChatPage_description_response"> Reponse</p>
-
                 </div>
             </Page>
         )

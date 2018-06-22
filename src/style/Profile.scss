@@ -3,6 +3,13 @@ $secondary-color: #ed5a5a;
 
 .ProfilePage {
   font-family: Comfortaa;
+  &_arrow {
+    fill: #ed5a5a !important;
+    width: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+  }
   .page__background { background-color: $primary-color;}
   &_image {
     top: 0;
@@ -18,23 +25,29 @@ $secondary-color: #ed5a5a;
     flex-direction: column;
     margin: 20px;
     color: white;
+    font-family: Comfortaa;
     &_description {
       overflow-wrap: break-word;
       margin-top: -10px !important;
+      font-family: Comfortaa;
     }
     &_header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-family: Comfortaa;
     }
     &_about {
       color: $secondary-color;
+      font-family: Comfortaa;
     }
     &_response {
       color: $secondary-color;
+      font-family: Comfortaa;
     }
     &_place {
       margin-top: -10px !important;
+      font-family: Comfortaa;
     }
   }
 }

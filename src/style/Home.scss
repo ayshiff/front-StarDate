@@ -7,6 +7,9 @@
     background-image: url('../icons/background.png')
   }
   &_carousel2 {
+    &_profile {
+      position: absolute;
+    }
     &_loading {
       margin-top: 50%;
       margin-left: 23%;

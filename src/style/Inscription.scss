@@ -1,6 +1,21 @@
 $secondary-color: #0a073f;
 
 .InscriptionPage {
+    font-family: Comfortaa !important;
+    &_arrow {
+        fill: #ed5a5a !important;
+        width: 20px;
+        margin-top: 20px;
+        margin-left: 20px;
+        position: absolute;
+    }
+    &_title {
+        font-family: Comfortaa !important;
+        text-align: center;
+        color: white;
+        font-size: 5px;
+        padding-top: 100px !important;
+    }
     .page__background { background-color: $secondary-color}
     &_containerInscription {
         background-color: white;
@@ -8,7 +23,7 @@ $secondary-color: #0a073f;
         max-width: 400px;
         min-width: 280px;
         margin-bottom: 40px;
-        margin-top: 50%;
+        margin-top: 15%;
         margin-left: 20px;
         margin-right: 20px;
         border-radius: 10px;
@@ -19,9 +34,10 @@ $secondary-color: #0a073f;
             margin-top: 10px;
             #password2 {
                 margin-bottom: 15px;
+                font-family: Comfortaa;
             }
             input {
-                font-size: 14px;
+                font-family: Comfortaa;
                 margin-top: 15px;
                 height: 38px;
                 border-style: none;
@@ -30,23 +46,30 @@ $secondary-color: #0a073f;
                 margin-right: 15px;
                 line-height: 20px;
         }
+
         &_flexName {
             display: flex;
             #nom {
-
+                font-family: Comfortaa;
 
             }
             #prenom {
                 margin-left: 0;
+                font-family: Comfortaa;
 
             }
 
         }
+            #date {
+                font-family: Comfortaa;
+                color: grey;
+                width: 81vw;
+            }
     }
     
 }
     &_icon {
-        float: right;
-        margin-right: -30px;
+        display: block;
+        margin: 0 auto;
     }
 }
