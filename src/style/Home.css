@@ -1,2 +1,11 @@
 .HomePage .page__background {
+  background-image: url("../icons/background.png") !important; }
+
+.HomePage_carousel1 {
+  background-image: url("../icons/background.png"); }
+
+.HomePage_carousel2 {
+  background-image: url("../icons/background.png"); }
+
+.HomePage_carousel3 {
   background-image: url("../icons/background.png"); }

@@ -1,4 +1,13 @@
 
 .HomePage {
-  .page__background { background-image: url('../icons/background.png')}
+  .page__background { background-image: url('../icons/background.png') !important;}
+  &_carousel1 {
+    background-image: url('../icons/background.png')
+  }
+  &_carousel2 {
+    background-image: url('../icons/background.png')
+  }
+  &_carousel3 {
+    background-image: url('../icons/background.png')
+  }
 }

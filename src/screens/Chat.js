@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import { Page} from 'react-onsenui';
+import '../style/Chat.css';
 
 class Chat extends Component {
 
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
 
         }

@@ -17,12 +17,12 @@ class Home extends Component {
         <Page className="HomePage">
           <ReactSwipe className="HomePage_carousel" swipeOptions={{
                 startSlide: 1,
-                continuous: false,
-                speed: 400
+                continuous: true,
+                speed: 700
             }} key={3}>
-            <div class="HomePage_carousel1" style={{color: "white", height: '100vh'}}>Content 1</div>
-            <div class="HomePage_carousel2" style={{color: "white", height: '100vh'}}>Content 2</div>
-            <div class="HomePage_carousel3" style={{color: "white", height: '100vh'}}>Content 3</div>
+            <div class="HomePage_carousel1" style={{color: "white", height: '80vh'}}></div>
+            <div class="HomePage_carousel2" style={{color: "white", height: '80vh'}}></div>
+            <div class="HomePage_carousel3" style={{color: "white", height: '80vh'}}></div>
 
             </ReactSwipe>
       </Page>
