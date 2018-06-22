@@ -24,8 +24,8 @@ class Home extends Component {
                 continuous: true,
                 speed: 700
             }} key={3}>
-            <div className="HomePage_carousel1" style={{color: "white", height: '80vh'}}></div>
-            <div className="HomePage_carousel2" style={{color: "white", height: '80vh'}}>
+            <div className="HomePage_carousel1" style={{color: "white", height: '90vh'}}></div>
+            <div className="HomePage_carousel2" style={{color: "white", height: '90vh'}}>
                 <div className="HomePage_carousel2_loading">
                     <img src={mask1} className="HomePage_carousel2_loading_mask1"/>
                     <img src={mask2} className="HomePage_carousel2_loading_mask2"/>
@@ -33,7 +33,7 @@ class Home extends Component {
                     <img src={mask4} className="HomePage_carousel2_loading_mask4"/>
                 </div>
             </div>
-            <div className="HomePage_carousel3" style={{color: "white", height: '80vh'}}></div>
+            <div className="HomePage_carousel3" style={{color: "white", height: '90vh'}}></div>
 
             </ReactSwipe>
       </Page>
