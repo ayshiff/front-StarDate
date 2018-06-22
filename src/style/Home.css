@@ -1,0 +1,32 @@
+.HomePage .page__background {
+  background-image: url("../icons/background.png") !important; }
+
+.HomePage_carousel1 {
+  background-image: url("../icons/background.png"); }
+
+.HomePage_carousel2 {
+  background-image: url("../icons/background.png"); }
+  .HomePage_carousel2_loading {
+    margin-top: 50%;
+    margin-left: 23%; }
+    .HomePage_carousel2_loading_mask1 {
+      margin-left: 75px;
+      margin-top: 75px;
+      position: absolute;
+      z-index: 4; }
+    .HomePage_carousel2_loading_mask2 {
+      margin-left: 50px;
+      margin-top: 50px;
+      position: absolute;
+      z-index: 3; }
+    .HomePage_carousel2_loading_mask3 {
+      margin-left: 25px;
+      margin-top: 25px;
+      position: absolute;
+      z-index: 2; }
+    .HomePage_carousel2_loading_mask4 {
+      position: absolute;
+      z-index: 1; }
+
+.HomePage_carousel3 {
+  background-image: url("../icons/background.png"); }

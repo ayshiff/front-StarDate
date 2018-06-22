@@ -1,0 +1,46 @@
+
+.HomePage {
+  .page__background {
+    background-image: url('../icons/background.png') !important;
+  }
+  &_carousel1 {
+    background-image: url('../icons/background.png')
+  }
+  &_carousel2 {
+    &_loading {
+      margin-top: 50%;
+      margin-left: 23%;
+      &_mask1 {
+        margin-left: 75px;
+        margin-top: 75px;
+        position: absolute;
+        z-index: 4;
+
+      }
+      &_mask2 {
+        margin-left: 50px;
+        margin-top: 50px;
+        position: absolute;
+
+        z-index: 3;
+      }
+      &_mask3 {
+        margin-left: 25px;
+        margin-top: 25px;
+        position: absolute;
+        z-index: 2;
+
+      }
+      &_mask4 {
+
+        position: absolute;
+        z-index: 1;
+
+      }
+    }
+    background-image: url('../icons/background.png')
+  }
+  &_carousel3 {
+    background-image: url('../icons/background.png')
+  }
+}

@@ -1,0 +1,39 @@
+$primary-color: #0a073f;
+$secondary-color: #ed5a5a;
+
+.ProfilePage {
+  .page__background { background-color: $primary-color;}
+  &_image {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 70%,
+            $primary-color), url('../icons/imageProfile.png');
+  }
+  &_description {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: white;
+    &_description {
+      overflow-wrap: break-word;
+      margin-top: -10px !important;
+    }
+    &_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &_about {
+      color: $secondary-color;
+    }
+    &_response {
+      color: $secondary-color;
+    }
+    &_place {
+      margin-top: -10px !important;
+    }
+  }
+}

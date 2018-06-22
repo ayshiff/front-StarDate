@@ -1,0 +1,37 @@
+.InscriptionPage .page__background {
+  background-color: #0a073f; }
+
+.InscriptionPage_containerInscription {
+  background-color: white;
+  min-height: 200px;
+  max-width: 400px;
+  min-width: 280px;
+  margin-bottom: 40px;
+  margin-top: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 10px; }
+  .InscriptionPage_containerInscription_formInscription {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px; }
+    .InscriptionPage_containerInscription_formInscription #password2 {
+      margin-bottom: 15px; }
+    .InscriptionPage_containerInscription_formInscription input {
+      font-size: 14px;
+      margin-top: 15px;
+      height: 38px;
+      border-style: none;
+      background-color: #F3F3F3;
+      margin-left: 15px;
+      margin-right: 15px;
+      line-height: 20px; }
+    .InscriptionPage_containerInscription_formInscription_flexName {
+      display: flex; }
+      .InscriptionPage_containerInscription_formInscription_flexName #prenom {
+        margin-left: 0; }
+
+.InscriptionPage_icon {
+  float: right;
+  margin-right: -30px; }
