@@ -5,7 +5,8 @@
     width: 20px;
     margin-top: 20px;
     margin-left: 20px;
-    position: absolute; }
+    position: absolute;
+    z-index: 3; }
   .InscriptionPage_title {
     font-family: Comfortaa !important;
     text-align: center;
