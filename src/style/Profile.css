@@ -30,6 +30,9 @@
       justify-content: space-between;
       align-items: center;
       font-family: Comfortaa; }
+      .ProfilePage_description_header svg {
+        fill: #ed5a5a !important;
+        width: 25px; }
     .ProfilePage_description_about {
       color: #ed5a5a;
       font-family: Comfortaa; }

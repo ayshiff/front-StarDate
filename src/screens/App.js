@@ -17,7 +17,7 @@ class App extends Component {
 
   render() {
     return (
-        <MediaQuery query="(max-device-width: 400px)">
+        <MediaQuery query="(max-device-width: 420px)">
         <Provider store={store}>
             <Navigator
                 key={"Navigator"}

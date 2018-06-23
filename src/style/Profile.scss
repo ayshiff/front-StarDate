@@ -36,6 +36,10 @@ $secondary-color: #ed5a5a;
       justify-content: space-between;
       align-items: center;
       font-family: Comfortaa;
+      svg {
+        fill: #ed5a5a !important;
+        width: 25px;
+      }
     }
     &_about {
       color: $secondary-color;
