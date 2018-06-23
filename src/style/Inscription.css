@@ -1,37 +1,58 @@
-.InscriptionPage .page__background {
-  background-color: #0a073f; }
-
-.InscriptionPage_containerInscription {
-  background-color: white;
-  min-height: 200px;
-  max-width: 400px;
-  min-width: 280px;
-  margin-bottom: 40px;
-  margin-top: 50%;
-  margin-left: 20px;
-  margin-right: 20px;
-  border-radius: 10px; }
-  .InscriptionPage_containerInscription_formInscription {
+.InscriptionPage {
+  font-family: Comfortaa !important; }
+  .InscriptionPage_arrow {
+    fill: #ed5a5a !important;
+    width: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+    z-index: 3; }
+  .InscriptionPage_title {
+    font-family: Comfortaa !important;
+    text-align: center;
     color: white;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px; }
-    .InscriptionPage_containerInscription_formInscription #password2 {
-      margin-bottom: 15px; }
-    .InscriptionPage_containerInscription_formInscription input {
-      font-size: 14px;
-      margin-top: 15px;
-      height: 38px;
-      border-style: none;
-      background-color: #F3F3F3;
-      margin-left: 15px;
-      margin-right: 15px;
-      line-height: 20px; }
-    .InscriptionPage_containerInscription_formInscription_flexName {
-      display: flex; }
-      .InscriptionPage_containerInscription_formInscription_flexName #prenom {
-        margin-left: 0; }
-
-.InscriptionPage_icon {
-  float: right;
-  margin-right: -30px; }
+    font-size: 5px;
+    padding-top: 100px !important; }
+  .InscriptionPage .page__background {
+    background-color: #0a073f; }
+  .InscriptionPage_containerInscription {
+    background-color: white;
+    min-height: 200px;
+    max-width: 400px;
+    min-width: 280px;
+    margin-bottom: 40px;
+    margin-top: 15%;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px; }
+    .InscriptionPage_containerInscription_formInscription {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px; }
+      .InscriptionPage_containerInscription_formInscription #password2 {
+        margin-bottom: 15px;
+        font-family: Comfortaa; }
+      .InscriptionPage_containerInscription_formInscription input {
+        font-family: Comfortaa;
+        margin-top: 15px;
+        height: 38px;
+        border-style: none;
+        background-color: #F3F3F3;
+        margin-left: 15px;
+        margin-right: 15px;
+        line-height: 20px; }
+      .InscriptionPage_containerInscription_formInscription_flexName {
+        display: flex; }
+        .InscriptionPage_containerInscription_formInscription_flexName #nom {
+          font-family: Comfortaa; }
+        .InscriptionPage_containerInscription_formInscription_flexName #prenom {
+          margin-left: 0;
+          font-family: Comfortaa; }
+      .InscriptionPage_containerInscription_formInscription #date {
+        font-family: Comfortaa;
+        color: grey;
+        width: 81vw; }
+  .InscriptionPage_icon {
+    display: block;
+    margin: 0 auto; }

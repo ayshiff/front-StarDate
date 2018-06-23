@@ -89,6 +89,7 @@ $secondary-color: #0a073f;
         margin-bottom: 20px;
         padding-top: 0;
         white-space: nowrap;
+        font-family: Comfortaa;
         &_checkbox {
             display: flex;
             color: black;
@@ -121,6 +122,7 @@ $secondary-color: #0a073f;
             margin-right: 15px;
             margin-bottom: 5px;
             line-height: 20px;
+            font-family: Comfortaa;
         }
         &_buttons {
             display: flex;
@@ -139,11 +141,12 @@ $secondary-color: #0a073f;
                 font-size: 14px;
                 font-weight: bold;
                 white-space: nowrap;
+                font-family: Comfortaa;
             }
             &_create {
                 background-color: #F3F3F3;
                 border-style: none;
-                padding: 3.5% 10%;
+                padding: 3.5% 7%;
                 width: 50%;
                 border-bottom-left-radius: 10px;
                 position: absolute;
@@ -151,6 +154,7 @@ $secondary-color: #0a073f;
                 left: 0;
                 font-size: 14px;
                 white-space:nowrap;
+                font-family: Comfortaa;
 
             }
         }

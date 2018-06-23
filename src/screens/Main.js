@@ -15,8 +15,8 @@ import mask4 from '../icons/mask4.svg';
 
 class Main extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             display: null,
             index: 1
@@ -51,7 +51,7 @@ class Main extends Component {
             },
             {
                 content: (
-                    <Home/>
+                    <Home nav={this.props.navigator}/>
                 ),
                 tab: (
                     <Tab
@@ -108,12 +108,10 @@ class Main extends Component {
         );
 
         return (
-            <MediaQuery query="(max-device-width: 400px)">
                 <Page key="MainPage" className="MainPage">
 
                     {this.state.display ? tabDisplay: loading}
                 </Page>
-            </MediaQuery>
         );
     }
 }

@@ -6,6 +6,10 @@ import mask1 from '../icons/mask1.svg';
 import mask2 from '../icons/mask2.svg';
 import mask3 from '../icons/mask3.svg';
 import mask4 from '../icons/mask4.svg';
+import profilePic from '../icons/profilePic.png';
+
+import UserProfile from './UserProfile';
+import Inscription from "./Inscription";
 
 class Home extends Component {
 
@@ -13,8 +17,13 @@ class Home extends Component {
     super(props);
     this.state = {
       index: 1
-    }
+    };
   }
+
+  pushPageProfile() {
+      this.props.nav.pushPage({component: UserProfile})
+  }
+
 
   render() {
     return (
@@ -26,6 +35,7 @@ class Home extends Component {
             }} key={3}>
             <div className="HomePage_carousel1" style={{color: "white", height: '90vh'}}></div>
             <div className="HomePage_carousel2" style={{color: "white", height: '90vh'}}>
+                <img onClick={this.pushPageProfile.bind(this)} src={profilePic} alt="profilePic" className="HomePage_carousel2_profile"/>
                 <div className="HomePage_carousel2_loading">
                     <img src={mask1} className="HomePage_carousel2_loading_mask1"/>
                     <img src={mask2} className="HomePage_carousel2_loading_mask2"/>
