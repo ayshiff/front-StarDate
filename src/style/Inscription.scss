@@ -17,7 +17,55 @@ $secondary-color: #0a073f;
         font-size: 5px;
         padding-top: 100px !important;
     }
+    &_title2 {
+        font-family: Comfortaa !important;
+        text-align: center;
+        color: white;
+        padding-top: 90px !important;
+    }
     .page__background { background-color: $secondary-color}
+    &_containerInscription3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    &_div {
+        width: 150px;
+        height: 40px;
+        background: white;
+        border-radius: 5px;
+        margin: 20px;
+        &_title {
+            font-family: Comfortaa !important;
+            text-align: center;
+            margin: 14px !important;
+            font-size: 14px !important;
+        }
+    }
+
+    }
+    &_containerInscription2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        &_div {
+            margin: 10px;
+            background: white;
+            border-radius: 5px;
+            width: 90px;
+            height: 90px;
+            &_other {
+                font-family: Comfortaa !important;
+                text-align: center;
+                margin: auto;;
+            }
+        }
+        &_logo {
+            display: block;
+            margin: 15px auto;
+        }
+    }
     &_containerInscription {
         background-color: white;
         min-height: 200px;
@@ -71,6 +119,6 @@ $secondary-color: #0a073f;
 }
     &_icon {
         display: block;
-        margin: 0 auto;
+        margin: 10px auto;
     }
 }

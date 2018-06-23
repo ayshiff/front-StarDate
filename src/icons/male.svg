@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mobiles" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="formulaire-2" transform="translate(-160.000000, -210.000000)" fill-rule="nonzero" fill="#F3F3F3">
+            <g id="Group-3" transform="translate(27.000000, 148.000000)">
+                <g id="homme" transform="translate(123.000000, 50.000000)">
+                    <g id="mars" transform="translate(10.000000, 12.000000)">
+                        <path d="M52.3125,0 L41.203125,0 C39.6984375,0 38.953125,1.8140625 40.0078125,2.8828125 L42.384375,5.259375 L31.0359375,16.6078125 C27.9140625,14.6390625 24.215625,13.5 20.25,13.5 C9.0703125,13.5 0,22.5703125 0,33.75 C0,44.9296875 9.0703125,54 20.25,54 C31.4296875,54 40.5,44.9296875 40.5,33.75 C40.5,29.784375 39.3609375,26.0859375 37.3921875,22.9640625 L48.740625,11.615625 L51.1171875,13.9921875 C52.1859375,15.0609375 54,14.3015625 54,12.796875 L54,1.6875 C54,0.759375 53.240625,0 52.3125,0 Z M20.5,44 C14.160625,44 9,39.06375 9,33 C9,26.93625 14.160625,22 20.5,22 C26.839375,22 32,26.93625 32,33 C32,39.06375 26.839375,44 20.5,44 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

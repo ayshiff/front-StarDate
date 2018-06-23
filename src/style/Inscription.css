@@ -13,8 +13,47 @@
     color: white;
     font-size: 5px;
     padding-top: 100px !important; }
+  .InscriptionPage_title2 {
+    font-family: Comfortaa !important;
+    text-align: center;
+    color: white;
+    padding-top: 90px !important; }
   .InscriptionPage .page__background {
     background-color: #0a073f; }
+  .InscriptionPage_containerInscription3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; }
+    .InscriptionPage_containerInscription3_div {
+      width: 150px;
+      height: 40px;
+      background: white;
+      border-radius: 5px;
+      margin: 20px; }
+      .InscriptionPage_containerInscription3_div_title {
+        font-family: Comfortaa !important;
+        text-align: center;
+        margin: 14px !important;
+        font-size: 14px !important; }
+  .InscriptionPage_containerInscription2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around; }
+    .InscriptionPage_containerInscription2_div {
+      margin: 10px;
+      background: white;
+      border-radius: 5px;
+      width: 90px;
+      height: 90px; }
+      .InscriptionPage_containerInscription2_div_other {
+        font-family: Comfortaa !important;
+        text-align: center;
+        margin: auto; }
+    .InscriptionPage_containerInscription2_logo {
+      display: block;
+      margin: 15px auto; }
   .InscriptionPage_containerInscription {
     background-color: white;
     min-height: 200px;
@@ -55,4 +94,4 @@
         width: 81vw; }
   .InscriptionPage_icon {
     display: block;
-    margin: 0 auto; }
+    margin: 10px auto; }
