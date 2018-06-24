@@ -15,10 +15,16 @@ class Inscription extends Component {
     constructor(props){
         super(props);
         this.state = {
-            index: 0
+            index: 0,
+            userSearch: null,
+            userState: null,
+            userGalaxie: null
         };
         this.backPage = this.backPage.bind(this);
         this.next = this.next.bind(this);
+        this.onItemClickSearch = this.onItemClickSearch.bind(this)
+        this.onItemClickState = this.onItemClickState.bind(this)
+        this.onItemClick = this.onItemClick.bind(this)
     }
 
     backPage() {
@@ -27,7 +33,51 @@ class Inscription extends Component {
         } else {
             this.prev()
         }
+    }
 
+    onItemClickSearch(event) {
+        if(event.currentTarget.style.backgroundColor === "rgb(237, 90, 90)" ) {
+            event.currentTarget.style.backgroundColor = "white"
+            this.setState({
+                userSearch: null
+            })
+        } else if (event.currentTarget.style.backgroundColor !== "rgb(237, 90, 90)" && this.state.userSearch === null) {
+            event.currentTarget.style.backgroundColor = "rgb(237, 90, 90)"
+            this.setState({
+                userSearch: event.currentTarget,
+                userSearch: true
+            })
+        }
+    }
+
+    onItemClickState(event) {
+        if(event.currentTarget.style.backgroundColor === "rgb(237, 90, 90)" ) {
+            event.currentTarget.style.backgroundColor = "white"
+            this.setState({
+                userState: null
+            })
+        } else if (event.currentTarget.style.backgroundColor !== "rgb(237, 90, 90)" && this.state.userState === null) {
+            event.currentTarget.style.backgroundColor = "rgb(237, 90, 90)"
+            this.setState({
+                userState: event.currentTarget,
+                userState: true
+            })
+        }
+    }
+
+    onItemClick(event) {
+        if(event.currentTarget.style.backgroundColor === "rgb(237, 90, 90)" ) {
+            event.currentTarget.style.backgroundColor = "white"
+            this.setState({
+                userGalaxie: null
+            })
+        } else if (event.currentTarget.style.backgroundColor !== "rgb(237, 90, 90)" && this.state.userGalaxie === null) {
+            event.currentTarget.style.backgroundColor = "rgb(237, 90, 90)"
+            this.setState({
+                userGalaxie: event.currentTarget,
+                userGalaxie: true
+            })
+        }
     }
 
     next() {
@@ -92,26 +142,26 @@ class Inscription extends Component {
                     <div>
                         <h3 className="InscriptionPage_title2"> Vous êtes ? </h3>
                         <div className="InscriptionPage_containerInscription2">
-                        <div className="InscriptionPage_containerInscription2_div">
+                        <div onClick={this.onItemClickState} className="InscriptionPage_containerInscription2_div">
                             <img src={male} alt="logoFemale" className="InscriptionPage_containerInscription2_logo"/>
                         </div>
-                        <div className="InscriptionPage_containerInscription2_div">
+                        <div onClick={this.onItemClickState} className="InscriptionPage_containerInscription2_div">
                             <img src={female} alt="logoMale" className="InscriptionPage_containerInscription2_logo"/>
                         </div>
-                        <div className="InscriptionPage_containerInscription2_div">
+                        <div onClick={this.onItemClickState} className="InscriptionPage_containerInscription2_div">
                             <h2 className="InscriptionPage_containerInscription2_div_other"> Autre </h2>
                         </div>
                         </div>
                         <h3 className="InscriptionPage_title2"> Vous recherchez ? </h3>
                     <div className="InscriptionPage_containerInscription2">
                         <div className="InscriptionPage_containerInscription2">
-                            <div className="InscriptionPage_containerInscription2_div">
+                            <div onClick={this.onItemClickSearch} className="InscriptionPage_containerInscription2_div">
                                 <img src={male} alt="logoFemale" className="InscriptionPage_containerInscription2_logo"/>
                             </div>
-                            <div className="InscriptionPage_containerInscription2_div">
+                            <div onClick={this.onItemClickSearch} className="InscriptionPage_containerInscription2_div">
                                 <img src={female} alt="logoMale" className="InscriptionPage_containerInscription2_logo"/>
                             </div>
-                            <div className="InscriptionPage_containerInscription2_div">
+                            <div onClick={this.onItemClickSearch} className="InscriptionPage_containerInscription2_div">
                                 <img src={both} alt="logoAutre" className="InscriptionPage_containerInscription2_logo"/>
                             </div>
                         </div>
@@ -121,16 +171,16 @@ class Inscription extends Component {
                     <div>
                         <h3 className="InscriptionPage_title"> Sélectionnez votre galaxie </h3>
                         <div className="InscriptionPage_containerInscription3">
-                            <div className="InscriptionPage_containerInscription3_div">
+                            <div onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
                                 <h1 className="InscriptionPage_containerInscription3_div_title">Voie lactée</h1>
                             </div>
-                            <div className="InscriptionPage_containerInscription3_div">
+                            <div onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
                                 <h1 className="InscriptionPage_containerInscription3_div_title"> Andromède </h1>
                             </div>
-                            <div className="InscriptionPage_containerInscription3_div">
+                            <div onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
                                 <h1 className="InscriptionPage_containerInscription3_div_title"> Têtard </h1>
                             </div>
-                            <div className="InscriptionPage_containerInscription3_div">
+                            <div onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
                                 <h1 className="InscriptionPage_containerInscription3_div_title">Autres </h1>
                             </div>
                         </div>
@@ -140,6 +190,7 @@ class Inscription extends Component {
                         <h3 className="InscriptionPage_title"> Dites nous en plus </h3>
                         <div className="InscriptionPage_containerInscription4">
                         <div className="InscriptionPage_containerInscription4_pic">
+                        <p>Choisir une photo</p>
                         </div>
                         <select className="InscriptionPage_containerInscription4_espece">
                         <option value="" selected disabled hidden>Votre espece</option>
