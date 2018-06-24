@@ -9,6 +9,7 @@ import oval from '../icons/oval.png';
 import female from '../icons/female.svg';
 import male from '../icons/male.svg';
 import both from '../icons/both.svg';
+import Main from './Main';
 
 class Inscription extends Component {
     constructor(props){
@@ -30,7 +31,11 @@ class Inscription extends Component {
     }
 
     next() {
-        this.reactSwipe.next();
+        if(this.state.index === 3) {
+            this.props.navigator.pushPage({component: Main})
+        } else {
+            this.reactSwipe.next();
+        }
     }
 
     prev() {
@@ -132,18 +137,22 @@ class Inscription extends Component {
                     </div>
 
                     <div>
-                        <h3 className="InscriptionPage_title"> Vous êtes ? </h3>
-                        <div className="InscriptionPage_containerInscription">
-                            <form action="" method="post" className="InscriptionPage_containerInscription_formInscription">
-                                <div className="InscriptionPage_containerInscription_formInscription_flexName">
-                                    <input type="text" name="email" id="nom" placeholder="Nom*"/>
-                                    <input type="text" name="email" id="prenom" placeholder="Prénom*"/>
-                                </div>
-                                <input type="email" name="email" id="email" placeholder="Email*"/>
-                                <input type="date" name="date" id="date" placeholder="Email*"/>
-                                <input type="password" name="password" id="password" placeholder="Mot de passe*"/>
-                                <input type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*"/>
-                            </form>
+                        <h3 className="InscriptionPage_title"> Dites nous en plus </h3>
+                        <div className="InscriptionPage_containerInscription4">
+                        <div className="InscriptionPage_containerInscription4_pic">
+                        </div>
+                        <select className="InscriptionPage_containerInscription4_espece">
+                        <option value="" selected disabled hidden>Votre espece</option>
+                            <option value="test1">test1</option>
+                            <option value="test2">test2</option>
+                            <option value="test3">test3</option>
+                            <option value="test4">test4</option>
+                        </select>
+                        <div className="InscriptionPage_containerInscription4_Bio">
+                        <textarea placeholder="Bio" rows="4" cols="50">
+                            
+                        </textarea>
+                            </div>
                         </div>
                     </div>
                 </ReactSwipe>

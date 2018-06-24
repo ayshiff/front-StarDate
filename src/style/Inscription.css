@@ -36,11 +36,41 @@
         text-align: center;
         margin: 14px !important;
         font-size: 14px !important; }
+  .InscriptionPage_containerInscription4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; }
+    .InscriptionPage_containerInscription4_pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      background: white; }
+    .InscriptionPage_containerInscription4_espece {
+      font-family: Comfortaa !important;
+      width: 90vw;
+      background: white;
+      margin-top: 40px;
+      height: 40px; }
+    .InscriptionPage_containerInscription4_Bio {
+      font-family: Comfortaa !important;
+      margin: 20px;
+      height: 200px;
+      width: 90vw;
+      background: white;
+      border-radius: 10px; }
+      .InscriptionPage_containerInscription4_Bio textarea {
+        background: #F3F3F3;
+        border: none;
+        display: block;
+        margin: 20px auto;
+        height: 160px; }
   .InscriptionPage_containerInscription2 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around; }
+    justify-content: space-around;
+    width: 100vw; }
     .InscriptionPage_containerInscription2_div {
       margin: 10px;
       background: white;
@@ -49,8 +79,7 @@
       height: 90px; }
       .InscriptionPage_containerInscription2_div_other {
         font-family: Comfortaa !important;
-        text-align: center;
-        margin: auto; }
+        text-align: center; }
     .InscriptionPage_containerInscription2_logo {
       display: block;
       margin: 15px auto; }
@@ -94,4 +123,4 @@
         width: 81vw; }
   .InscriptionPage_icon {
     display: block;
-    margin: 10px auto; }
+    margin: -10px auto; }
