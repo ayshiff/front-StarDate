@@ -45,7 +45,17 @@
       width: 100px;
       height: 100px;
       border-radius: 50px;
-      background: white; }
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 3px; }
+      .InscriptionPage_containerInscription4_pic input {
+        font-family: Comfortaa !important; }
+      .InscriptionPage_containerInscription4_pic img {
+        width: 50px;
+        margin: auto;
+        display: block; }
       .InscriptionPage_containerInscription4_pic p {
         text-align: center;
         margin: 0 auto;
@@ -56,10 +66,18 @@
       width: 90vw;
       background: white;
       margin-top: 40px;
-      height: 40px; }
+      height: 40px;
+      border: none; }
+    .InscriptionPage_containerInscription4_planete {
+      font-family: Comfortaa !important;
+      width: 90vw;
+      background: white;
+      margin-top: 20px;
+      height: 40px;
+      border: none; }
     .InscriptionPage_containerInscription4_Bio {
       margin: 20px;
-      height: 200px;
+      height: 110px;
       width: 90vw;
       background: white;
       border-radius: 10px; }
@@ -69,7 +87,7 @@
         border: none;
         display: block;
         margin: 20px auto;
-        height: 160px;
+        height: 66px;
         width: 80vw; }
   .InscriptionPage_containerInscription2 {
     display: flex;

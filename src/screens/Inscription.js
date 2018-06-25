@@ -80,6 +80,22 @@ class Inscription extends Component {
         }
     }
 
+    _handleImageChange(e) {
+        e.preventDefault();
+
+        let reader = new FileReader();
+        let file = e.target.files[0];
+
+        reader.onloadend = () => {
+            this.setState({
+                file: file,
+                imagePreviewUrl: reader.result
+            });
+        }
+
+        reader.readAsDataURL(file)
+    }
+
     next() {
         if(this.state.index === 3) {
             this.props.navigator.pushPage({component: Main})
@@ -114,6 +130,10 @@ class Inscription extends Component {
             }
             return tab
         }
+
+        var style = {
+            backgroundImage: 'url(' + this.state.imagePreviewUrl + ') !important',
+        };
 
         return (
             <Page key="InscriptionPage" className="InscriptionPage">
@@ -189,8 +209,10 @@ class Inscription extends Component {
                     <div>
                         <h3 className="InscriptionPage_title"> Dites nous en plus </h3>
                         <div className="InscriptionPage_containerInscription4">
-                        <div className="InscriptionPage_containerInscription4_pic">
-                        <p>Choisir une photo</p>
+                        <div style={style} className="InscriptionPage_containerInscription4_pic">
+                            {this.state.file ? <img src={this.state.imagePreviewUrl} />: null}
+
+                            <input type="file" accept="image/*" capture="camera" onChange={(e) => this._handleImageChange(e)} />
                         </div>
                         <select className="InscriptionPage_containerInscription4_espece">
                         <option value="" selected disabled hidden>Votre espece</option>
@@ -199,6 +221,13 @@ class Inscription extends Component {
                             <option value="test3">test3</option>
                             <option value="test4">test4</option>
                         </select>
+                            <select className="InscriptionPage_containerInscription4_planete">
+                                <option value="" selected disabled hidden>Votre planète</option>
+                                <option value="test1">test1</option>
+                                <option value="test2">test2</option>
+                                <option value="test3">test3</option>
+                                <option value="test4">test4</option>
+                            </select>
                         <div className="InscriptionPage_containerInscription4_Bio">
                         <textarea placeholder="Bio" rows="4" cols="50">
                             
