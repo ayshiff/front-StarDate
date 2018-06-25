@@ -1,5 +1,10 @@
 .ProfilePage {
   font-family: Comfortaa; }
+  .ProfilePage_suppress {
+    text-align: center;
+    font-family: Comfortaa;
+    color: white;
+    font-size: 12px; }
   .ProfilePage_deconnection {
     background-color: #ed5a5a;
     margin-top: 5px;
