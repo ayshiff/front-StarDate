@@ -1,5 +1,36 @@
 .LoginPage {
   font-family: Comfortaa; }
+  .LoginPage_modal {
+    background: white;
+    width: 300px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: black; }
+    .LoginPage_modal_p {
+      padding-top: 15px;
+      font-family: Comfortaa; }
+    .LoginPage_modal input {
+      font-size: 14px;
+      padding-left: 10px;
+      height: 38px;
+      width: 260px;
+      border-style: none;
+      background-color: #F3F3F3;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-bottom: 5px;
+      line-height: 20px;
+      font-family: Comfortaa; }
+    .LoginPage_modal button {
+      background-color: #ed5a5a;
+      margin-top: 5px;
+      border-style: none;
+      width: 300px;
+      padding: 3.5% 10%;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      font-family: Comfortaa; }
   .LoginPage_index {
     display: flex;
     justify-content: space-around;
@@ -58,11 +89,7 @@
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 10px;
-  position: relative;
-  /* @include for-size('desktop-up'){
-    
-  } */
-}
+  position: relative; }
   .containerLogin_params {
     display: flex;
     color: black;

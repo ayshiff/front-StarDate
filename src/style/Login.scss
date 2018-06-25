@@ -2,6 +2,42 @@ $primary-color: #ed5a5a;
 $secondary-color: #0a073f;
 
 .LoginPage {
+
+    &_modal {
+        background: white;
+        width: 300px;
+        height: 150px;
+        margin: 0 auto;
+        border-radius: 10px;
+        color: black;
+        &_p {
+            padding-top: 15px;
+            font-family: Comfortaa;
+        }
+        input {
+            font-size: 14px;
+            padding-left: 10px;
+            height: 38px;
+            width: 260px;
+            border-style: none;
+            background-color: #F3F3F3;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 5px;
+            line-height: 20px;
+            font-family: Comfortaa;
+        }
+        button {
+            background-color: #ed5a5a;
+            margin-top: 5px;
+            border-style: none;
+            width: 300px;
+            padding: 3.5% 10%;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            font-family: Comfortaa;
+        }
+    }
     font-family: Comfortaa;
     &_index {
         display: flex;
