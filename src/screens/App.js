@@ -21,7 +21,7 @@ class App extends Component {
         <Provider store={store}>
             <Navigator
                 key={"Navigator"}
-                animation='fade'
+                animation='slide'
                 initialRoute={{ component: Login }}
                 renderPage={this.renderPage}
             />
