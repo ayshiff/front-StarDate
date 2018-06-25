@@ -27,7 +27,6 @@ class Home extends Component {
 
   render() {
     return (
-      <MediaQuery query="(max-device-width: 421px)">
         <Page key="HomePage" className="HomePage">
           <ReactSwipe className="HomePage_carousel" swipeOptions={{
                 startSlide: 1,
@@ -48,7 +47,6 @@ class Home extends Component {
 
             </ReactSwipe>
       </Page>
-      </MediaQuery>
     );
   }
 }
