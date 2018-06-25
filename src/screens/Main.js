@@ -6,7 +6,7 @@ import 'onsenui/css/onsen-css-components.css';
 import Home from './Home'
 import Profile from './Profile'
 import Chat from './Chat'
-import MediaQuery from 'react-responsive'
+// import MediaQuery from 'react-responsive'
 
 import mask1 from '../icons/mask1.svg';
 import mask2 from '../icons/mask2.svg';

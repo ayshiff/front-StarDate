@@ -7,7 +7,7 @@ import mask2 from '../icons/mask2.svg';
 import mask3 from '../icons/mask3.svg';
 import mask4 from '../icons/mask4.svg';
 import profilePic from '../icons/profilePic.png';
-
+import MediaQuery from 'react-responsive';
 import UserProfile from './UserProfile';
 import Inscription from "./Inscription";
 
@@ -27,6 +27,7 @@ class Home extends Component {
 
   render() {
     return (
+      <MediaQuery query="(max-device-width: 421px)">
         <Page key="HomePage" className="HomePage">
           <ReactSwipe className="HomePage_carousel" swipeOptions={{
                 startSlide: 1,
@@ -47,6 +48,7 @@ class Home extends Component {
 
             </ReactSwipe>
       </Page>
+      </MediaQuery>
     );
   }
 }

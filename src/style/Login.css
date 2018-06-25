@@ -58,7 +58,11 @@
   margin-left: 20px;
   margin-right: 20px;
   border-radius: 10px;
-  position: relative; }
+  position: relative;
+  /* @include for-size('desktop-up'){
+    
+  } */
+}
   .containerLogin_params {
     display: flex;
     color: black;
