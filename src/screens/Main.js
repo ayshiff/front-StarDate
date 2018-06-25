@@ -40,7 +40,7 @@ class Main extends Component {
         return [
             {
                 content: (
-                    <Profile />
+                    <Profile nav={this.props.navigator} />
                 ),
                 tab: (
                     <Tab
