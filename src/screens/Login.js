@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Page, Toolbar, Tab, Tabbar } from 'react-onsenui';
+import { Page, Toolbar, Tab, Tabbar, Modal, Button } from 'react-onsenui';
 import ReactSwipe from 'react-swipe';
 import Main from './Main'
 import '../style/Login.css'
@@ -20,11 +20,14 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            index: 0
+            index: 0,
+            modalIsOpen: false
         };
         this.pushPageMain = this.pushPageMain.bind(this);
         this.pushPageInscription = this.pushPageInscription.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     pushPageMain(e) {
@@ -45,6 +48,19 @@ class Login extends Component {
         this.setState({
             [name]: value
         });
+    }
+
+    openModal() {
+        this.setState({
+            modalIsOpen: true
+        })
+    }
+
+    closeModal() {
+
+           this.setState({
+                modalIsOpen: false
+            })
     }
 
   render() {
@@ -122,6 +138,23 @@ class Login extends Component {
             {renderSwitch(this.state.index)}
             </div>
             </MediaQuery>
+
+            <Modal
+                isOpen={this.state.modalIsOpen}
+            >
+                <div className="LoginPage_modal">
+                    <p className="LoginPage_modal_p">
+                        Ecrivez votre email
+                    </p>
+                    <input type="text" placeholder="Email"/>
+                    <p>
+                        <button onClick={this.closeModal}>
+                            Envoyer
+                        </button>
+                    </p>
+                </div>
+            </Modal>
+
             <div className="containerLogin">
                 <form action="" method="post" className="containerLogin_formLogin">
                     <input type="email" name="email" id="email" placeholder="Email"/>
@@ -135,7 +168,7 @@ class Login extends Component {
                             onChange={this.handleInputChange} />
                         <p> Rester connecté </p>
                         </div>
-                        <p> Mot de passe oublié ? </p>
+                        <p onClick={this.openModal}> Mot de passe oublié ? </p>
                     </div>
                     <div className="containerLogin_formLogin_buttons">
                     <button className="containerLogin_formLogin_buttons_create" type="submit" onClick={this.pushPageInscription}>Créer un compte</button>

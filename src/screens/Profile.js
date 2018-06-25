@@ -5,6 +5,17 @@ import imageProfile from '../icons/imageProfile.png';
 import settings from '../icons/settings.png';
 
 class Profile extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        };
+        this.disconnect = this.disconnect.bind(this);
+    }
+
+    disconnect () {
+        this.props.nav.popPage();
+    }
 
   render() {
     return (
@@ -18,9 +29,13 @@ class Profile extends Component {
                 <h3 className="ProfilePage_description_place">Terraria</h3>
                 <p className="ProfilePage_description_about"> A propos</p>
                 <p className="ProfilePage_description_description"> ezfezfezfzefzefzfefsdfssdfsdfsdfsdfsdgfdsgdfgdgezfeezefz</p>
-                <p className="ProfilePage_description_response"> Reponse</p>
-
+                <div className="ProfilePage_description_div">
+                <p className="ProfilePage_description_div_deconnection"> Se déconnecter </p>
+                </div>
             </div>
+            <button onClick={this.disconnect} className="ProfilePage_deconnection">
+                Se déconnecter
+            </button>
         </Page>
     );
   }

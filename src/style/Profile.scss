@@ -4,6 +4,17 @@ $secondary-color: #ed5a5a;
 
 .ProfilePage {
   font-family: Comfortaa;
+  &_deconnection {
+    background-color: #ed5a5a;
+    margin-top: 5px;
+    border-style: none;
+    width: 160px;
+    padding: 2.5% 5%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    font-family: Comfortaa;
+  }
   &_arrow {
     fill: #ed5a5a !important;
     width: 20px;
