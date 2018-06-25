@@ -110,11 +110,11 @@ class Main extends Component {
         return (
                 <Page key="MainPage" className="MainPage">
 
-                    <MediaQuery query="(min-device-width: 421px)">
+                    <MediaQuery query="(min-width: 421px)">
                         {this.state.display ? <Home nav={this.props.navigator}/>: loading}
                     </MediaQuery>
 
-                    <MediaQuery query="(max-device-width: 420px)">
+                    <MediaQuery query="(max-width: 420px)">
                         {this.state.display ? tabDisplay: loading}
                     </MediaQuery>
       
