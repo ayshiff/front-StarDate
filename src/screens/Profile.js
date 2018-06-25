@@ -36,6 +36,7 @@ class Profile extends Component {
             <button onClick={this.disconnect} className="ProfilePage_deconnection">
                 Se déconnecter
             </button>
+            <p className="ProfilePage_suppress"> Supprimer le compte </p>
         </Page>
     );
   }
