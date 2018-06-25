@@ -1,3 +1,4 @@
+@import 'forsize.scss';
 $primary-color: #ed5a5a;
 $secondary-color: #0a073f;
 
@@ -10,9 +11,6 @@ $secondary-color: #0a073f;
         margin-left: 35%;
         margin-right: 35%;
         margin-top: 20px;
-        img {
-
-        }
     }
     .page__background { background-color: $secondary-color}
     &_carousel {
