@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-point-to-right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mobiles" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="formulaire-1" transform="translate(-168.000000, -514.000000)">
+            <g id="arrow-point-to-right" transform="translate(168.000000, 514.000000)">
+                <circle id="Oval" fill="#F04240" cx="20" cy="20" r="20"></circle>
+                <path d="M25.5682563,21.539608 L16.516548,30.568994 C15.94075,31.1436687 15.0071922,31.1436687 14.4316738,30.568994 C13.8561087,29.9948307 13.8561087,29.0635929 14.4316738,28.489476 L22.4410382,20.499849 L14.4319067,12.5105008 C13.8563417,11.936105 13.8563417,11.0049602 14.4319067,10.4307968 C15.0074718,9.85640106 15.9409829,9.85640106 16.5167809,10.4307968 L25.5684893,19.4603223 C25.8562718,19.7475434 26,20.12358 26,20.4998025 C26,20.8762109 25.8559923,21.2525263 25.5682563,21.539608 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

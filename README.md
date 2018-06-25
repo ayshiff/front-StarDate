@@ -12,7 +12,7 @@ width="200px">
 ## Step 1
 Run ```git clone https://github.com/ayshiff/front-StarDate.git ```
 It will initialize the dependencies.
-And then ```cd MovieGame ```
+And then ```cd front-StarDate ```
 
 ## Step 2
 Run ```npm install ```
