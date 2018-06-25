@@ -1,3 +1,9 @@
+// Breakpoint
+$bp-tablet: 600px;
+$bp-desktop: 949px;
+$bp-desktop-large: 1200px;
+$bp-desktop-x-large: 1800px;
+
 @mixin for-size($range) {
   $phone-upper-boundary: $bp-tablet;
   $tablet-portrait-upper-boundary: $bp-desktop;
