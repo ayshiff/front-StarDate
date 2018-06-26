@@ -29,7 +29,8 @@ class Login extends Component {
         this.state = {
             index: 0,
             modalIsOpen: false,
-            error: null
+            error: null,
+            indexContent: 0
         };
         this.pushPageMain = this.pushPageMain.bind(this);
         this.pushPageInscription = this.pushPageInscription.bind(this);
@@ -39,6 +40,7 @@ class Login extends Component {
         this.loginAction = this.loginAction.bind(this)
         this.passwordChange = this.passwordChange.bind(this)
         this.emailChange = this.emailChange.bind(this)
+        this.registerDesktop = this.registerDesktop.bind(this)
     }
 
     pushPageMain() {
@@ -93,6 +95,13 @@ class Login extends Component {
         })
     }
 
+    registerDesktop () {
+        this.setState({indexContent: this.state.indexContent +1})
+        if(this.state.indexContent === 2) {
+            window.location.href = "/home";
+        }
+    }
+
     closeModal() {
 
            this.setState({
@@ -121,6 +130,64 @@ class Login extends Component {
         }
         return tab
     }
+
+    let showContent = () => {
+            switch (this.state.indexContent){
+                case 0 :
+                    return content1();
+                case 1:
+                    return content2();
+                case 2:
+                    return content3();
+            }
+    };
+
+    let content1 = () => (<div className="homeDesktop_inscriptionContainer">
+        <h3 className="homeDesktop_createAccount">Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
+        <div className="homeDesktop_containerInscription">
+            <form action="" method="post" className="homeDesktop_formInscription">
+                <div className="homeDesktop_flexName">
+                    <input className="homeDesktop_inputItemForm" type="text" name="email" id="nom" placeholder="Nom*" />
+                </div>
+                <input className="homeDesktop_inputItemForm" type="email" name="email" id="email" placeholder="Email*" />
+                <input className="homeDesktop_inputItemForm" type="number" name="age" id="age" placeholder="age*" />
+                <input className="homeDesktop_inputItemForm" type="password" name="password" id="password" placeholder="Mot de passe*" />
+                <input className="homeDesktop_inputItemForm" type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*" />
+            </form>
+            <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">S'inscrire</button>
+        </div>
+    </div>);
+
+      let content2 = () => (<div className="homeDesktop_inscriptionContainer">
+          <h3 className="homeDesktop_createAccount">
+              Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
+          <div className="homeDesktop_containerInscription">
+              <div className="homeDesktop_titleContainerStep2" >
+                  <h3 className="homeDesktop_titleStep2">
+                      Vous êtes ?
+                  </h3>
+              </div>
+              <div className="homeDesktop_containerInscription2">
+                  <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
+                  <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
+                  <h2 className="homeDesktop_logoStep2"> Autre </h2>
+              </div>
+              <div className="homeDesktop_titleContainerStep2">
+                  <h3 className="homeDesktop_titleStep2">
+                      Vous recherchez ?
+                  </h3>
+              </div>
+              <div className="homeDesktop_containerInscription2">
+                  <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
+                  <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
+                  <img src={desktopboth} alt="logoAutre" className="homeDesktop_logoStep2" />
+              </div>
+          </div>
+      </div>);
+
+      let content3 = () => (<div className="homeDesktop_inscriptionContainer">
+      </div>);
+
     return (
         
         <Page className="LoginPage">
@@ -241,50 +308,7 @@ class Login extends Component {
                         <img src={stars1} alt="logo" className="homeDesktop_stars1" />
                         <img src={stars2} alt="logo" className="homeDesktop_stars2" />
                         </div>
-                       {/* Homepage content right side first step */}
-                        {/* <div className="homeDesktop_inscriptionContainer">
-                            <h3 className="homeDesktop_createAccount">Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
-                            <div className="homeDesktop_containerInscription">
-                                <form action="" method="post" className="homeDesktop_formInscription">
-                                    <div className="homeDesktop_flexName">
-                                        <input className="homeDesktop_inputItemForm" type="text" name="email" id="nom" placeholder="Nom*" />
-                                    </div>
-                                    <input className="homeDesktop_inputItemForm" type="email" name="email" id="email" placeholder="Email*" />
-                                    <input className="homeDesktop_inputItemForm" type="number" name="age" id="age" placeholder="age*" />
-                                    <input className="homeDesktop_inputItemForm" type="password" name="password" id="password" placeholder="Mot de passe*" />
-                                    <input className="homeDesktop_inputItemForm" type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*" />
-                                </form>
-                                    <button className="homeDesktop_inscriptionBtn">S'inscrire</button>
-                            </div>
-                        </div> */}
-                        {/* Homepage content right side second step */}
-
-                        <div className="homeDesktop_inscriptionContainer">
-                         <h3 className="homeDesktop_createAccount">
-                            Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
-                            <div className="homeDesktop_containerInscription">
-                            <div className="homeDesktop_titleContainerStep2" >
-                                <h3 className="homeDesktop_titleStep2">
-                                 Vous êtes ? 
-                                 </h3>
-                           </div>
-                                <div className="homeDesktop_containerInscription2">
-                                    <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
-                                    <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
-                                    <h2 className="homeDesktop_logoStep2"> Autre </h2>
-                                </div>
-                                <div className="homeDesktop_titleContainerStep2">
-                                <h3 className="homeDesktop_titleStep2">
-                                 Vous recherchez ? 
-                                 </h3>
-                                </div>
-                                <div className="homeDesktop_containerInscription2">
-                                    <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
-                                    <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
-                                    <img src={desktopboth} alt="logoAutre" className="homeDesktop_logoStep2" />
-                                </div>
-                            </div>
-                          </div>
+                        {showContent()}
                       </div>
                  </div>
             </MediaQuery>
