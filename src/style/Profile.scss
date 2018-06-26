@@ -78,14 +78,14 @@ $secondary-color: #ed5a5a;
 .ProfilePageDesktop{
   background-color: #0a073f;
   height: 100vh;
-  &_image {
-    position: absolute;
-    top: 33%;
-    left: 30%;
-    right: 0;
-    width: 230px;
-    height: 230px;
-  }
+    &_image {
+      position: absolute;
+      top: 33%;
+      left: 30%;
+      right: 0;
+      width: 230px;
+      height: 230px;
+    }
 
   &_description{
     position: absolute;
@@ -175,4 +175,120 @@ $secondary-color: #ed5a5a;
     top: 5%;
   }
 }
+.ProfilePageDesktop_modal_logout{
+  position: absolute;
+  height: 125px;
+  width: 497px;
+  background-color: white;
+  bottom: 40vh;
+  left: 40vw;
+  border-radius: 6px;
+  display: none;
+    &_txt{
+      color: #000000;
+      font-size: 18px;
+      font-family: 'Comfortaa';
+      text-align: center;
+      }
+
+&_input{
+  &_left{
+    border-style: none;
+    position: absolute;
+    font-size: 18px;
+    color: #DCDCDC;
+    width: 160px;
+    display: block;
+    bottom: 0%;
+    left: 0%;
+    font-family: 'Comfortaa';
+    height: 60px;
+    width: 248px;
+    background-color: #F3F3F3;
+    border-bottom-left-radius: 6px;
+  
+  }
+  &_right{
+    border-style: none;
+    position: absolute;
+    font-size: 18px;
+    color: #DCDCDC;
+    display: block;
+    bottom: 0;
+    right: 0;
+    font-family: 'Comfortaa';
+    height: 60px;
+    width: 249px;
+    background-color: red;
+    border-radius: 6px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+  &_delete{
+    position: absolute;
+    height: 325px;
+    width: 497px;
+    background-color: white;
+    bottom: 40vh;
+    left: 40vw;
+    border-radius: 6px;
+    display: none;
+
+    &_txt{
+      position: absolute;
+      color: #000000;
+      font-size: 18px;
+      font-family: 'Comfortaa';
+      text-align: center;
+      bottom: 30%;
+      left: 14%;
+    }
+
+    &_input {
+     &_left{
+      border-style: none;
+      position: absolute;
+      font-size: 18px;
+      color: #DCDCDC;
+      width: 160px;
+      display: block;
+      bottom: 0%;
+      left: 0%;
+      font-family: 'Comfortaa';
+      height: 60px;
+      width: 248px;
+      background-color: #F3F3F3;
+      border-bottom-left-radius: 6px;
+     }
+     &_right{
+      border-style: none;
+      position: absolute;
+      font-size: 18px;
+      color: #DCDCDC;
+      display: block;
+      bottom: 0;
+      right: 0;
+      font-family: 'Comfortaa';
+      height: 60px;
+      width: 249px;
+      background-color: red;
+      border-radius: 6px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+   }
+   &_img{
+    position: absolute;
+    top: 19%;
+    left: 41%;
+    width: 19%;
+  
+  }
+
+  }
 }
+}
+}
+

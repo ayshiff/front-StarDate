@@ -48,11 +48,21 @@ class Profile extends Component {
            réaliser un livre spécimen de polices de texte.</p>
            <img className="ProfilePage_description_settings" src="settings.png"/>
            <img className="ProfilePage_description_settings_ok" src="ok.png"/>
-
       </div>
       <div className="ProfilePageDesktop_description_input">
     <input className="ProfilePageDesktop_description_input_logout" value="Se deconnecter" type="button"/>
     <input className="ProfilePageDesktop_description_input_delete" value="supprimer le compte" type="button"/>
+    </div>
+    <div class="ProfilePageDesktop_modal_logout">
+      <p class="ProfilePageDesktop_modal_logout_txt">Voulez-vous vraiment vous deconnecter ?</p>
+      <input value="Non" type="button" class="ProfilePageDesktop_modal_logout_input_left"/>
+      <input value="Oui"type="button" class="ProfilePageDesktop_modal_logout_input_right"/>
+    </div>
+    <div class="ProfilePageDesktop_modal_delete">
+      <img class="ProfilePageDesktop_modal_delete_img"src="warning.png" alt=""/>
+      <p class="ProfilePageDesktop_modal_delete_txt">Voulez-vous vraiment vous deconnecter ?</p>
+      <input value="Non" type="button" class="ProfilePageDesktop_modal_delete_input_left"/>
+      <input value="Oui"type="button" class="ProfilePageDesktop_modal_delete_input_right"/>
     </div>
            </MediaQuery> 
         </Page>
