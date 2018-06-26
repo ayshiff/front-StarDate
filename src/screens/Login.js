@@ -165,6 +165,24 @@ class Login extends Component {
             <div className="LoginPage_index">
             {renderSwitch(this.state.index)}
             </div>
+            </MediaQuery>
+
+            <Modal
+                isOpen={this.state.modalIsOpen}
+            >
+                <div className="LoginPage_modal">
+                    <p className="LoginPage_modal_p">
+                        Ecrivez votre email
+                    </p>
+                    <input type="text" placeholder="Email"/>
+                    <p>
+                        <button onClick={this.closeModal}>
+                            Envoyer
+                        </button>
+                    </p>
+                </div>
+            </Modal>
+
             <div className="containerLogin">
                 <div className="containerLogin_formLogin">
                     <input onChange={this.emailChange} type="email" name="email" id="email" placeholder="Email"/>
@@ -188,7 +206,6 @@ class Login extends Component {
 
                 </div>
             </div>
-            </MediaQuery>
             {/* Desktop home */}
             <MediaQuery query="(min-width: 421px)">
             {/* Header */}

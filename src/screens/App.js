@@ -4,7 +4,7 @@ import { store } from "../redux/reducers";
 import {Provider} from 'react-redux';
 import { Navigator } from 'react-onsenui';
 import MediaQuery from 'react-responsive';
-// import * as firebase from 'firebase'
+import * as firebase from 'firebase'
 
 
 
@@ -19,7 +19,7 @@ class App extends Component {
             storageBucket: "",
             messagingSenderId: ""
         };
-        // firebase.initializeApp(config);
+        firebase.initializeApp(config);
     }
 
 
