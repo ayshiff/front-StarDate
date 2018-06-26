@@ -205,17 +205,15 @@ $secondary-color: #0a073f;
 .homeDesktop{
     &_inputContainer{
         display: flex;
-        margin-top: 32px; 
     }
     &_logo{
         width: 55px;
         height: 50px;
-        margin: 0 0 0 110px;
+        margin: 32px 0 0 110px;
     }
     &_inputs{
         top: 0;
         right: 0;
-        margin-top: 32px;
     }
     &_inputItem{
         width: 200px;
@@ -233,12 +231,9 @@ $secondary-color: #0a073f;
         cursor: pointer;
     }
     &_container{
-        margin: 0 0 0 45%;
+        margin: 32px 0 0 35%;
         top: 0;
-        right: 100;
-    }
-    &_forgottenContainer{
-    
+        right: 0;
     }
     &_forgotten{
         color: $primary-color;
