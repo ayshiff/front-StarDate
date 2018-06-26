@@ -121,6 +121,22 @@ class Login extends Component {
     return (
         
         <Page className="LoginPage">
+
+            <Modal
+                isOpen={this.state.modalIsOpen}
+            >
+                <div className="LoginPage_modal">
+                    <p className="LoginPage_modal_p">
+                        Ecrivez votre email
+                    </p>
+                    <input type="text" placeholder="Email"/>
+                    <p>
+                        <button onClick={this.closeModal}>
+                            Envoyer
+                        </button>
+                    </p>
+                </div>
+            </Modal>
             <MediaQuery query="(max-width: 420px)">
             <ReactSwipe className="LoginPage_carousel" swipeOptions={{
                 continuous: false,
@@ -169,21 +185,6 @@ class Login extends Component {
             {renderSwitch(this.state.index)}
             </div>
 
-            <Modal
-                isOpen={this.state.modalIsOpen}
-                >
-                <div className="LoginPage_modal">
-                    <p className="LoginPage_modal_p">
-                        Ecrivez votre email
-                    </p>
-                    <input type="text" placeholder="Email"/>
-                    <p>
-                        <button onClick={this.closeModal}>
-                            Envoyer
-                        </button>
-                    </p>
-                </div>
-            </Modal>
 
             <div className="containerLogin">
                 <div className="containerLogin_formLogin">
@@ -216,11 +217,11 @@ class Login extends Component {
             <div className="homeDesktop_inputContainer">
                  <img src={logo} alt="logo" className="homeDesktop_logo" />    
                  <div className="homeDesktop_container">
-                   <input className="homeDesktop_inputItem" type="email" name="email" id="email" placeholder="Email" />
-                   <input className="homeDesktop_inputItem" type="password" name="password" id="password" placeholder="Mot de passe" />
-                   <button className="homeDesktop_btnConnexion">Se connecter</button>
+                   <input onChange={this.emailChange} className="homeDesktop_inputItem" type="email" name="email" id="email" placeholder="Email" />
+                   <input onChange={this.passwordChange} className="homeDesktop_inputItem" type="password" name="password" id="password" placeholder="Mot de passe" />
+                   <button className="homeDesktop_btnConnexion" onClick={this.loginAction}>Se connecter</button>
                    <div className="homeDesktop_forgottenContainer">
-                       <p className="homeDesktop_forgotten">Mot de passe oublié ?</p>
+                       <p onClick={this.openModal} className="homeDesktop_forgotten">Mot de passe oublié ?</p>
                    </div>
                 </div>
             </div>

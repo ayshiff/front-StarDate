@@ -53,6 +53,7 @@ class Profile extends Component {
     return (
         <Page key="ProfilePage" className="ProfilePage">
 
+            <MediaQuery query="(max-width: 420px)">
             <div className="ProfilePage_image"></div>
             {this.state.edit? editContent: content}
             {this.state.edit? <button onClick={this.edit} className="ProfilePage_deconnection">
@@ -63,16 +64,18 @@ class Profile extends Component {
 
             {this.state.edit? <p className="ProfilePage_suppress"> Supprimer le compte </p>: null}
 
+            </MediaQuery>
+
         <MediaQuery query="(min-width: 421px)">
-        <div className=""> <img class="ProfilePageDesktop_image"src="wala.png" alt=""/> </div>
+        <div className=""> <img class="ProfilePageDesktop_image"src="#" alt=""/> </div>
       <div className="ProfilePageDesktop_description">
         <p className="ProfilePageDesktop_description_header_name">Zimbabwe, 12</p>
-        <h3 className="ProfilePage_description_place">Terraria</h3>
-        <p className="ProfilePage_description_about"> A propos</p>
-        <p className="ProfilePage_description_txt"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour
+        <h3 className="ProfilePageDesktop_description_place">Terraria</h3>
+        <p className="ProfilePageDesktop_description_about"> A propos</p>
+        <p className="ProfilePageDesktop_description_txt"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour
            réaliser un livre spécimen de polices de texte.</p>
-           <img className="ProfilePage_description_settings" src="settings.png"/>
-           <img className="ProfilePage_description_settings_ok" src="ok.png"/>
+           <img className="ProfilePageDesktop_description_settings" src="#"/>
+           <img className="ProfilePageDesktop_description_settings_ok" src="#"/>
       </div>
       <div className="ProfilePageDesktop_description_input">
     <input className="ProfilePageDesktop_description_input_logout" value="Se deconnecter" type="button"/>
@@ -84,7 +87,7 @@ class Profile extends Component {
       <input value="Oui" type="button" className="ProfilePageDesktop_modal_logout_input_right"/>
     </div>
     <div className="ProfilePageDesktop_modal_delete">
-      <img className="ProfilePageDesktop_modal_delete_img" src="warning.png" alt=""/>
+      <img className="ProfilePageDesktop_modal_delete_img" src="#" alt=""/>
       <p className="ProfilePageDesktop_modal_delete_txt">Voulez-vous vraiment vous deconnecter ?</p>
       <input value="Non" type="button" class="ProfilePageDesktop_modal_delete_input_left"/>
       <input value="Oui" type="button" class="ProfilePageDesktop_modal_delete_input_right"/>
