@@ -169,11 +169,7 @@ $secondary-color: #0a073f;
             display: flex;
             #nom {
                 font-family: Comfortaa;
-
-            }
-            #prenom {
-                margin-left: 0;
-                font-family: Comfortaa;
+                width: 370px;;
 
             }
 
@@ -181,7 +177,7 @@ $secondary-color: #0a073f;
             #date {
                 font-family: Comfortaa;
                 color: grey;
-                width: 81vw;
+                width: 370px;
             }
     }
     

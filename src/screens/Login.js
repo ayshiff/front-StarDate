@@ -71,6 +71,7 @@ class Login extends Component {
     return (
         
         <Page className="LoginPage">
+            <MediaQuery query="(max-width: 420px)">
             <ReactSwipe className="LoginPage_carousel" swipeOptions={{
                 continuous: false,
                 speed: 400,
@@ -91,6 +92,7 @@ class Login extends Component {
                     <img src={stars1} alt="logo" className="LoginPage_carousel_stars1"/>
                     <img src={stars2} alt="logo" className="LoginPage_carousel_stars2"/>
                 </div>
+                
                 <div className="LoginPage_carousel_div">
                     <div className="LoginPage_carousel_textLogin">
                         <p className="LoginPage_carousel_textLogin_textLoginContainer">
@@ -113,15 +115,9 @@ class Login extends Component {
                     <img src={placeholder2} alt="logo" className="LoginPage_carousel_div_img3"/>
                 </div>
             </ReactSwipe>
-
-            <div>
-
-            </div>
-            <MediaQuery query="(max-device-width: 420px)">
             <div className="LoginPage_index">
             {renderSwitch(this.state.index)}
             </div>
-            </MediaQuery>
             <div className="containerLogin">
                 <form action="" method="post" className="containerLogin_formLogin">
                     <input type="email" name="email" id="email" placeholder="Email"/>
@@ -143,7 +139,58 @@ class Login extends Component {
                     </div>
                 </form>
             </div>
+            </MediaQuery>
+            {/* Desktop home */}
+            <MediaQuery query="(min-width: 421px)">
+            {/* Header */}
+            <header className="homeDesktop">
+            <div className="homeDesktop_inputContainer">
+                 <img src={logo} alt="logo" className="homeDesktop_logo" />    
+                 <div>
+                 <div className="homeDesktop_container">
+                   <input className="homeDesktop_inputItem" type="email" name="email" id="email" placeholder="Email" />
+                   <input className="homeDesktop_inputItem" type="password" name="password" id="password" placeholder="Mot de passe" />
+                   <button className="homeDesktop_btnConnexion">Se connecter</button>
+                   <div className="homeDesktop_forgottenContainer">
+                       <p className="homeDesktop_forgotten">Mot de passe oublié ?</p>
+                   </div>
+                </div>
+                 </div>          
+            </div>
+            {/* Homepage Content */}
+                    <div className="homeDesktop_bigContainer">
+                {/* Homepage Content left side  */}
+                        <div className="homeDesktop_textContainer">
+                            <p className="homeDesktop_textTitle">
+                                Bienvenue sur Star Date <br />
+                                le <span className="homeDesktop_coloriage">1er site de rencontre <br />
+                                    intergalactique.</span>
+                            </p>
+                        <img src={planet} alt="logo" className="homeDesktop_planet" />
+                        <img src={stars1} alt="logo" className="homeDesktop_stars1" />
+                        <img src={stars2} alt="logo" className="homeDesktop_stars2" />
+                        </div>
+                       {/* Homepage content right side */}
+                        <div className="homeDesktop_inscriptionContainer">
+                            <h3 className="homeDesktop_createAccount">Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
+                            <div className="homeDesktop_containerInscription">
+                                <form action="" method="post" className="homeDesktop_formInscription">
+                                    <div className="InscriptionPage_containerInscription_formInscription_flexName">
+                                        <input type="text" name="email" id="nom" placeholder="Nom*" />
+                                    </div>
+                                    <input type="email" name="email" id="email" placeholder="Email*" />
+                                    <input type="date" name="date" id="date" placeholder="date*" />
+                                    <input type="password" name="password" id="password" placeholder="Mot de passe*" />
+                                    <input type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*" />
+                                    <button className="homeDesktop_inscriptionBtn">S'inscrire</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
+
+            </header>
+            </MediaQuery>
 
       </Page>
     );
