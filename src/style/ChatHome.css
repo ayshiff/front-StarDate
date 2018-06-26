@@ -1,0 +1,23 @@
+.ChatPage {
+  font-family: Comfortaa; }
+  .ChatPage .page__background {
+    background-color: #0a073f; }
+  .ChatPage_div {
+    margin: 30px auto;
+    padding: 10px;
+    background: white;
+    width: 90vw;
+    border-radius: 10px;
+    height: 60px;
+    display: flex;
+    align-items: center; }
+    .ChatPage_div_image {
+      width: 80px;
+      height: 80px;
+      margin-left: 10px; }
+    .ChatPage_div_container {
+      display: flex;
+      flex-direction: column;
+      color: black; }
+      .ChatPage_div_container_message {
+        margin-top: 0; }

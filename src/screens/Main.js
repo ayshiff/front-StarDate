@@ -5,8 +5,8 @@ import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.css';
 import Home from './Home'
 import Profile from './Profile'
-import Chat from './Chat'
-// import MediaQuery from 'react-responsive'
+import ChatHome from './ChatHome'
+import MediaQuery from 'react-responsive'
 
 import mask1 from '../icons/mask1.svg';
 import mask2 from '../icons/mask2.svg';
@@ -40,7 +40,7 @@ class Main extends Component {
         return [
             {
                 content: (
-                    <Profile />
+                    <Profile nav={this.props.navigator} />
                 ),
                 tab: (
                     <Tab
@@ -62,7 +62,7 @@ class Main extends Component {
             },
             {
                 content: (
-                    <Chat />
+                    <ChatHome />
                 ),
                 tab: (
                     <Tab
@@ -110,7 +110,15 @@ class Main extends Component {
         return (
                 <Page key="MainPage" className="MainPage">
 
-                    {this.state.display ? tabDisplay: loading}
+                    <MediaQuery query="(min-width: 421px)">
+                        {this.state.display ? <Home nav={this.props.navigator}/>: loading}
+                    </MediaQuery>
+
+                    <MediaQuery query="(max-width: 420px)">
+                        {this.state.display ? tabDisplay: loading}
+                    </MediaQuery>
+      
+                    
                 </Page>
         );
     }

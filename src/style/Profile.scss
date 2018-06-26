@@ -4,6 +4,23 @@ $secondary-color: #ed5a5a;
 
 .ProfilePage {
   font-family: Comfortaa;
+  &_suppress {
+    text-align: center;
+    font-family: Comfortaa;
+    color: white;
+    font-size: 12px;
+  }
+  &_deconnection {
+    background-color: #ed5a5a;
+    margin-top: 5px;
+    border-style: none;
+    width: 160px;
+    padding: 2.5% 5%;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    font-family: Comfortaa;
+  }
   &_arrow {
     fill: #ed5a5a !important;
     width: 20px;
@@ -27,6 +44,17 @@ $secondary-color: #ed5a5a;
     margin: 20px;
     color: white;
     font-family: Comfortaa;
+    input {
+      font-size: 14px;
+      padding-left: 10px;
+      height: 38px;
+      width: 260px;
+      border-style: none;
+      background-color: #F3F3F3;
+      margin: 14px 20px;
+      line-height: 20px;
+      font-family: Comfortaa;
+    }
     &_description {
       overflow-wrap: break-word;
       margin-top: -10px !important;
