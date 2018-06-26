@@ -4,13 +4,13 @@ import ReactSwipe from 'react-swipe';
 import Main from './Main'
 import '../style/Login.css'
 import logo from '../icons/logo.png';
-import planet from '../icons/planet.png';
-import stars1 from '../icons/stars1.png';
-import stars2 from '../icons/stars2.png';
+import planet from '../icons/planet.svg';
+import stars1 from '../icons/stars1.svg';
+import stars2 from '../icons/stars2.svg';
 import placeholder from '../icons/placeholder.png';
 import placeholder2 from '../icons/placeholder2.png';
-import oval from '../icons/oval.png';
-import OvalToggle from '../icons/OvalToggle.png';
+import oval from '../icons/oval.svg';
+import OvalToggle from '../icons/OvalToggle.svg';
 import Inscription from './Inscription';
 import * as firebase from 'firebase'
 import {getLoginAction} from '../redux/action'
@@ -79,13 +79,29 @@ class Login extends Component {
         })
     }
 
-    loginAction (){
+    loginActionDesktop (){
 
         let that = this;
         this.props.onSubmit(this.state.email)
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
             console.log(user.user.uid);
             window.location.href = "/home";
+        }).catch(error => {
+            // console.log(error.code +''+ error.message)
+            console.log(error.message);
+            that.setState({
+                error: error.code // ou error.message
+            })
+        })
+    }
+
+    loginAction (){
+
+        let that = this;
+        this.props.onSubmit(this.state.email)
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
+            console.log(user.user.uid);
+            that.props.navigator.pushPage({component: Main})
         }).catch(error => {
             // console.log(error.code +''+ error.message)
             console.log(error.message);
@@ -289,7 +305,7 @@ class Login extends Component {
                  <div className="homeDesktop_container">
                    <input onChange={this.emailChange} className="homeDesktop_inputItem" type="email" name="email" id="email" placeholder="Email" />
                    <input onChange={this.passwordChange} className="homeDesktop_inputItem" type="password" name="password" id="password" placeholder="Mot de passe" />
-                   <button className="homeDesktop_btnConnexion" onClick={this.loginAction}>Se connecter</button>
+                   <button className="homeDesktop_btnConnexion" onClick={this.loginActionDesktop}>Se connecter</button>
                    <div className="homeDesktop_forgottenContainer">
                        <p onClick={this.openModal} className="homeDesktop_forgotten">Mot de passe oublié ?</p>
                    </div>

@@ -56,8 +56,12 @@ class Profile extends Component {
 
     }
 
-    disconnect () {
+    disconnectDesktop () {
         window.location.href = "/";
+    }
+
+    disconnect () {
+        this.props.nav.popPage()
     }
 
 
@@ -119,7 +123,7 @@ class Profile extends Component {
     <div className="ProfilePageDesktop_modal_logout">
       <p className="ProfilePageDesktop_modal_logout_txt">Voulez-vous vraiment vous deconnecter ?</p>
       <input onClick={this.closeModal} value="Non" type="button" className="ProfilePageDesktop_modal_logout_input_left"/>
-      <input onClick={this.disconnect} value="Oui" type="button" className="ProfilePageDesktop_modal_logout_input_right"/>
+      <input onClick={this.disconnectDesktop} value="Oui" type="button" className="ProfilePageDesktop_modal_logout_input_right"/>
     </div>
             </Modal>
                 <Modal

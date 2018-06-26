@@ -27,7 +27,6 @@ class Entry extends Component {
         return (
             <div>
                 <MediaQuery query="(min-width: 421px)">
-
                     <BrowserRouter>
                         <Switch>
                             <Route exact path='/' component={Login}/>
