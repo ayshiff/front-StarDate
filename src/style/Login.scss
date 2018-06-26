@@ -291,7 +291,7 @@ $secondary-color: #0a073f;
         margin: 100px 0 0 0;
     }
     &_createAccount{
-        font-size: 40px;
+        font-size: 60px;
         color: #FFF;
         margin: 100px 0 0 0;
     }
@@ -303,7 +303,7 @@ $secondary-color: #0a073f;
         font-size: 18px;
         border: none;
         border-radius: 10px;
-        margin: 22px auto;
+        margin: 22px 30px;
         cursor: pointer;
     }
     &_flexName{
@@ -334,6 +334,21 @@ $secondary-color: #0a073f;
             width: 447px;
             height: 35px;
             padding: 5px;
+        }
+        &_containerInscription2{
+            display: flex;
+            justify-content: space-around;
+        }
+        &_logoStep2{
+           width: 60px;
+        }
+        &_titleStep2{
+            text-align: center;
+        }
+        &_titleContainerStep2{
+            h3 {
+                padding: 15px;
+            }
         }
 }
 

@@ -16,6 +16,9 @@ import * as firebase from 'firebase'
 import {getLoginAction} from '../redux/action'
 import {connect} from 'react-redux'
 import MediaQuery from 'react-responsive';
+import desktopfemale from '../icons/female.svg';
+import desktopmale from '../icons/male.svg';
+import desktopboth from '../icons/both.svg';
 
 
 
@@ -212,7 +215,7 @@ class Login extends Component {
             {/* Desktop home */}
             <MediaQuery query="(min-width: 421px)">
             {/* Header */}
-            <header className="homeDesktop">
+            <div className="homeDesktop">
             <div className="homeDesktop_inputContainer">
                  <img src={logo} alt="logo" className="homeDesktop_logo" />    
                  <div className="homeDesktop_container">
@@ -237,8 +240,8 @@ class Login extends Component {
                         <img src={stars1} alt="logo" className="homeDesktop_stars1" />
                         <img src={stars2} alt="logo" className="homeDesktop_stars2" />
                         </div>
-                       {/* Homepage content right side */}
-                        <div className="homeDesktop_inscriptionContainer">
+                       {/* Homepage content right side first step */}
+                        {/* <div className="homeDesktop_inscriptionContainer">
                             <h3 className="homeDesktop_createAccount">Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
                             <div className="homeDesktop_containerInscription">
                                 <form action="" method="post" className="homeDesktop_formInscription">
@@ -249,14 +252,39 @@ class Login extends Component {
                                     <input className="homeDesktop_inputItemForm" type="number" name="age" id="age" placeholder="age*" />
                                     <input className="homeDesktop_inputItemForm" type="password" name="password" id="password" placeholder="Mot de passe*" />
                                     <input className="homeDesktop_inputItemForm" type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*" />
-                                    <button className="homeDesktop_inscriptionBtn">S'inscrire</button>
                                 </form>
+                                    <button className="homeDesktop_inscriptionBtn">S'inscrire</button>
                             </div>
-                        </div>
-                    </div>
-
-
-            </header>
+                        </div> */}
+                        {/* Homepage content right side second step */}
+                        <div className="homeDesktop_inscriptionContainer">
+                         <h3 className="homeDesktop_createAccount">
+                            Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
+                            <div className="homeDesktop_containerInscription">
+                            <div className="homeDesktop_titleContainerStep2" >
+                                <h3 className="homeDesktop_titleStep2">
+                                 Vous êtes ? 
+                                 </h3>
+                           </div>
+                                <div className="homeDesktop_containerInscription2">
+                                    <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
+                                    <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
+                                    <h2 className="homeDesktop_logoStep2"> Autre </h2>
+                                </div>
+                                <div className="homeDesktop_titleContainerStep2">
+                                <h3 className="homeDesktop_titleStep2">
+                                 Vous recherchez ? 
+                                 </h3>
+                                </div>
+                                <div className="homeDesktop_containerInscription2">
+                                    <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
+                                    <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
+                                    <img src={desktopboth} alt="logoAutre" className="homeDesktop_logoStep2" />
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                 </div>
             </MediaQuery>
 
       </Page>
