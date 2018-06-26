@@ -10,6 +10,7 @@ import profilePic from '../icons/profilePic.png';
 import MediaQuery from 'react-responsive';
 import UserProfile from './UserProfile';
 import Inscription from "./Inscription";
+import Profile from './Profile';
 
 class Home extends Component {
 
@@ -18,18 +19,23 @@ class Home extends Component {
     this.state = {
       index: 1
     };
+    this.pushProfile = this.pushProfile.bind(this)
   }
 
   pushPageProfile() {
       this.props.nav.pushPage({component: UserProfile})
   }
 
+    pushProfile() {
+        window.location.href = "/profile";
+    }
+
 
   render() {
     return (
         <Page key="HomePage" className="HomePage">
             <MediaQuery query="(min-width: 421px)">
-
+                <h1 onClick={this.pushProfile}> Page Profile </h1>
             </MediaQuery>
 
             <MediaQuery query="(max-width: 420px)">

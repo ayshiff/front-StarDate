@@ -133,8 +133,7 @@
       left: 30.5%;
       font-family: 'Comfortaa';
       height: 30px;
-      width: 207px;
-      display: none; }
+      width: 207px; }
     .ProfilePageDesktop_description_input_delete {
       background-color: #0a073f;
       border-style: none;
@@ -147,8 +146,7 @@
       left: 30.5%;
       font-family: 'Comfortaa';
       height: 30px;
-      width: 207px;
-      display: none; }
+      width: 207px; }
     .ProfilePageDesktop_description_settings_ok {
       display: none;
       position: absolute;
