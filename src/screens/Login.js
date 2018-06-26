@@ -168,11 +168,10 @@ class Login extends Component {
             <div className="LoginPage_index">
             {renderSwitch(this.state.index)}
             </div>
-            </MediaQuery>
 
             <Modal
                 isOpen={this.state.modalIsOpen}
-            >
+                >
                 <div className="LoginPage_modal">
                     <p className="LoginPage_modal_p">
                         Ecrivez votre email
@@ -209,13 +208,13 @@ class Login extends Component {
 
                 </div>
             </div>
+            </MediaQuery>
             {/* Desktop home */}
             <MediaQuery query="(min-width: 421px)">
             {/* Header */}
             <header className="homeDesktop">
             <div className="homeDesktop_inputContainer">
                  <img src={logo} alt="logo" className="homeDesktop_logo" />    
-                 <div>
                  <div className="homeDesktop_container">
                    <input className="homeDesktop_inputItem" type="email" name="email" id="email" placeholder="Email" />
                    <input className="homeDesktop_inputItem" type="password" name="password" id="password" placeholder="Mot de passe" />
@@ -224,7 +223,6 @@ class Login extends Component {
                        <p className="homeDesktop_forgotten">Mot de passe oublié ?</p>
                    </div>
                 </div>
-                 </div>          
             </div>
             {/* Homepage Content */}
                     <div className="homeDesktop_bigContainer">

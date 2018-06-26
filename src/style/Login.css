@@ -167,18 +167,16 @@
         font-family: Comfortaa; }
 
 .homeDesktop_inputContainer {
-  display: flex;
-  margin-top: 32px; }
+  display: flex; }
 
 .homeDesktop_logo {
   width: 55px;
   height: 50px;
-  margin: 0 0 0 110px; }
+  margin: 32px 0 0 110px; }
 
 .homeDesktop_inputs {
   top: 0;
-  right: 0;
-  margin-top: 32px; }
+  right: 0; }
 
 .homeDesktop_inputItem {
   width: 200px;
@@ -196,9 +194,9 @@
   cursor: pointer; }
 
 .homeDesktop_container {
-  margin: 0 0 0 45%;
+  margin: 32px 0 0 35%;
   top: 0;
-  right: 100; }
+  right: 0; }
 
 .homeDesktop_forgotten {
   color: #ed5a5a;
