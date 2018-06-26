@@ -10,6 +10,7 @@ import female from '../icons/female.svg';
 import male from '../icons/male.svg';
 import both from '../icons/both.svg';
 import Main from './Main';
+import * as firebase from 'firebase'
 
 class Inscription extends Component {
     constructor(props){
@@ -38,7 +39,20 @@ class Inscription extends Component {
         this.passwordChange = this.passwordChange.bind(this)
         this.passwordConfirmChange = this.passwordConfirmChange.bind(this)
         this.ageChange = this.ageChange.bind(this)
+        this.register = this.register.bind(this)
     }
+
+    register(){
+        let that = this;
+            firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+                .then(function(user) {
+                    that.props.navigator.pushPage({component: Main})
+                })
+
+                .catch(function(error){
+                console.log(error.code + '' + error.message)
+            })
+        }
 
     backPage() {
         if(this.state.index === 0) {
@@ -145,7 +159,7 @@ class Inscription extends Component {
 
     next() {
         if(this.state.index === 3) {
-            this.props.navigator.pushPage({component: Main})
+            this.register();
         } else {
             this.reactSwipe.next();
         }
