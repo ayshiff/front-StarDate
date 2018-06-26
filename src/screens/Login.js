@@ -82,7 +82,7 @@ class Login extends Component {
         let that = this;
         this.props.onSubmit(this.state.email)
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
-            console.log(user);
+            console.log(user)
             that.pushPageMain()
         }).catch(error => {
             // console.log(error.code +''+ error.message)
@@ -257,6 +257,7 @@ class Login extends Component {
                             </div>
                         </div> */}
                         {/* Homepage content right side second step */}
+
                         <div className="homeDesktop_inscriptionContainer">
                          <h3 className="homeDesktop_createAccount">
                             Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>

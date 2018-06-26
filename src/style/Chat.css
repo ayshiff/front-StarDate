@@ -2,3 +2,9 @@
   font-family: Comfortaa; }
   .Chat .page__background {
     background-color: white; }
+  .Chat_arrow {
+    fill: #ed5a5a !important;
+    width: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute; }

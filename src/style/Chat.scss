@@ -5,6 +5,12 @@ $secondary-color: #ed5a5a;
 .Chat {
   font-family: Comfortaa;
   .page__background { background-color: white;}
-
+  &_arrow {
+    fill: #ed5a5a !important;
+    width: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+  }
 
 }
