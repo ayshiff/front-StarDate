@@ -140,8 +140,8 @@
   margin-top: 32px; }
 
 .homeDesktop_logo {
-  width: 47px;
-  height: 42px;
+  width: 55px;
+  height: 50px;
   margin: 0 0 0 110px; }
 
 .homeDesktop_inputs {
@@ -161,7 +161,8 @@
   font-size: 18px;
   width: 170px;
   height: 35px;
-  border-radius: 15px; }
+  border-radius: 15px;
+  cursor: pointer; }
 
 .homeDesktop_container {
   margin: 0 0 0 45%;
@@ -174,7 +175,8 @@
   margin: 15px 0 0 236px; }
 
 .homeDesktop_bigContainer {
-  display: flex; }
+  display: flex;
+  justify-content: space-around; }
 
 .homeDesktop_textContainer {
   margin: 150px 50px 0 150px; }
@@ -185,7 +187,8 @@
   width: 80px;
   height: 80px;
   position: absolute;
-  margin: 168px 0 0 560px; }
+  margin: 168px 0 0 560px;
+  z-index: -1; }
 
 .homeDesktop_stars1 {
   top: 0;
@@ -193,7 +196,8 @@
   position: absolute;
   width: 87px;
   height: 85px;
-  margin: 205px 0 0 110px; }
+  margin: 205px 0 0 110px;
+  z-index: -1; }
 
 .homeDesktop_stars2 {
   position: absolute;
@@ -201,7 +205,8 @@
   height: 85px;
   bottom: 0;
   left: 0;
-  margin: 0px 0px 145px 619px; }
+  margin: 0px 0px 145px 619px;
+  z-index: -1; }
 
 .homeDesktop_textTitle {
   margin: 100px 0 0 0;
@@ -210,6 +215,9 @@
 
 .homeDesktop_coloriage {
   color: #ed5a5a; }
+
+.homeDesktop_inscriptionContainer {
+  margin: 100px 0 0 0; }
 
 .homeDesktop_createAccount {
   font-size: 40px;
@@ -223,26 +231,17 @@
   height: 40px;
   font-size: 18px;
   border: none;
-  border-radius: 10px; }
-
-.homeDesktop_formInscription {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px; }
+  border-radius: 10px;
+  margin: 22px auto;
+  cursor: pointer; }
 
 .homeDesktop_flexName {
   display: flex; }
 
 .homeDesktop_containerInscription {
   background-color: white;
-  min-height: 200px;
-  max-width: 400px;
-  min-width: 280px;
-  margin-bottom: 40px;
-  margin-top: 15%;
-  margin-left: 20px;
-  margin-right: 20px;
+  width: 500px;
+  height: 370px;
   border-radius: 10px; }
 
 .homeDesktop_formInscription {
@@ -250,3 +249,16 @@
   display: flex;
   flex-direction: column;
   margin-top: 10px; }
+
+.homeDesktop_inputItemForm {
+  font-family: Comfortaa;
+  margin-top: 15px;
+  height: 38px;
+  border-style: none;
+  background-color: #F3F3F3;
+  margin-left: 18px;
+  margin-right: 15px;
+  line-height: 20px;
+  width: 447px;
+  height: 35px;
+  padding: 5px; }

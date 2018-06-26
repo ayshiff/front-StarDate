@@ -167,6 +167,10 @@ $secondary-color: #0a073f;
 
         &_flexName {
             display: flex;
+            #age{
+               font-family: Comfortaa;
+                width: 370px;; 
+            }
             #nom {
                 font-family: Comfortaa;
                 width: 370px;;
@@ -174,11 +178,6 @@ $secondary-color: #0a073f;
             }
 
         }
-            #date {
-                font-family: Comfortaa;
-                color: grey;
-                width: 370px;
-            }
     }
     
 }

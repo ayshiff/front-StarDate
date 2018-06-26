@@ -175,13 +175,13 @@ class Login extends Component {
                             <h3 className="homeDesktop_createAccount">Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
                             <div className="homeDesktop_containerInscription">
                                 <form action="" method="post" className="homeDesktop_formInscription">
-                                    <div className="InscriptionPage_containerInscription_formInscription_flexName">
-                                        <input type="text" name="email" id="nom" placeholder="Nom*" />
+                                    <div className="homeDesktop_flexName">
+                                        <input className="homeDesktop_inputItemForm" type="text" name="email" id="nom" placeholder="Nom*" />
                                     </div>
-                                    <input type="email" name="email" id="email" placeholder="Email*" />
-                                    <input type="date" name="date" id="date" placeholder="date*" />
-                                    <input type="password" name="password" id="password" placeholder="Mot de passe*" />
-                                    <input type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*" />
+                                    <input className="homeDesktop_inputItemForm" type="email" name="email" id="email" placeholder="Email*" />
+                                    <input className="homeDesktop_inputItemForm" type="number" name="age" id="age" placeholder="age*" />
+                                    <input className="homeDesktop_inputItemForm" type="password" name="password" id="password" placeholder="Mot de passe*" />
+                                    <input className="homeDesktop_inputItemForm" type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*" />
                                     <button className="homeDesktop_inscriptionBtn">S'inscrire</button>
                                 </form>
                             </div>

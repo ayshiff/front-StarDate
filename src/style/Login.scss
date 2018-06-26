@@ -172,8 +172,8 @@ $secondary-color: #0a073f;
         margin-top: 32px; 
     }
     &_logo{
-        width: 47px;
-        height: 42px;
+        width: 55px;
+        height: 50px;
         margin: 0 0 0 110px;
     }
     &_inputs{
@@ -194,6 +194,7 @@ $secondary-color: #0a073f;
         width: 170px;
         height: 35px;
         border-radius: 15px;
+        cursor: pointer;
     }
     &_container{
         margin: 0 0 0 45%;
@@ -211,6 +212,7 @@ $secondary-color: #0a073f;
     // Homepage Content
     &_bigContainer{
         display: flex;
+        justify-content: space-around;
     }
     // left side homepage content
     &_textContainer{
@@ -224,6 +226,7 @@ $secondary-color: #0a073f;
         height: 80px;
         position: absolute;
         margin: 168px 0 0 560px;
+        z-index: -1;
     }
     &_stars1{
         top: 0;
@@ -232,6 +235,7 @@ $secondary-color: #0a073f;
         width: 87px;
         height: 85px;
         margin: 205px 0 0 110px;
+        z-index: -1;
     }
     &_stars2{
         position: absolute;
@@ -240,6 +244,7 @@ $secondary-color: #0a073f;
         bottom: 0;
         left: 0;
         margin: 0px 0px 145px 619px;
+        z-index: -1;
     }
     &_textTitle{
         margin: 100px 0 0 0;
@@ -251,6 +256,9 @@ $secondary-color: #0a073f;
     }
 
     // Right side homepage content
+    &_inscriptionContainer{
+        margin: 100px 0 0 0;
+    }
     &_createAccount{
         font-size: 40px;
         color: #FFF;
@@ -264,31 +272,37 @@ $secondary-color: #0a073f;
         font-size: 18px;
         border: none;
         border-radius: 10px;
-    }
-    &_formInscription {
-        color: white;
-        display: flex;
-        flex-direction: column;
-        margin-top: 10px;
+        margin: 22px auto;
+        cursor: pointer;
     }
     &_flexName{
         display: flex;
     }
      &_containerInscription {
         background-color: white;
-        min-height: 200px;
-        max-width: 400px;
-        min-width: 280px;
-        margin-bottom: 40px;
-        margin-top: 15%;
-        margin-left: 20px;
-        margin-right: 20px;
-        border-radius: 10px;}
+         width: 500px; 
+         height: 370px;
+         border-radius: 10px;
+    }
 
         &_formInscription {
             color: white;
             display: flex;
             flex-direction: column;
-            margin-top: 10px;}
+            margin-top: 10px;
+        }
+        &_inputItemForm{
+            font-family: Comfortaa;
+            margin-top: 15px;
+            height: 38px;
+            border-style: none;
+            background-color: #F3F3F3;
+            margin-left: 18px;
+            margin-right: 15px;
+            line-height: 20px;
+            width: 447px;
+            height: 35px;
+            padding: 5px;
+        }
 }
 
