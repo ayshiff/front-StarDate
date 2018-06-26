@@ -62,7 +62,7 @@ class Main extends Component {
             },
             {
                 content: (
-                    <ChatHome />
+                    <ChatHome nav={this.props.navigator}/>
                 ),
                 tab: (
                     <Tab
