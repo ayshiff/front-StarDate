@@ -29,7 +29,7 @@ class Home extends Component {
     return (
         <Page key="HomePage" className="HomePage">
             <MediaQuery query="(min-width: 421px)">
-                <h2 style={{color: 'white'}}>Coucou</h2>
+
             </MediaQuery>
 
             <MediaQuery query="(max-width: 420px)">

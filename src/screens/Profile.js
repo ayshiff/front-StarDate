@@ -9,9 +9,20 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            edit: false
         };
         this.disconnect = this.disconnect.bind(this);
+        this.editProfile = this.editProfile.bind(this);
+    }
+
+    editProfile() {
+        this.setState({
+            edit: true
+        })
+    }
+
+    edit() {
+
     }
 
     disconnect () {
@@ -19,25 +30,39 @@ class Profile extends Component {
     }
 
   render() {
+        let content =  (<div className="ProfilePage_description">
+            <div className="ProfilePage_description_header">
+                <h1 className="ProfilePage_description_header_Name"> DarkVador, 50</h1>
+                <img onClick={this.editProfile} src={settings} alt="settings" className="ProfilePage_description_header_settings"/>
+            </div>
+            <h3 className="ProfilePage_description_place">Terraria</h3>
+            <p className="ProfilePage_description_about"> A propos</p>
+            <p className="ProfilePage_description_description"> ezfezfezfzefzefzfefsdfssdfsdfsdfsdfsdgfdsgdfgdgezfeezefz</p>
+        </div>);
+
+        let editContent =  (<form className="ProfilePage_description">
+          <div className="ProfilePage_description_header">
+              <input className="ProfilePage_description_header_Name" value="DarkVador"/>
+          </div>
+                <p className="ProfilePage_description_about">Planète</p>
+          <input className="ProfilePage_description_place" value="Terraria"/>
+          <p className="ProfilePage_description_about"> A propos</p>
+          <input className="ProfilePage_description_description" value="hgktkfyututiuytiutuyduy" />
+      </form>
+        )
     return (
         <Page key="ProfilePage" className="ProfilePage">
+
             <div className="ProfilePage_image"></div>
-            <div className="ProfilePage_description">
-                <div className="ProfilePage_description_header">
-                <h1 className="ProfilePage_description_header_Name"> DarkVador, 50</h1>
-                <img src={settings} alt="settings" className="ProfilePage_description_header_settings"/>
-                </div>
-                <h3 className="ProfilePage_description_place">Terraria</h3>
-                <p className="ProfilePage_description_about"> A propos</p>
-                <p className="ProfilePage_description_description"> ezfezfezfzefzefzfefsdfssdfsdfsdfsdfsdgfdsgdfgdgezfeezefz</p>
-                <div className="ProfilePage_description_div">
-                <p className="ProfilePage_description_div_deconnection"> Se déconnecter </p>
-                </div>
-            </div>
-            <button onClick={this.disconnect} className="ProfilePage_deconnection">
+            {this.state.edit? editContent: content}
+            {this.state.edit? <button onClick={this.edit} className="ProfilePage_deconnection">
+                Modifier
+            </button>: <button onClick={this.disconnect} className="ProfilePage_deconnection">
                 Se déconnecter
-            </button>
-            <p className="ProfilePage_suppress"> Supprimer le compte </p>
+      </button>}
+
+            {this.state.edit? <p className="ProfilePage_suppress"> Supprimer le compte </p>: null}
+
         <MediaQuery query="(min-width: 421px)">
         <div className=""> <img class="ProfilePageDesktop_image"src="wala.png" alt=""/> </div>
       <div className="ProfilePageDesktop_description">
@@ -65,6 +90,7 @@ class Profile extends Component {
       <input value="Oui" type="button" class="ProfilePageDesktop_modal_delete_input_right"/>
     </div>
            </MediaQuery> 
+
         </Page>
     );
   }

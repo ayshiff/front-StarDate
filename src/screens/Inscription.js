@@ -10,6 +10,7 @@ import female from '../icons/female.svg';
 import male from '../icons/male.svg';
 import both from '../icons/both.svg';
 import Main from './Main';
+import * as firebase from 'firebase'
 
 class Inscription extends Component {
     constructor(props){
@@ -18,14 +19,40 @@ class Inscription extends Component {
             index: 0,
             userSearch: null,
             userState: null,
-            userGalaxie: null
+            userGalaxie: null,
+            name: "",
+            email: "",
+            password: "",
+            passwordConfirm: "",
+            age: null,
+            bio: ""
+
         };
         this.backPage = this.backPage.bind(this);
         this.next = this.next.bind(this);
         this.onItemClickSearch = this.onItemClickSearch.bind(this)
         this.onItemClickState = this.onItemClickState.bind(this)
         this.onItemClick = this.onItemClick.bind(this)
+        this.emailChange = this.emailChange.bind(this)
+        this.nameChange = this.nameChange.bind(this)
+        this.bioChange = this.bioChange.bind(this)
+        this.passwordChange = this.passwordChange.bind(this)
+        this.passwordConfirmChange = this.passwordConfirmChange.bind(this)
+        this.ageChange = this.ageChange.bind(this)
+        this.register = this.register.bind(this)
     }
+
+    register(){
+        let that = this;
+            firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+                .then(function(user) {
+                    that.props.navigator.pushPage({component: Main})
+                })
+
+                .catch(function(error){
+                console.log(error.code + '' + error.message)
+            })
+        }
 
     backPage() {
         if(this.state.index === 0) {
@@ -33,6 +60,42 @@ class Inscription extends Component {
         } else {
             this.prev()
         }
+    }
+
+    emailChange (event) {
+        this.setState({
+            email : event.target.value
+        })
+    }
+
+    bioChange (event) {
+        this.setState({
+            bio : event.target.value
+        })
+    }
+
+    passwordChange (event) {
+        this.setState({
+            password : event.target.value
+        })
+    }
+
+    passwordConfirmChange (event) {
+        this.setState({
+            passwordConfirm : event.target.value
+        })
+    }
+
+    ageChange (event) {
+        this.setState({
+            age : event.target.value
+        })
+    }
+
+   nameChange (event) {
+        this.setState({
+            name : event.target.value
+        })
     }
 
     onItemClickSearch(event) {
@@ -45,7 +108,7 @@ class Inscription extends Component {
             event.currentTarget.style.backgroundColor = "rgb(237, 90, 90)"
             this.setState({
                 userSearch: event.currentTarget,
-                userSearch: true
+
             })
         }
     }
@@ -60,7 +123,6 @@ class Inscription extends Component {
             event.currentTarget.style.backgroundColor = "rgb(237, 90, 90)"
             this.setState({
                 userState: event.currentTarget,
-                userState: true
             })
         }
     }
@@ -75,7 +137,6 @@ class Inscription extends Component {
             event.currentTarget.style.backgroundColor = "rgb(237, 90, 90)"
             this.setState({
                 userGalaxie: event.currentTarget,
-                userGalaxie: true
             })
         }
     }
@@ -98,7 +159,7 @@ class Inscription extends Component {
 
     next() {
         if(this.state.index === 3) {
-            this.props.navigator.pushPage({component: Main})
+            this.register();
         } else {
             this.reactSwipe.next();
         }
@@ -147,11 +208,11 @@ class Inscription extends Component {
                 <h3 className="InscriptionPage_title">Remplir les informations</h3>
             <div className="InscriptionPage_containerInscription">
                 <form action="" method="post" className="InscriptionPage_containerInscription_formInscription">
-                <input type="text" name="email" id="nom" placeholder="Nom*"/>
-                <input type="email" name="email" id="email" placeholder="Email*"/>
-                    <input type="number" name="date" id="date" placeholder="Age*"/>
-                <input type="password" name="password" id="password" placeholder="Mot de passe*"/>
-                <input type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*"/>
+                <input onChange={this.nameChange} type="text" name="email" id="nom" placeholder="Nom*"/>
+                <input onChange={this.emailChange} type="email" name="email" id="email" placeholder="Email*"/>
+                    <input onChange={this.ageChange} type="number" name="date" id="date" placeholder="Age*"/>
+                <input onChange={this.passwordChange} type="password" name="password" id="password" placeholder="Mot de passe*"/>
+                <input onChange={this.passwordConfirmChange} type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*"/>
                 </form>
             </div>
                     </div>
@@ -226,7 +287,7 @@ class Inscription extends Component {
                                 <option value="test4">test4</option>
                             </select>
                         <div className="InscriptionPage_containerInscription4_Bio">
-                        <textarea placeholder="Bio" rows="4" cols="50">
+                        <textarea onChange={this.bioChange} placeholder="Bio" rows="4" cols="50">
                             
                         </textarea>
                             </div>
