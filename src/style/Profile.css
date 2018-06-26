@@ -67,3 +67,188 @@
     .ProfilePage_description_place {
       margin-top: -10px !important;
       font-family: Comfortaa; }
+
+.ProfilePageDesktop {
+  background-color: #0a073f;
+  height: 100vh; }
+  .ProfilePageDesktop_image {
+    position: absolute;
+    top: 33%;
+    left: 30%;
+    right: 0;
+    width: 230px;
+    height: 230px; }
+  .ProfilePageDesktop_description {
+    position: absolute;
+    top: 30%;
+    left: 46.3%;
+    width: 42vw;
+    height: 35vh; }
+    .ProfilePageDesktop_description_header_name {
+      position: absolute;
+      color: white;
+      font-family: 'Helvetica';
+      font-size: 48px;
+      top: -12%;
+      left: 10%; }
+    .ProfilePageDesktop_description_about {
+      position: absolute;
+      color: #ed5a5a;
+      font-family: 'Helvetica';
+      font-size: 18px;
+      top: 30%;
+      left: 10%; }
+    .ProfilePageDesktop_description_place {
+      position: absolute;
+      color: white;
+      font-family: 'Helvetica';
+      font-size: 18px;
+      top: 20%;
+      left: 10%; }
+    .ProfilePageDesktop_description_txt {
+      position: absolute;
+      color: white;
+      font-family: 'Helvetica';
+      font-size: 18px;
+      top: 40%;
+      left: 10%;
+      line-height: 1.5; }
+    .ProfilePageDesktop_description_settings {
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      right: 5%;
+      top: 5%; }
+    .ProfilePageDesktop_description_input_logout {
+      position: absolute;
+      font-size: 18px;
+      color: white;
+      background-color: #ed5a5a;
+      border-style: none;
+      width: 160px;
+      padding: 0 1% 0 1%;
+      border-radius: 10px;
+      display: block;
+      bottom: 30%;
+      left: 30.5%;
+      font-family: 'Comfortaa';
+      height: 30px;
+      width: 207px;
+      display: none; }
+    .ProfilePageDesktop_description_input_delete {
+      background-color: #0a073f;
+      border-style: none;
+      position: absolute;
+      font-size: 18px;
+      color: #DCDCDC;
+      width: 160px;
+      display: block;
+      bottom: 24%;
+      left: 30.5%;
+      font-family: 'Comfortaa';
+      height: 30px;
+      width: 207px;
+      display: none; }
+    .ProfilePageDesktop_description_settings_ok {
+      display: none;
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      right: 5%;
+      top: 5%; }
+  .ProfilePageDesktop .ProfilePageDesktop_modal_logout {
+    position: absolute;
+    height: 125px;
+    width: 497px;
+    background-color: white;
+    bottom: 40vh;
+    left: 40vw;
+    border-radius: 6px;
+    display: none; }
+    .ProfilePageDesktop .ProfilePageDesktop_modal_logout_txt {
+      color: #000000;
+      font-size: 18px;
+      font-family: 'Comfortaa';
+      text-align: center; }
+    .ProfilePageDesktop .ProfilePageDesktop_modal_logout_input_left {
+      border-style: none;
+      position: absolute;
+      font-size: 18px;
+      color: #DCDCDC;
+      width: 160px;
+      display: block;
+      bottom: 0%;
+      left: 0%;
+      font-family: 'Comfortaa';
+      height: 60px;
+      width: 248px;
+      background-color: #F3F3F3;
+      border-bottom-left-radius: 6px; }
+    .ProfilePageDesktop .ProfilePageDesktop_modal_logout_input_right {
+      border-style: none;
+      position: absolute;
+      font-size: 18px;
+      color: #DCDCDC;
+      display: block;
+      bottom: 0;
+      right: 0;
+      font-family: 'Comfortaa';
+      height: 60px;
+      width: 249px;
+      background-color: red;
+      border-radius: 6px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px; }
+    .ProfilePageDesktop .ProfilePageDesktop_modal_logout_input_delete {
+      position: absolute;
+      height: 325px;
+      width: 497px;
+      background-color: white;
+      bottom: 40vh;
+      left: 40vw;
+      border-radius: 6px;
+      display: none; }
+      .ProfilePageDesktop .ProfilePageDesktop_modal_logout_input_delete_txt {
+        position: absolute;
+        color: #000000;
+        font-size: 18px;
+        font-family: 'Comfortaa';
+        text-align: center;
+        bottom: 30%;
+        left: 14%; }
+      .ProfilePageDesktop .ProfilePageDesktop_modal_logout_input_delete_input_left {
+        border-style: none;
+        position: absolute;
+        font-size: 18px;
+        color: #DCDCDC;
+        width: 160px;
+        display: block;
+        bottom: 0%;
+        left: 0%;
+        font-family: 'Comfortaa';
+        height: 60px;
+        width: 248px;
+        background-color: #F3F3F3;
+        border-bottom-left-radius: 6px; }
+      .ProfilePageDesktop .ProfilePageDesktop_modal_logout_input_delete_input_right {
+        border-style: none;
+        position: absolute;
+        font-size: 18px;
+        color: #DCDCDC;
+        display: block;
+        bottom: 0;
+        right: 0;
+        font-family: 'Comfortaa';
+        height: 60px;
+        width: 249px;
+        background-color: red;
+        border-radius: 6px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 0px; }
+      .ProfilePageDesktop .ProfilePageDesktop_modal_logout_input_delete_img {
+        position: absolute;
+        top: 19%;
+        left: 41%;
+        width: 19%; }
