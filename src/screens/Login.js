@@ -12,7 +12,9 @@ import placeholder2 from '../icons/placeholder2.png';
 import oval from '../icons/oval.png';
 import OvalToggle from '../icons/OvalToggle.png';
 import Inscription from './Inscription';
+import * as firebase from 'firebase'
 import MediaQuery from 'react-responsive';
+
 
 
 class Login extends Component {
@@ -21,23 +23,37 @@ class Login extends Component {
         super(props);
         this.state = {
             index: 0,
-            modalIsOpen: false
+            modalIsOpen: false,
+            error: null
         };
         this.pushPageMain = this.pushPageMain.bind(this);
         this.pushPageInscription = this.pushPageInscription.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.loginAction = this.loginAction.bind(this)
+        this.passwordChange = this.passwordChange.bind(this)
+        this.emailChange = this.emailChange.bind(this)
     }
 
-    pushPageMain(e) {
-        e.preventDefault();
+    pushPageMain() {
         this.props.navigator.pushPage({component: Main})
     }
 
-    pushPageInscription(e) {
-        e.preventDefault();
+    pushPageInscription() {
         this.props.navigator.pushPage({component: Inscription})
+    }
+
+    emailChange (event) {
+        this.setState({
+            email : event.target.value
+        })
+    }
+
+    passwordChange (event) {
+        this.setState({
+            password : event.target.value
+        })
     }
 
     handleInputChange(event) {
@@ -53,6 +69,21 @@ class Login extends Component {
     openModal() {
         this.setState({
             modalIsOpen: true
+        })
+    }
+
+    loginAction (){
+
+        let that = this;
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
+            console.log(user);
+            that.pushPageMain()
+        }).catch(error => {
+            // console.log(error.code +''+ error.message)
+            console.log(error.message);
+            that.setState({
+                error: error.code // ou error.message
+            })
         })
     }
 
@@ -156,9 +187,9 @@ class Login extends Component {
             </Modal>
 
             <div className="containerLogin">
-                <form action="" method="post" className="containerLogin_formLogin">
-                    <input type="email" name="email" id="email" placeholder="Email"/>
-                    <input type="password" name="password" id="password" placeholder="Mot de passe"/>
+                <div className="containerLogin_formLogin">
+                    <input onChange={this.emailChange} type="email" name="email" id="email" placeholder="Email"/>
+                    <input onChange={this.passwordChange} type="password" name="password" id="password" placeholder="Mot de passe"/>
                     <div className="containerLogin_params">
                         <div className="containerLogin_params_checkbox">
                         <input
@@ -170,11 +201,13 @@ class Login extends Component {
                         </div>
                         <p onClick={this.openModal}> Mot de passe oublié ? </p>
                     </div>
+
                     <div className="containerLogin_formLogin_buttons">
-                    <button className="containerLogin_formLogin_buttons_create" type="submit" onClick={this.pushPageInscription}>Créer un compte</button>
-                    <button className="containerLogin_formLogin_buttons_connect" type="submit" onClick={this.pushPageMain}>Se connecter </button>
+                    <button className="containerLogin_formLogin_buttons_create" onClick={this.pushPageInscription}>Créer un compte</button>
+                    <button className="containerLogin_formLogin_buttons_connect" onClick={this.loginAction}>Se connecter </button>
                     </div>
-                </form>
+
+                </div>
             </div>
 
 

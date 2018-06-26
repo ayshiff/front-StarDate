@@ -36,6 +36,16 @@
     margin: 20px;
     color: white;
     font-family: Comfortaa; }
+    .ProfilePage_description input {
+      font-size: 14px;
+      padding-left: 10px;
+      height: 38px;
+      width: 260px;
+      border-style: none;
+      background-color: #F3F3F3;
+      margin: 14px 20px;
+      line-height: 20px;
+      font-family: Comfortaa; }
     .ProfilePage_description_description {
       overflow-wrap: break-word;
       margin-top: -10px !important;

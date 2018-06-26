@@ -5,7 +5,7 @@ import 'onsenui/css/onsenui.css';
 import 'onsenui/css/onsen-css-components.css';
 import Home from './Home'
 import Profile from './Profile'
-import Chat from './Chat'
+import ChatHome from './ChatHome'
 import MediaQuery from 'react-responsive'
 
 import mask1 from '../icons/mask1.svg';
@@ -62,7 +62,7 @@ class Main extends Component {
             },
             {
                 content: (
-                    <Chat />
+                    <ChatHome />
                 ),
                 tab: (
                     <Tab
