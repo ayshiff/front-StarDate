@@ -53,16 +53,16 @@ class Profile extends Component {
     <input className="ProfilePageDesktop_description_input_logout" value="Se deconnecter" type="button"/>
     <input className="ProfilePageDesktop_description_input_delete" value="supprimer le compte" type="button"/>
     </div>
-    <div class="ProfilePageDesktop_modal_logout">
-      <p class="ProfilePageDesktop_modal_logout_txt">Voulez-vous vraiment vous deconnecter ?</p>
-      <input value="Non" type="button" class="ProfilePageDesktop_modal_logout_input_left"/>
-      <input value="Oui"type="button" class="ProfilePageDesktop_modal_logout_input_right"/>
+    <div className="ProfilePageDesktop_modal_logout">
+      <p className="ProfilePageDesktop_modal_logout_txt">Voulez-vous vraiment vous deconnecter ?</p>
+      <input value="Non" type="button" className="ProfilePageDesktop_modal_logout_input_left"/>
+      <input value="Oui" type="button" className="ProfilePageDesktop_modal_logout_input_right"/>
     </div>
-    <div class="ProfilePageDesktop_modal_delete">
-      <img class="ProfilePageDesktop_modal_delete_img"src="warning.png" alt=""/>
-      <p class="ProfilePageDesktop_modal_delete_txt">Voulez-vous vraiment vous deconnecter ?</p>
+    <div className="ProfilePageDesktop_modal_delete">
+      <img className="ProfilePageDesktop_modal_delete_img" src="warning.png" alt=""/>
+      <p className="ProfilePageDesktop_modal_delete_txt">Voulez-vous vraiment vous deconnecter ?</p>
       <input value="Non" type="button" class="ProfilePageDesktop_modal_delete_input_left"/>
-      <input value="Oui"type="button" class="ProfilePageDesktop_modal_delete_input_right"/>
+      <input value="Oui" type="button" class="ProfilePageDesktop_modal_delete_input_right"/>
     </div>
            </MediaQuery> 
         </Page>
