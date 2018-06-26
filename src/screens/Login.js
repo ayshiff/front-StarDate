@@ -16,6 +16,9 @@ import * as firebase from 'firebase'
 import {getLoginAction} from '../redux/action'
 import {connect} from 'react-redux'
 
+import MediaQuery from 'react-responsive';
+
+
 
 class Login extends Component {
 
@@ -117,6 +120,7 @@ class Login extends Component {
         return tab
     }
     return (
+        
         <Page className="LoginPage">
             <ReactSwipe className="LoginPage_carousel" swipeOptions={{
                 continuous: false,
@@ -132,7 +136,6 @@ class Login extends Component {
                                 le <span>1er site de rencontre <br/>
                                 intergalactique.</span>
                         </p>
-
                     </div>
                     <img src={planet} alt="logo" className="LoginPage_carousel_planet"/>
                     <img src={logo} alt="logo" className="LoginPage_carousel_logo"/>
@@ -142,8 +145,11 @@ class Login extends Component {
                 <div className="LoginPage_carousel_div">
                     <div className="LoginPage_carousel_textLogin">
                         <p className="LoginPage_carousel_textLogin_textLoginContainer">
-                        Découvrez des profiles <br/>
-                            <span>dans tous l’univers.</span>
+                        Découvrez des profiles 
+                        <br/>
+                      <span>
+                          dans tous l’univers.
+                          </span>
                         </p>
                     </div>
                     <img src={placeholder} alt="logo" className="LoginPage_carousel_div_img2"/>
@@ -162,10 +168,12 @@ class Login extends Component {
             <div>
 
             </div>
-
+            <MediaQuery query="(max-device-width: 420px)">
             <div className="LoginPage_index">
             {renderSwitch(this.state.index)}
             </div>
+            </MediaQuery>
+
             <Modal
                 isOpen={this.state.modalIsOpen}
             >
@@ -181,6 +189,7 @@ class Login extends Component {
                     </p>
                 </div>
             </Modal>
+
             <div className="containerLogin">
                 <div className="containerLogin_formLogin">
                     <input onChange={this.emailChange} type="email" name="email" id="email" placeholder="Email"/>
