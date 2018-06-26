@@ -168,22 +168,17 @@ $secondary-color: #0a073f;
 
         &_flexName {
             display: flex;
+            #age{
+               font-family: Comfortaa;
+                width: 370px;; 
+            }
             #nom {
                 font-family: Comfortaa;
-
-            }
-            #prenom {
-                margin-left: 0;
-                font-family: Comfortaa;
+                width: 370px;;
 
             }
 
         }
-            #date {
-                font-family: Comfortaa;
-                color: grey;
-                width: 81vw;
-            }
     }
     
 }
