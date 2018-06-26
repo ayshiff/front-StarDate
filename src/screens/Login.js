@@ -13,6 +13,8 @@ import oval from '../icons/oval.png';
 import OvalToggle from '../icons/OvalToggle.png';
 import Inscription from './Inscription';
 import * as firebase from 'firebase'
+import {getLoginAction} from '../redux/action'
+import {connect} from 'react-redux'
 import MediaQuery from 'react-responsive';
 
 
@@ -75,6 +77,7 @@ class Login extends Component {
     loginAction (){
 
         let that = this;
+        this.props.onSubmit(this.state.email)
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
             console.log(user);
             that.pushPageMain()
@@ -263,4 +266,17 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+    return {
+        // getLogint: state.email,state.password
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSubmit: (email) => {
+            dispatch(getLoginAction(email))
+        }
+    }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
