@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Page, Toolbar, Tab, Tabbar } from 'react-onsenui';
+import { Page, Toolbar, Tab, Tabbar, Modal } from 'react-onsenui';
 import '../style/Profile.css'
 import imageProfile from '../icons/imageProfile.png';
 import settings from '../icons/settings.png';
@@ -9,10 +9,17 @@ class Profile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            edit: false
+            edit: false,
+            modalIsOpen: false,
+            modalIsOpenDelete: false
         };
         this.disconnect = this.disconnect.bind(this);
         this.editProfile = this.editProfile.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.openModalDelete = this.openModalDelete.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+        this.closeModalDelete = this.closeModalDelete.bind(this);
+        console.log(this.props.navigator)
     }
 
     editProfile() {
@@ -21,13 +28,38 @@ class Profile extends Component {
         })
     }
 
+    openModal() {
+        this.setState({
+            modalIsOpen: true
+        })
+    }
+
+    closeModal() {
+        this.setState({
+            modalIsOpen: false
+        })
+    }
+
+    closeModalDelete() {
+        this.setState({
+            modalIsOpenDelete: false
+        })
+    }
+
+    openModalDelete() {
+        this.setState({
+            modalIsOpenDelete: true
+        })
+    }
+
     edit() {
 
     }
 
     disconnect () {
-        this.props.nav.popPage();
+        window.location.href = "/";
     }
+
 
   render() {
         let content =  (<div className="ProfilePage_description">
@@ -78,20 +110,28 @@ class Profile extends Component {
            <img className="ProfilePageDesktop_description_settings_ok" src="#"/>
       </div>
       <div className="ProfilePageDesktop_description_input">
-    <input className="ProfilePageDesktop_description_input_logout" value="Se deconnecter" type="button"/>
-    <input className="ProfilePageDesktop_description_input_delete" value="supprimer le compte" type="button"/>
+    <input onClick={this.openModal} className="ProfilePageDesktop_description_input_logout" value="Se deconnecter" type="button"/>
+    <input onClick={this.openModalDelete} className="ProfilePageDesktop_description_input_delete" value="supprimer le compte" type="button"/>
     </div>
+            <Modal
+                isOpen={this.state.modalIsOpen}
+            >
     <div className="ProfilePageDesktop_modal_logout">
       <p className="ProfilePageDesktop_modal_logout_txt">Voulez-vous vraiment vous deconnecter ?</p>
-      <input value="Non" type="button" className="ProfilePageDesktop_modal_logout_input_left"/>
-      <input value="Oui" type="button" className="ProfilePageDesktop_modal_logout_input_right"/>
+      <input onClick={this.closeModal} value="Non" type="button" className="ProfilePageDesktop_modal_logout_input_left"/>
+      <input onClick={this.disconnect} value="Oui" type="button" className="ProfilePageDesktop_modal_logout_input_right"/>
     </div>
+            </Modal>
+                <Modal
+                    isOpen={this.state.modalIsOpenDelete}
+                >
     <div className="ProfilePageDesktop_modal_delete">
       <img className="ProfilePageDesktop_modal_delete_img" src="#" alt=""/>
       <p className="ProfilePageDesktop_modal_delete_txt">Voulez-vous vraiment vous deconnecter ?</p>
-      <input value="Non" type="button" class="ProfilePageDesktop_modal_delete_input_left"/>
-      <input value="Oui" type="button" class="ProfilePageDesktop_modal_delete_input_right"/>
+      <input onClick={this.closeModalDelete} value="Non" type="button" className="ProfilePageDesktop_modal_delete_input_left"/>
+      <input value="Oui" type="button" className="ProfilePageDesktop_modal_delete_input_right"/>
     </div>
+                </Modal>
            </MediaQuery> 
 
         </Page>

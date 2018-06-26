@@ -80,7 +80,7 @@ class Login extends Component {
         this.props.onSubmit(this.state.email)
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
             console.log(user.user.uid);
-            that.pushPageMain()
+            window.location.href = "/home";
         }).catch(error => {
             // console.log(error.code +''+ error.message)
             console.log(error.message);

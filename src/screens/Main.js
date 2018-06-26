@@ -7,6 +7,7 @@ import Home from './Home'
 import Profile from './Profile'
 import ChatHome from './ChatHome'
 import MediaQuery from 'react-responsive'
+import { Switch, Route, Router, BrowserRouter } from 'react-router-dom'
 
 import mask1 from '../icons/mask1.svg';
 import mask2 from '../icons/mask2.svg';
@@ -111,6 +112,7 @@ class Main extends Component {
                 <Page key="MainPage" className="MainPage">
 
                     <MediaQuery query="(min-width: 421px)">
+
                         {this.state.display ? <Home nav={this.props.navigator}/>: loading}
                     </MediaQuery>
 

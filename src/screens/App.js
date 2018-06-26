@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import { Navigator } from 'react-onsenui';
 import MediaQuery from 'react-responsive';
 import * as firebase from 'firebase'
+import Entry from './Entry';
 
 
 
@@ -22,23 +23,10 @@ class App extends Component {
         firebase.initializeApp(config);
     }
 
-
-    renderPage(route, navigator) {
-        const props = route.props || {};
-        props.navigator = navigator;
-
-        return React.createElement(route.component, props);
-    }
-
   render() {
     return (
         <Provider store={store}>
-            <Navigator
-                key={"Navigator"}
-                animation='slide'
-                initialRoute={{ component: Login }}
-                renderPage={this.renderPage}
-            />
+           <Entry/>
         </Provider>
     );
   }

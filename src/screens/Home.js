@@ -27,7 +27,7 @@ class Home extends Component {
   }
 
     pushProfile() {
-        this.props.nav.pushPage({component: Profile})
+        window.location.href = "/profile";
     }
 
 
