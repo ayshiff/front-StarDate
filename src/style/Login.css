@@ -249,7 +249,7 @@
   margin: 100px 0 0 0; }
 
 .homeDesktop_createAccount {
-  font-size: 40px;
+  font-size: 60px;
   color: #FFF;
   margin: 100px 0 0 0; }
 
@@ -261,7 +261,7 @@
   font-size: 18px;
   border: none;
   border-radius: 10px;
-  margin: 22px auto;
+  margin: 22px 30px;
   cursor: pointer; }
 
 .homeDesktop_flexName {
@@ -291,3 +291,16 @@
   width: 447px;
   height: 35px;
   padding: 5px; }
+
+.homeDesktop_containerInscription2 {
+  display: flex;
+  justify-content: space-around; }
+
+.homeDesktop_logoStep2 {
+  width: 60px; }
+
+.homeDesktop_titleStep2 {
+  text-align: center; }
+
+.homeDesktop_titleContainerStep2 h3 {
+  padding: 15px; }
