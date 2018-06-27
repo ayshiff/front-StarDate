@@ -83,7 +83,7 @@ class Login extends Component {
     loginActionDesktop (){
 
         let that = this;
-        this.props.onSubmit(this.state.email)
+        this.props.onSubmit(this.state.email);
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
             console.log(user.user.uid);
             window.location.href = "/home";

@@ -11,16 +11,34 @@ import MediaQuery from 'react-responsive';
 import UserProfile from './UserProfile';
 import Inscription from "./Inscription";
 import Profile from './Profile';
+import axios from 'axios';
 
 class Home extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      index: 1
+      index: 1,
+        users: []
     };
     this.pushProfile = this.pushProfile.bind(this)
   }
+
+  // Request => API users
+  /*
+  componentWillMount() {
+      axios.get('http://localhost:8000/api/users')
+          .then(function (response) {
+              console.log(response);
+              this.setState({
+                  users: response
+              })
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+
+  } */
 
   pushPageProfile() {
       this.props.nav.pushPage({component: UserProfile})
@@ -88,7 +106,9 @@ class Home extends Component {
                     continuous: true,
                     speed: 700
                 }} key={3}>
-                    <div className="HomePage_carousel1" style={{color: "white", height: '90vh'}}></div>
+                    <div className="HomePage_carousel1" style={{color: "white", height: '90vh'}}>
+
+                    </div>
                     <div className="HomePage_carousel2" style={{color: "white", height: '90vh'}}>
                         <img onClick={this.pushPageProfile.bind(this)} src={profilePic} alt="profilePic" className="HomePage_carousel2_profile"/>
                         <div className="HomePage_carousel2_loading">
@@ -98,7 +118,9 @@ class Home extends Component {
                             <img src={mask4} className="HomePage_carousel2_loading_mask4"/>
                         </div>
                     </div>
-                    <div className="HomePage_carousel3" style={{color: "white", height: '90vh'}}></div>
+                    <div className="HomePage_carousel3" style={{color: "white", height: '90vh'}}>
+
+                    </div>
 
                 </ReactSwipe>
             </MediaQuery>
