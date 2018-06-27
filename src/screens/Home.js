@@ -96,8 +96,6 @@ class Home extends Component {
                 </div>
               </div>
 
-                <h1 onClick={this.pushProfile}> Page Profile </h1>
-
             </MediaQuery>
 
             <MediaQuery query="(max-width: 420px)">
