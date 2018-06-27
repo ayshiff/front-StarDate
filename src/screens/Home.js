@@ -12,6 +12,8 @@ import UserProfile from './UserProfile';
 import Inscription from "./Inscription";
 import Profile from './Profile';
 import axios from 'axios';
+import PARASITE from '../img/PARASITE.jpeg';
+
 
 class Home extends Component {
 
@@ -19,15 +21,27 @@ class Home extends Component {
     super(props);
     this.state = {
       index: 1,
-        users: []
+        users: [],
+        isToggle: false
     };
+      this.handleClick = this.handleClick.bind(this);
     this.pushProfile = this.pushProfile.bind(this)
   }
+
+    handleClick(element) {
+        this.setState({
+            isToggle: !this.state.isToggle,
+            name: element.name,
+            age: element.age,
+            position: element.position,
+            description: element.description
+        });
+    }
 
   // Request => API users
 
   componentWillMount() {
-      let that = this
+      let that = this;
       axios.get('http://localhost:8000/api/users')
           .then(function (response) {
               console.log(response.data['hydra:member']);
@@ -41,8 +55,8 @@ class Home extends Component {
 
   }
 
-  pushPageProfile() {
-      this.props.nav.pushPage({component: UserProfile})
+  pushPageProfile(e) {
+      this.props.nav.pushPage({component: UserProfile},{param: e})
   }
 
     pushProfile() {
@@ -53,9 +67,28 @@ class Home extends Component {
   render() {
       let tabUsers = [];
       this.state.users.map((e) => {
-          let randomPosition = Math.floor(Math.random() * (300 - 0 + 1)) + 0;
-          tabUsers.push(<img onClick={this.pushPageProfile.bind(this)} style={{top: randomPosition, left: randomPosition, position: 'absolute'}} alt="profilePic"/>)
+          let randomPositionX = Math.floor(Math.random() * (300 - 0 + 1)) + 0;
+          let randomPositionY = Math.floor(Math.random() * (400 - 0 + 1)) + 0;
+          tabUsers.push(<img src={PARASITE} onClick={this.pushPageProfile.bind(this, e)} style={{top: randomPositionY, left: randomPositionX, position: 'absolute', width: '40px', borderRadius: '50%', zIndex: 50}} alt="profilePic"/>)
       });
+
+      let tabUsersDesktop = [];
+      this.state.users.map((e) => {
+          let randomPositionX = Math.floor(Math.random() * (97 - 30 + 1)) + 30+"%";
+          let randomPositionY = Math.floor(Math.random() * (90 - 0 + 1)) + 0+"%";
+          tabUsersDesktop.push(<img src={PARASITE} onClick={() => this.handleClick(e)} style={{top: randomPositionY, left: randomPositionX, position: 'absolute', width: '40px', borderRadius: '50%'}} alt="profilePic"/>)
+      });
+
+      let modal = (
+          <div className="HomePageDesktop_view_modal">
+              <img className="HomePageDesktop_view_modal_pic" src={profilePic} alt="profilePic"/>
+              <h2 className="HomePageDesktop_view_modal_name">{this.state.name}, <span className="HomePageDesktop_view_modal_age">{this.state.age}</span></h2>
+              <p className="HomePageDesktop_view_modal_planet">{this.state.position}</p>
+              <h4 className="HomePageDesktop_view_modal_about">À propos</h4>
+              <p className="HomePageDesktop_view_modal_descri">{this.state.description}</p>
+              <button className="HomePageDesktop_view_modal_button">Message</button>
+          </div>
+)
     return (
         <Page key="HomePage" className="HomePage">
             <MediaQuery query="(min-width: 421px)">
@@ -87,18 +120,12 @@ class Home extends Component {
                       <img src={mask4} className="HomePageDesktop_map_myPosition_mask4"/>
                   </div>
                   <div className="HomePageDesktop_map_profiles">
+                      {tabUsersDesktop}
                     <img className="HomePageDesktop_map_profiles_pic" src={profilePic} alt="profilePic"/>
                   </div>
                 </div>
-                <div className="HomePageDesktop_view">
-                  <div className="HomePageDesktop_view_modal">
-                    <img className="HomePageDesktop_view_modal_pic" src={profilePic} alt="profilePic"/>
-                    <h2 className="HomePageDesktop_view_modal_name">Neytiri, <span className="HomePageDesktop_view_modal_age">24</span></h2>
-                    <p className="HomePageDesktop_view_modal_planet">Pandora</p>
-                    <h4 className="HomePageDesktop_view_modal_about">À propos</h4>
-                    <p className="HomePageDesktop_view_modal_descri">BRAAAWWWWHH Sznf fef zfezf ezfez fez fez fezfez</p>
-                    <button className="HomePageDesktop_view_modal_button">Message</button>
-                  </div>
+                <div onClick={this.handleClick} style={{display: this.state.isToggle ? 'block': 'none'}} className="HomePageDesktop_view">
+                {modal}
                 </div>
               </div>
 

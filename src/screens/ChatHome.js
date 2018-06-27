@@ -7,7 +7,6 @@ import MediaQuery from 'react-responsive';
 import settings from '../icons/settings.png';
 import profilePic from '../icons/profilePic.png';
 import Chat from './Chat';
-import MediaQuery from 'react-responsive';
 
 class ChatHome extends Component {
 

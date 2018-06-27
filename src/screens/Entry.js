@@ -9,6 +9,7 @@ import { Switch, Route, Router, BrowserRouter } from 'react-router-dom'
 import Home from './Home';
 import Profile from './Profile';
 import ChatHome from './ChatHome';
+import UserProfile from "./UserProfile";
 
 
 class Entry extends Component {

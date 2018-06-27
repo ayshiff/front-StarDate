@@ -137,8 +137,20 @@ class Login extends Component {
         let that = this;
         this.props.onSubmit(this.state.email);
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
-            console.log(user.user.uid);
-            window.location.href = "/home";
+
+            axios.get('http://localhost:8000/api/users')
+                .then(function (response) {
+                    let respon = response.data['hydra:member'].find((e) => {
+                        return e.email === that.state.email
+                    });
+                    if(respon.password === that.state.password) {
+                        window.location.href = "/home";
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
         }).catch(error => {
             // console.log(error.code +''+ error.message)
             console.log(error.message);
