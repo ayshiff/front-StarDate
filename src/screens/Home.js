@@ -27,11 +27,12 @@ class Home extends Component {
   // Request => API users
 
   componentWillMount() {
+      let that = this
       axios.get('http://localhost:8000/api/users')
           .then(function (response) {
               console.log(response.data['hydra:member']);
-              this.setState({
-                  users: response
+              that.setState({
+                  users: response.data['hydra:member']
               })
           })
           .catch(function (error) {
@@ -50,6 +51,11 @@ class Home extends Component {
 
 
   render() {
+      let tabUsers = [];
+      this.state.users.map((e) => {
+          let randomPosition = Math.floor(Math.random() * (300 - 0 + 1)) + 0;
+          tabUsers.push(<img onClick={this.pushPageProfile.bind(this)} style={{top: randomPosition, left: randomPosition, position: 'absolute'}} alt="profilePic"/>)
+      });
     return (
         <Page key="HomePage" className="HomePage">
             <MediaQuery query="(min-width: 421px)">
@@ -108,7 +114,7 @@ class Home extends Component {
 
                     </div>
                     <div className="HomePage_carousel2" style={{color: "white", height: '90vh'}}>
-                        <img onClick={this.pushPageProfile.bind(this)} src={profilePic} alt="profilePic" className="HomePage_carousel2_profile"/>
+                        {tabUsers}
                         <div className="HomePage_carousel2_loading">
                             <img src={mask1} className="HomePage_carousel2_loading_mask1"/>
                             <img src={mask2} className="HomePage_carousel2_loading_mask2"/>

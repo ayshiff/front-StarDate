@@ -19,6 +19,7 @@ import MediaQuery from 'react-responsive';
 import desktopfemale from '../icons/female.svg';
 import desktopmale from '../icons/male.svg';
 import desktopboth from '../icons/both.svg';
+import axios from 'axios';
 
 
 
@@ -69,7 +70,7 @@ class Login extends Component {
     onItemClickState(event) {
         console.log(event.currentTarget.style.backgroundColor)
         if(event.currentTarget.style.backgroundColor === "rgb(237, 90, 90)" ) {
-            event.currentTarget.style.backgroundColor = "black"
+            event.currentTarget.style.backgroundColor = "white"
             this.setState({
                 userState: null
             })
@@ -150,10 +151,22 @@ class Login extends Component {
     loginAction (){
 
         let that = this;
-        this.props.onSubmit(this.state.email)
+        this.props.onSubmit(this.state.email);
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
             console.log(user.user.uid);
-            that.props.navigator.pushPage({component: Main})
+
+            axios.get('http://localhost:8000/api/users')
+                .then(function (response) {
+                    let respon = response.data['hydra:member'].find((e) => {
+                        return e.email === that.state.email
+                    });
+                    if(respon.password === that.state.password) {
+                        that.props.navigator.pushPage({component: Main})
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         }).catch(error => {
             // console.log(error.code +''+ error.message)
             console.log(error.message);

@@ -7,6 +7,7 @@ import MediaQuery from 'react-responsive';
 import settings from '../icons/settings.png';
 import profilePic from '../icons/profilePic.png';
 import Chat from './Chat';
+import MediaQuery from 'react-responsive';
 
 class ChatHome extends Component {
 
@@ -26,6 +27,7 @@ class ChatHome extends Component {
     render() {
         return(
             <Page key="ChatPage" className="ChatPage">
+                <MediaQuery query="(max-width: 420px)">
                 <div onClick={this.pushChat} className="ChatPage_div">
                     <img className="ChatPage_div_image" src={profilePic} alt=""/>
                     <div className="ChatPage_div_container">
@@ -33,6 +35,7 @@ class ChatHome extends Component {
                         <p className="ChatPage_div_container_message">Hello :)</p>
                     </div>
                 </div>
+                </MediaQuery>
 
                 <MediaQuery query="(min-width: 421px)">
                 <div className="ChatPageDesktop">
@@ -73,29 +76,33 @@ class ChatHome extends Component {
                       </div>
                     </div>
                   </div>
-                  <div class="ChatPageDesktop_conv">
-                    <div class="ChatPageDesktop_conv_read">
-                      <div class="ChatPageDesktop_conv_read_contents">
 
-                        <div class="ChatPageDesktop_conv_read_received">
-                          <img src="profilePic.png" alt="profilePic" class="ChatPageDesktop_conv_read_received_pic"/>
-                          <p class="ChatPageDesktop_conv_read_received_message">On est quoi ?</p>
+                  <div className="ChatPageDesktop_conv">
+                    <div className="ChatPageDesktop_conv_read">
+                      <div className="ChatPageDesktop_conv_read_contents">
+
+                        <div className="ChatPageDesktop_conv_read_received">
+                          <img src="profilePic.png" alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                          <p className="ChatPageDesktop_conv_read_received_message">On est quoi ?</p>
                         </div>
 
-                        <div class="ChatPageDesktop_conv_read_send">
-                          <p class="ChatPageDesktop_conv_read_send_message">Champion mon frère.</p>
-                          <img src="profilePic.png" alt="profilePic" class="ChatPageDesktop_conv_read_send_pic"/>
+                        <div className="ChatPageDesktop_conv_read_send">
+                          <p className="ChatPageDesktop_conv_read_send_message">Champion mon frère.</p>
+                          <img src="profilePic.png" alt="profilePic" className="ChatPageDesktop_conv_read_send_pic"/>
                         </div>
 
-                        <div class="ChatPageDesktop_conv_read_received">
-                          <img src="profilePic.png" alt="profilePic" class="ChatPageDesktop_conv_read_received_pic"/>
-                          <p class="ChatPageDesktop_conv_read_received_message">ON EST CHAMPION !!!</p>
+                        <div className="ChatPageDesktop_conv_read_received">
+                          <img src="profilePic.png" alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                          <p className="ChatPageDesktop_conv_read_received_message">ON EST CHAMPION !!!</p>
+
                         </div>
 
                       </div>
                     </div>
-                    <div class="ChatPageDesktop_conv_sendingZone">
-                      <input class="ChatPageDesktop_conv_sendingZone_input" type="text" name="Nouveau message" value="Nouveau message"/>
+
+                    <div className="ChatPageDesktop_conv_sendingZone">
+                      <input className="ChatPageDesktop_conv_sendingZone_input" type="text" name="Nouveau message" value="Nouveau message"/>
+
                     </div>
                   </div>
                 </div>

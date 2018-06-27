@@ -52,31 +52,35 @@ class Inscription extends Component {
 
     register(){
         let that = this;
-            firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-                .then(function(user) {
-                    that.props.navigator.pushPage({component: Main})
+        let data = JSON.stringify({
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password,
+            position: '/api/positions/1',
+            race: '/api/races/1',
+            description: this.state.bio,
+            gender: this.state.userState,
+            searchGender: this.state.userSearch,
+            image: this.state.image,
+            age: 12
+        });
+        console.log(data)
+
                     axios.post('http://localhost:8000/api/users', {
-                        name: that.state.name,
-                        email: that.state.email,
-                        password: that.state.password,
-                        position: that.state.planete,
-                        race: that.state.espece,
-                        description: that.state.bio,
-                        gender: that.state.userState,
-                        searchGender: that.state.userSearch,
-                        image: that.state.image
-                    })
+                            data
+                    },{
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
                         .then(function (response) {
+                            that.props.navigator.pushPage({component: Main})
                             console.log(response);
                         })
                         .catch(function (error) {
-                            console.log(error);
+                            console.log(error.response);
                         });
-                })
 
-                .catch(function(error){
-                console.log(error.code + '' + error.message)
-            })
         }
 
     backPage() {
