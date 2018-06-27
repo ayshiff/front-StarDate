@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>planet</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="2.33993582%" y1="65.1089723%" x2="97.6600371%" y2="34.9121082%" id="linearGradient-1">
+            <stop stop-color="#0A073F" offset="0%"></stop>
+            <stop stop-color="#27055B" offset="27.58%"></stop>
+            <stop stop-color="#7000A2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="2.326415%" y1="65.1280425%" x2="97.6584977%" y2="34.89154%" id="linearGradient-2">
+            <stop stop-color="#ED5A5A" offset="0%"></stop>
+            <stop stop-color="#ED575A" offset="16.2%"></stop>
+            <stop stop-color="#ED4F5A" offset="26.13%"></stop>
+            <stop stop-color="#ED415A" offset="34.37%"></stop>
+            <stop stop-color="#ED2C5A" offset="41.69%"></stop>
+            <stop stop-color="#ED125A" offset="48.33%"></stop>
+            <stop stop-color="#ED0A5A" offset="50%"></stop>
+            <stop stop-color="#E70955" offset="57.23%"></stop>
+            <stop stop-color="#D50849" offset="67.21%"></stop>
+            <stop stop-color="#B80634" offset="78.79%"></stop>
+            <stop stop-color="#8F0317" offset="91.47%"></stop>
+            <stop stop-color="#700000" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="2.22995593%" y1="65.0710519%" x2="97.633932%" y2="34.8476167%" id="linearGradient-3">
+            <stop stop-color="#ED5A5A" offset="0%"></stop>
+            <stop stop-color="#ED575A" offset="16.2%"></stop>
+            <stop stop-color="#ED4F5A" offset="26.13%"></stop>
+            <stop stop-color="#ED415A" offset="34.37%"></stop>
+            <stop stop-color="#ED2C5A" offset="41.69%"></stop>
+            <stop stop-color="#ED125A" offset="48.33%"></stop>
+            <stop stop-color="#ED0A5A" offset="50%"></stop>
+            <stop stop-color="#E70955" offset="57.23%"></stop>
+            <stop stop-color="#D50849" offset="67.21%"></stop>
+            <stop stop-color="#B80634" offset="78.79%"></stop>
+            <stop stop-color="#8F0317" offset="91.47%"></stop>
+            <stop stop-color="#700000" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="2.16224978%" y1="65.2385546%" x2="97.5967315%" y2="35.0054554%" id="linearGradient-4">
+            <stop stop-color="#ED5A5A" offset="0%"></stop>
+            <stop stop-color="#ED575A" offset="16.2%"></stop>
+            <stop stop-color="#ED4F5A" offset="26.13%"></stop>
+            <stop stop-color="#ED415A" offset="34.37%"></stop>
+            <stop stop-color="#ED2C5A" offset="41.69%"></stop>
+            <stop stop-color="#ED125A" offset="48.33%"></stop>
+            <stop stop-color="#ED0A5A" offset="50%"></stop>
+            <stop stop-color="#E70955" offset="57.23%"></stop>
+            <stop stop-color="#D50849" offset="67.21%"></stop>
+            <stop stop-color="#B80634" offset="78.79%"></stop>
+            <stop stop-color="#8F0317" offset="91.47%"></stop>
+            <stop stop-color="#700000" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="2.01579648%" y1="65.0013712%" x2="97.5673434%" y2="34.7311864%" id="linearGradient-5">
+            <stop stop-color="#ED5A5A" offset="0%"></stop>
+            <stop stop-color="#ED575A" offset="16.2%"></stop>
+            <stop stop-color="#ED4F5A" offset="26.13%"></stop>
+            <stop stop-color="#ED415A" offset="34.37%"></stop>
+            <stop stop-color="#ED2C5A" offset="41.69%"></stop>
+            <stop stop-color="#ED125A" offset="48.33%"></stop>
+            <stop stop-color="#ED0A5A" offset="50%"></stop>
+            <stop stop-color="#E70955" offset="57.23%"></stop>
+            <stop stop-color="#D50849" offset="67.21%"></stop>
+            <stop stop-color="#B80634" offset="78.79%"></stop>
+            <stop stop-color="#8F0317" offset="91.47%"></stop>
+            <stop stop-color="#700000" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-628.000000, -168.000000)" fill-rule="nonzero">
+            <g id="Group-3" transform="translate(111.000000, 168.000000)">
+                <g id="planet" transform="translate(517.000000, 0.000000)">
+                    <g id="Group" opacity="0.5" fill="url(#linearGradient-1)">
+                        <circle id="Oval" cx="40" cy="40.076555" r="39.9043062"></circle>
+                    </g>
+                    <circle id="Oval" fill="url(#linearGradient-2)" cx="39.5" cy="39.5" r="36.5"></circle>
+                    <circle id="Oval" fill="url(#linearGradient-3)" cx="33" cy="26" r="7"></circle>
+                    <circle id="Oval" fill="url(#linearGradient-4)" cx="21.5" cy="44.5" r="4.5"></circle>
+                    <circle id="Oval" fill="url(#linearGradient-5)" cx="21" cy="32" r="2"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

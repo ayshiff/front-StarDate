@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import { Page} from 'react-onsenui';
-import '../style/Chat.css';
+import '../style/ChatHome.css';
 import settings from '../icons/settings.png';
 import '../style/Profile.css';
+import Chat from './Chat';
 
 class UserProfile extends Component {
 
@@ -10,13 +11,20 @@ class UserProfile extends Component {
         super(props);
         this.state = {
 
-        }
+        };
         this.backPage = this.backPage.bind(this);
+        this.pushPageChat = this.pushPageChat.bind(this);
     }
 
     backPage() {
         this.props.navigator.popPage();
     }
+
+    pushPageChat() {
+        this.props.navigator.pushPage({component: Chat});
+    }
+
+
 
     render() {
         return(
@@ -26,12 +34,11 @@ class UserProfile extends Component {
                 <div className="ProfilePage_description">
                     <div className="ProfilePage_description_header">
                         <h1 className="ProfilePage_description_header_Name"> DarkVador, 50</h1>
-                        <svg className="ProfilePage_description_header_settings" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"/></svg>
+                        <svg onClick={this.pushPageChat} className="ProfilePage_description_header_settings" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 32C114.6 32 0 125.1 0 240c0 49.6 21.4 95 57 130.7C44.5 421.1 2.7 466 2.2 466.5c-2.2 2.3-2.8 5.7-1.5 8.7S4.8 480 8 480c66.3 0 116-31.8 140.6-51.4 32.7 12.3 69 19.4 107.4 19.4 141.4 0 256-93.1 256-208S397.4 32 256 32z"/></svg>
                     </div>
                     <h3 className="ProfilePage_description_place">Terraria</h3>
                     <p className="ProfilePage_description_about"> A propos</p>
                     <p className="ProfilePage_description_description"> ezfezfezfzefzefzfefsdfssdfsdfsdfsdfsdgfdsgdfgdgezfeezefz</p>
-                    <p className="ProfilePage_description_response"> Reponse</p>
 
                 </div>
             </Page>

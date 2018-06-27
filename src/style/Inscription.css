@@ -140,15 +140,12 @@
         line-height: 20px; }
       .InscriptionPage_containerInscription_formInscription_flexName {
         display: flex; }
+        .InscriptionPage_containerInscription_formInscription_flexName #age {
+          font-family: Comfortaa;
+          width: 370px; }
         .InscriptionPage_containerInscription_formInscription_flexName #nom {
-          font-family: Comfortaa; }
-        .InscriptionPage_containerInscription_formInscription_flexName #prenom {
-          margin-left: 0;
-          font-family: Comfortaa; }
-      .InscriptionPage_containerInscription_formInscription #date {
-        font-family: Comfortaa;
-        color: grey;
-        width: 81vw; }
+          font-family: Comfortaa;
+          width: 370px; }
   .InscriptionPage_icon {
     display: block;
     margin: -10px auto; }
