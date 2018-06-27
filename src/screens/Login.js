@@ -4,13 +4,13 @@ import ReactSwipe from 'react-swipe';
 import Main from './Main'
 import '../style/Login.css'
 import logo from '../icons/logo.png';
-import planet from '../icons/planet.png';
-import stars1 from '../icons/stars1.png';
-import stars2 from '../icons/stars2.png';
+import planet from '../icons/planet.svg';
+import stars1 from '../icons/stars1.svg';
+import stars2 from '../icons/stars2.svg';
 import placeholder from '../icons/placeholder.png';
 import placeholder2 from '../icons/placeholder2.png';
-import oval from '../icons/oval.png';
-import OvalToggle from '../icons/OvalToggle.png';
+import oval from '../icons/oval.svg';
+import OvalToggle from '../icons/OvalToggle.svg';
 import Inscription from './Inscription';
 import * as firebase from 'firebase'
 import {getLoginAction} from '../redux/action'
@@ -29,7 +29,8 @@ class Login extends Component {
         this.state = {
             index: 0,
             modalIsOpen: false,
-            error: null
+            error: null,
+            indexContent: 0
         };
         this.pushPageMain = this.pushPageMain.bind(this);
         this.pushPageInscription = this.pushPageInscription.bind(this);
@@ -39,6 +40,7 @@ class Login extends Component {
         this.loginAction = this.loginAction.bind(this)
         this.passwordChange = this.passwordChange.bind(this)
         this.emailChange = this.emailChange.bind(this)
+        this.registerDesktop = this.registerDesktop.bind(this)
     }
 
     pushPageMain() {
@@ -77,13 +79,13 @@ class Login extends Component {
         })
     }
 
-    loginAction (){
+    loginActionDesktop (){
 
         let that = this;
         this.props.onSubmit(this.state.email)
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
-            console.log(user)
-            that.pushPageMain()
+            console.log(user.user.uid);
+            window.location.href = "/home";
         }).catch(error => {
             // console.log(error.code +''+ error.message)
             console.log(error.message);
@@ -91,6 +93,29 @@ class Login extends Component {
                 error: error.code // ou error.message
             })
         })
+    }
+
+    loginAction (){
+
+        let that = this;
+        this.props.onSubmit(this.state.email)
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
+            console.log(user.user.uid);
+            that.props.navigator.pushPage({component: Main})
+        }).catch(error => {
+            // console.log(error.code +''+ error.message)
+            console.log(error.message);
+            that.setState({
+                error: error.code // ou error.message
+            })
+        })
+    }
+
+    registerDesktop () {
+        this.setState({indexContent: this.state.indexContent +1})
+        if(this.state.indexContent === 2) {
+            window.location.href = "/home";
+        }
     }
 
     closeModal() {
@@ -121,9 +146,83 @@ class Login extends Component {
         }
         return tab
     }
+
+    let showContent = () => {
+            switch (this.state.indexContent){
+                case 0 :
+                    return content1();
+                case 1:
+                    return content2();
+                case 2:
+                    return content3();
+            }
+    };
+
+    let content1 = () => (<div className="homeDesktop_inscriptionContainer">
+        <h3 className="homeDesktop_createAccount">Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
+        <div className="homeDesktop_containerInscription">
+            <form action="" method="post" className="homeDesktop_formInscription">
+                <div className="homeDesktop_flexName">
+                    <input className="homeDesktop_inputItemForm" type="text" name="email" id="nom" placeholder="Nom*" />
+                </div>
+                <input className="homeDesktop_inputItemForm" type="email" name="email" id="email" placeholder="Email*" />
+                <input className="homeDesktop_inputItemForm" type="number" name="age" id="age" placeholder="age*" />
+                <input className="homeDesktop_inputItemForm" type="password" name="password" id="password" placeholder="Mot de passe*" />
+                <input className="homeDesktop_inputItemForm" type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*" />
+            </form>
+            <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">S'inscrire</button>
+        </div>
+    </div>);
+
+      let content2 = () => (<div className="homeDesktop_inscriptionContainer">
+          <h3 className="homeDesktop_createAccount">
+              Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
+          <div className="homeDesktop_containerInscription">
+              <div className="homeDesktop_titleContainerStep2" >
+                  <h3 className="homeDesktop_titleStep2">
+                      Vous êtes ?
+                  </h3>
+              </div>
+              <div className="homeDesktop_containerInscription2">
+                  <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
+                  <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
+                  <h2 className="homeDesktop_logoStep2"> Autre </h2>
+              </div>
+              <div className="homeDesktop_titleContainerStep2">
+                  <h3 className="homeDesktop_titleStep2">
+                      Vous recherchez ?
+                  </h3>
+              </div>
+              <div className="homeDesktop_containerInscription2">
+                  <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
+                  <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
+                  <img src={desktopboth} alt="logoAutre" className="homeDesktop_logoStep2" />
+              </div>
+          </div>
+      </div>);
+
+      let content3 = () => (<div className="homeDesktop_inscriptionContainer">
+      </div>);
+
     return (
         
         <Page className="LoginPage">
+
+            <Modal
+                isOpen={this.state.modalIsOpen}
+            >
+                <div className="LoginPage_modal">
+                    <p className="LoginPage_modal_p">
+                        Ecrivez votre email
+                    </p>
+                    <input type="text" placeholder="Email"/>
+                    <p>
+                        <button onClick={this.closeModal}>
+                            Envoyer
+                        </button>
+                    </p>
+                </div>
+            </Modal>
             <MediaQuery query="(max-width: 420px)">
             <ReactSwipe className="LoginPage_carousel" swipeOptions={{
                 continuous: false,
@@ -172,21 +271,6 @@ class Login extends Component {
             {renderSwitch(this.state.index)}
             </div>
 
-            <Modal
-                isOpen={this.state.modalIsOpen}
-                >
-                <div className="LoginPage_modal">
-                    <p className="LoginPage_modal_p">
-                        Ecrivez votre email
-                    </p>
-                    <input type="text" placeholder="Email"/>
-                    <p>
-                        <button onClick={this.closeModal}>
-                            Envoyer
-                        </button>
-                    </p>
-                </div>
-            </Modal>
 
             <div className="containerLogin">
                 <div className="containerLogin_formLogin">
@@ -219,11 +303,11 @@ class Login extends Component {
             <div className="homeDesktop_inputContainer">
                  <img src={logo} alt="logo" className="homeDesktop_logo" />    
                  <div className="homeDesktop_container">
-                   <input className="homeDesktop_inputItem" type="email" name="email" id="email" placeholder="Email" />
-                   <input className="homeDesktop_inputItem" type="password" name="password" id="password" placeholder="Mot de passe" />
-                   <button className="homeDesktop_btnConnexion">Se connecter</button>
+                   <input onChange={this.emailChange} className="homeDesktop_inputItem" type="email" name="email" id="email" placeholder="Email" />
+                   <input onChange={this.passwordChange} className="homeDesktop_inputItem" type="password" name="password" id="password" placeholder="Mot de passe" />
+                   <button className="homeDesktop_btnConnexion" onClick={this.loginActionDesktop}>Se connecter</button>
                    <div className="homeDesktop_forgottenContainer">
-                       <p className="homeDesktop_forgotten">Mot de passe oublié ?</p>
+                       <p onClick={this.openModal} className="homeDesktop_forgotten">Mot de passe oublié ?</p>
                    </div>
                 </div>
             </div>
@@ -240,50 +324,7 @@ class Login extends Component {
                         <img src={stars1} alt="logo" className="homeDesktop_stars1" />
                         <img src={stars2} alt="logo" className="homeDesktop_stars2" />
                         </div>
-                       {/* Homepage content right side first step */}
-                        {/* <div className="homeDesktop_inscriptionContainer">
-                            <h3 className="homeDesktop_createAccount">Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
-                            <div className="homeDesktop_containerInscription">
-                                <form action="" method="post" className="homeDesktop_formInscription">
-                                    <div className="homeDesktop_flexName">
-                                        <input className="homeDesktop_inputItemForm" type="text" name="email" id="nom" placeholder="Nom*" />
-                                    </div>
-                                    <input className="homeDesktop_inputItemForm" type="email" name="email" id="email" placeholder="Email*" />
-                                    <input className="homeDesktop_inputItemForm" type="number" name="age" id="age" placeholder="age*" />
-                                    <input className="homeDesktop_inputItemForm" type="password" name="password" id="password" placeholder="Mot de passe*" />
-                                    <input className="homeDesktop_inputItemForm" type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*" />
-                                </form>
-                                    <button className="homeDesktop_inscriptionBtn">S'inscrire</button>
-                            </div>
-                        </div> */}
-                        {/* Homepage content right side second step */}
-
-                        <div className="homeDesktop_inscriptionContainer">
-                         <h3 className="homeDesktop_createAccount">
-                            Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
-                            <div className="homeDesktop_containerInscription">
-                            <div className="homeDesktop_titleContainerStep2" >
-                                <h3 className="homeDesktop_titleStep2">
-                                 Vous êtes ? 
-                                 </h3>
-                           </div>
-                                <div className="homeDesktop_containerInscription2">
-                                    <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
-                                    <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
-                                    <h2 className="homeDesktop_logoStep2"> Autre </h2>
-                                </div>
-                                <div className="homeDesktop_titleContainerStep2">
-                                <h3 className="homeDesktop_titleStep2">
-                                 Vous recherchez ? 
-                                 </h3>
-                                </div>
-                                <div className="homeDesktop_containerInscription2">
-                                    <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
-                                    <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
-                                    <img src={desktopboth} alt="logoAutre" className="homeDesktop_logoStep2" />
-                                </div>
-                            </div>
-                          </div>
+                        {showContent()}
                       </div>
                  </div>
             </MediaQuery>

@@ -145,23 +145,24 @@ $secondary-color: #ed5a5a;
       right: 5%;
       top: 5%;
     }
-    &_input_logout{
-      position: absolute;
-      font-size: 18px;
-      color: white;
-      background-color: #ed5a5a;
-      border-style: none;
-      width: 160px;
-      padding: 0 1% 0 1%;
-      border-radius: 10px;
-      display: block;
-      bottom: 30%;
-      left: 30.5%;
-      font-family: 'Comfortaa';
-      height: 30px;
-      width: 207px;
-      display: none;
-   }
+    &_input {
+      &_logout {
+        position: absolute;
+        font-size: 18px;
+        color: white;
+        background-color: #ed5a5a;
+        border-style: none;
+        width: 160px;
+        padding: 0 1% 0 1%;
+        border-radius: 10px;
+        display: block;
+        bottom: 30%;
+        left: 30.5%;
+        font-family: 'Comfortaa';
+        height: 30px;
+        width: 207px;
+      }
+    }
    &_input_delete{
     background-color: #0a073f;
     border-style: none;
@@ -175,7 +176,6 @@ $secondary-color: #ed5a5a;
     font-family: 'Comfortaa';
     height: 30px;
     width: 207px;
-    display: none;
   }
   &_settings_ok{
     display: none;
