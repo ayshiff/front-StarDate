@@ -239,6 +239,7 @@ $secondary-color: #0a073f;
         color: $primary-color;
         font-size: 10px;
         margin: 15px 0 0 236px;
+        cursor: pointer;
     }
     // Homepage Content
     &_bigContainer{
@@ -339,15 +340,37 @@ $secondary-color: #0a073f;
             display: flex;
             justify-content: space-around;
         }
+        &_logoStep2Container{
+            width: 75px;
+            height: 75px;
+            background-color: #FFF;
+            border-radius: 5px;
+            box-shadow: 0 0 15px 3px #F1F1F1;
+            &:hover{
+                background-color: rgb(237, 90, 90);
+            }
+            h5{
+            font-size: 20px;
+            padding: 14px 13px;
+            &:hover{
+                color: #FFF;
+            }
+             }
+            }
         &_logoStep2{
-           width: 60px;
+            width: 35px;
+            height: 50px;
+            margin: 10px 20px;
+            &:hover{
+                color: $primary-color;
+            }
         }
         &_titleStep2{
             text-align: center;
         }
         &_titleContainerStep2{
             h3 {
-                padding: 25px;
+                padding: 15px;
             }
         }
         &_buttonGalaxy{
