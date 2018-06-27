@@ -29,13 +29,24 @@ class Home extends Component {
   }
 
     handleClick(element) {
-        this.setState({
-            isToggle: !this.state.isToggle,
-            name: element.name,
-            age: element.age,
-            position: element.position,
-            description: element.description
-        });
+      let that = this;
+      axios.get('http://localhost:8000'+element.position)
+          .then(function(e) {
+              that.setState({
+                  position: e.data.name,
+                  isToggle: !that.state.isToggle,
+                  name: element.name,
+                  age: element.age,
+                  description: element.description
+              })
+          })
+          .catch((error) => console.log(error));
+    }
+
+    closeModal() {
+      this.setState({
+          isToggle: !this.state.isToggle
+      })
     }
 
   // Request => API users
@@ -124,7 +135,7 @@ class Home extends Component {
                     <img className="HomePageDesktop_map_profiles_pic" src={profilePic} alt="profilePic"/>
                   </div>
                 </div>
-                <div onClick={this.handleClick} style={{display: this.state.isToggle ? 'block': 'none'}} className="HomePageDesktop_view">
+                <div onClick={this.closeModal.bind(this)} style={{display: this.state.isToggle ? 'block': 'none'}} className="HomePageDesktop_view">
                 {modal}
                 </div>
               </div>
