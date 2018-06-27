@@ -19,7 +19,6 @@ class Profile extends Component {
         this.openModalDelete = this.openModalDelete.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.closeModalDelete = this.closeModalDelete.bind(this);
-        console.log(this.props.navigator)
     }
 
     editProfile() {
