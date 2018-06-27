@@ -30,7 +30,10 @@ class Login extends Component {
             index: 0,
             modalIsOpen: false,
             error: null,
-            indexContent: 0
+            indexContent: 0,
+            userSearch: null,
+            userState: null,
+            userGalaxie: null
         };
         this.pushPageMain = this.pushPageMain.bind(this);
         this.pushPageInscription = this.pushPageInscription.bind(this);
@@ -42,6 +45,54 @@ class Login extends Component {
         this.passwordChange = this.passwordChange.bind(this)
         this.emailChange = this.emailChange.bind(this)
         this.registerDesktop = this.registerDesktop.bind(this)
+        this.onItemClickSearch = this.onItemClickSearch.bind(this)
+        this.onItemClickState = this.onItemClickState.bind(this)
+        this.onItemClick = this.onItemClick.bind(this)
+    }
+
+
+    onItemClickSearch(event) {
+        if(event.currentTarget.style.backgroundColor === "rgb(237, 90, 90)" ) {
+            event.currentTarget.style.backgroundColor = "white"
+            this.setState({
+                userSearch: null
+            })
+        } else if (event.currentTarget.style.backgroundColor !== "rgb(237, 90, 90)" && this.state.userSearch === null) {
+            event.currentTarget.style.backgroundColor = "rgb(237, 90, 90)"
+            this.setState({
+                userSearch: event.currentTarget.id,
+
+            })
+        }
+    }
+
+    onItemClickState(event) {
+        console.log(event.currentTarget.style.backgroundColor)
+        if(event.currentTarget.style.backgroundColor === "rgb(237, 90, 90)" ) {
+            event.currentTarget.style.backgroundColor = "black"
+            this.setState({
+                userState: null
+            })
+        } else if (event.currentTarget.style.backgroundColor !== "rgb(237, 90, 90)" && this.state.userState === null) {
+            event.currentTarget.style.backgroundColor = "rgb(237, 90, 90)"
+            this.setState({
+                userState: event.currentTarget.id,
+            })
+        }
+    }
+
+    onItemClick(event) {
+        if(event.currentTarget.style.color === "rgb(237, 90, 90)" ) {
+            event.currentTarget.style.color = "black"
+            this.setState({
+                userGalaxie: null
+            })
+        } else if (event.currentTarget.style.color !== "rgb(237, 90, 90)" && this.state.userGalaxie === null) {
+            event.currentTarget.style.color = "rgb(237, 90, 90)"
+            this.setState({
+                userGalaxie: event.currentTarget.id,
+            })
+        }
     }
 
     pushPageMain() {
@@ -187,13 +238,13 @@ class Login extends Component {
                   </h3>
               </div>
               <div className="homeDesktop_containerInscription2">
-                  <div className="homeDesktop_logoStep2Container">
+                  <div onClick={this.onItemClickState} className="homeDesktop_logoStep2Container">
                   <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
               </div>
-                  <div className="homeDesktop_logoStep2Container">
+                  <div onClick={this.onItemClickState} className="homeDesktop_logoStep2Container">
                   <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
                   </div>
-                  <div className="homeDesktop_logoStep2Container">
+                  <div onClick={this.onItemClickState} className="homeDesktop_logoStep2Container">
                   <h5 className="homeDesktop_otherStep2">Autre</h5>
                   </div>
               </div>
@@ -203,13 +254,13 @@ class Login extends Component {
                   </h3>
               </div>
               <div className="homeDesktop_containerInscription2">
-                  <div className="homeDesktop_logoStep2Container">
+                  <div onClick={this.onItemClickSearch} className="homeDesktop_logoStep2Container">
                   <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
                   </div>
-                  <div className="homeDesktop_logoStep2Container">
+                  <div onClick={this.onItemClickSearch} className="homeDesktop_logoStep2Container">
                   <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
                   </div>
-                  <div className="homeDesktop_logoStep2Container">
+                  <div onClick={this.onItemClickSearch} className="homeDesktop_logoStep2Container">
                   <img src={desktopboth} alt="logoAutre" className="homeDesktop_logoStep2" />
                   </div>
               </div>
@@ -219,12 +270,12 @@ class Login extends Component {
     // Homepage content step 3 register
       let content3 = () => (<div className="homeDesktop_inscriptionContainer">
           <div className="homeDesktop_containerInscription">
-          <h3 className="homeDesktop_titleStep2">
-          Selectionner <span className="homeDesktop_coloriage">votre galaxie.</span></h3>
-          <div className="homeDesktop_buttonGalaxyContainer">
-            <button className="homeDesktop_buttonGalaxy">Voie lactée</button>
-          </div>
-          <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
+              <h3 className="homeDesktop_titleStep2">
+                  Selectionner <span className="homeDesktop_coloriage">votre galaxie.</span></h3>
+              <div className="homeDesktop_buttonGalaxyContainer">
+                  <button onClick={this.onItemClick} className="homeDesktop_buttonGalaxy">Voie lactée</button>
+              </div>
+              <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
           </div>
         </div>);
 
