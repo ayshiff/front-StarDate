@@ -10,7 +10,7 @@
     position: absolute; }
   .HomePage_carousel2_loading {
     margin-top: 50%;
-    margin-left: 23%; }
+    margin-left: 21.5%; }
     .HomePage_carousel2_loading_mask1 {
       margin-left: 75px;
       margin-top: 75px;
@@ -32,3 +32,133 @@
 
 .HomePage_carousel3 {
   background-image: url("../icons/background.png"); }
+
+.HomePageDesktop {
+  display: flex;
+  width: 100%;
+  height: 100vh; }
+  .HomePageDesktop_sideBar {
+    height: 100%;
+    width: 20%;
+    background-color: white;
+    z-index: 2; }
+    .HomePageDesktop_sideBar_profilePic {
+      width: 90px;
+      margin-left: 33%;
+      margin-top: 50px;
+      margin-bottom: 70px; }
+    .HomePageDesktop_sideBar_nav {
+      width: 100%;
+      height: 200px; }
+    .HomePageDesktop_sideBar_items {
+      width: 100%;
+      height: 40px;
+      margin-top: 17px;
+      display: flex;
+      transition: all 0.3s; }
+      .HomePageDesktop_sideBar_items:hover {
+        background-color: rgba(204, 204, 206, 0.46); }
+      .HomePageDesktop_sideBar_items_icons {
+        margin-top: 5px;
+        margin-left: 20px; }
+      .HomePageDesktop_sideBar_items_links {
+        text-decoration: none;
+        font-family: "Comfortaa";
+        font-size: 21px;
+        color: rgba(204, 204, 206, 0.46);
+        margin-top: 8px;
+        margin-left: 20px;
+        transition: all 0.3s; }
+      .HomePageDesktop_sideBar_items_span {
+        color: #F04240; }
+  .HomePageDesktop .HomePageDesktop_map {
+    width: 80%;
+    height: 100vh; }
+    .HomePageDesktop .HomePageDesktop_map_myPosition {
+      position: absolute;
+      top: 40%;
+      left: 55%;
+      transform: translate(-50%, -50%); }
+      .HomePageDesktop .HomePageDesktop_map_myPosition_mask1 {
+        width: 70px;
+        margin-left: 70px;
+        margin-top: 70px;
+        position: absolute;
+        z-index: 4; }
+      .HomePageDesktop .HomePageDesktop_map_myPosition_mask2 {
+        margin-left: 50px;
+        margin-top: 50px;
+        position: absolute;
+        z-index: 3; }
+      .HomePageDesktop .HomePageDesktop_map_myPosition_mask3 {
+        margin-left: 25px;
+        margin-top: 25px;
+        position: absolute;
+        z-index: 2; }
+      .HomePageDesktop .HomePageDesktop_map_myPosition_mask4 {
+        position: absolute;
+        z-index: 1; }
+    .HomePageDesktop .HomePageDesktop_map_profiles_pic {
+      width: 100px;
+      border-radius: 100px;
+      margin-top: 80px;
+      margin-left: 340px;
+      cursor: pointer;
+      transition: all 0.3s; }
+      .HomePageDesktop .HomePageDesktop_map_profiles_pic:hover {
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.5); }
+  .HomePageDesktop .HomePageDesktop_view {
+    display: none;
+    position: absolute;
+    margin-left: 20%;
+    width: 80%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5; }
+    .HomePageDesktop .HomePageDesktop_view_modal {
+      font-family: "Comfortaa";
+      width: 350px;
+      height: 470px;
+      border-radius: 10px;
+      background-color: white;
+      margin: 30vh auto;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+      z-index: 6; }
+      .HomePageDesktop .HomePageDesktop_view_modal_pic {
+        width: 82px;
+        margin-top: 15px;
+        margin-left: 134px; }
+      .HomePageDesktop .HomePageDesktop_view_modal_name {
+        font-family: "Open Sans Condensed";
+        font-weight: 700;
+        font-size: 35px;
+        margin-top: -5px;
+        text-align: center; }
+      .HomePageDesktop .HomePageDesktop_view_modal_planet {
+        text-align: center;
+        font-size: 20px;
+        margin-top: -13px; }
+      .HomePageDesktop .HomePageDesktop_view_modal_about {
+        font-family: "Comfortaa";
+        font-weight: bold;
+        font-size: 20px;
+        color: #F04240;
+        margin-top: 25px;
+        margin-left: 15px; }
+      .HomePageDesktop .HomePageDesktop_view_modal_descri {
+        height: 160px;
+        font-size: 16px;
+        margin-top: 5px;
+        margin-left: 15px;
+        margin-right: 15px; }
+      .HomePageDesktop .HomePageDesktop_view_modal_button {
+        font-family: "Comfortaa";
+        font-size: 18px;
+        width: 90%;
+        color: white;
+        background-color: #F04240;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 10px 0 10px 0;
+        border: none;
+        border-radius: 10px; }
