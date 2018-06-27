@@ -225,7 +225,8 @@ class Login extends Component {
             }
     };
     // Homepage Content step 1 register
-    let content1 = () => (<div className="homeDesktop_inscriptionContainer">
+    let content1 = () => (
+      <div className="homeDesktop_inscriptionContainer">
         <h3 className="homeDesktop_createAccount">Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
         <div className="homeDesktop_containerInscription">
             <form action="" method="post" className="homeDesktop_formInscription">
@@ -237,9 +238,9 @@ class Login extends Component {
                 <input className="homeDesktop_inputItemForm" type="password" name="password" id="password" placeholder="Mot de passe*" />
                 <input className="homeDesktop_inputItemForm" type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*" />
             </form>
-            <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">S'inscrire</button>
+            <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Sinscrire</button>
         </div>
-    </div>);
+     </div>);
     // Homepage Content Step 2 register
       let content2 = () => (<div className="homeDesktop_inscriptionContainer">
           <h3 className="homeDesktop_createAccount">
@@ -282,6 +283,8 @@ class Login extends Component {
       </div>);
     // Homepage content step 3 register
       let content3 = () => (<div className="homeDesktop_inscriptionContainer">
+          <h3 className="homeDesktop_createAccount">
+              Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
           <div className="homeDesktop_containerInscription">
               <h3 className="homeDesktop_titleStep2">
                   Selectionner <span className="homeDesktop_coloriage">votre galaxie.</span></h3>
@@ -294,21 +297,38 @@ class Login extends Component {
 
 
         let content4 = () => (<div className="homeDesktop_inscriptionContainer">
+            <h3 className="homeDesktop_createAccount">
+                Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
         <div className="homeDesktop_containerInscription">
+                <h3 className="homeDesktop_titleStep2">Dites nous en <span className="homeDesktop_coloriage">plus.</span></h3>
         <div className="homeDesktop_formInscription">
-            <div className="homeDesktop_flexName">
-                <input className="homeDesktop_inputItemForm_img" type="file" accept=".jpg, .jpeg, .png" name="img" id="img" placeholder="Choisir une photo" />
+            <div className="homeDesktop_profileContainer">
+                <div className="homeDesktop_profileItemContainer">
+                <div className="homeDesktop_profileItems">
+                    <div className="homeDesktop_inputItemFormImgContainer">
+                    <input className="homeDesktop_inputItemFormImg" type="file" accept=".jpg, .jpeg, .png" name="img" id="img"/>
+                    </div> 
+                </div>
+                <div className="homeDesktop_profileItems">
+                    <select className="homeDesktop_selectItemForm" name="Votre planete" size="" id="age" placeholder="age*" >
+                         <option className="homeDesktop_selectOption">Votre planete</option>
+                    </select>
+                    <select className="homeDesktop_selectItemForm"  name="Votre espece" size="" id="age" placeholder="age*">
+                         <option>Votre especes</option>
+                    </select>
+                </div>
+                  </div>
+                <div className="homeDesktop_bioContainer">
+                    <input className="homeDesktop_bioContent" type="text" placeholder="À propos de moi"  autofocus />
+                </div>
             </div>
-            <select className="homeDesktop_selectItemForm" name="Votre planete" size="" id="age" placeholder="age*" />
-                {/* <option>   Need to generate by BDD */}
-            <select className="homeDesktop_selectItemForm"  name="Votre espece" size="" id="age" placeholder="age*" />
-                {/* <option>   Need to generate by BDD */}
         </div>
-        <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
-            </div>
+             <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
+    </div>
         </div>);
+
     return (
-        
+
         <Page className="LoginPage">
 
             <Modal
@@ -347,11 +367,11 @@ class Login extends Component {
                     <img src={stars1} alt="logo" className="LoginPage_carousel_stars1"/>
                     <img src={stars2} alt="logo" className="LoginPage_carousel_stars2"/>
                 </div>
-                
+
                 <div className="LoginPage_carousel_div">
                     <div className="LoginPage_carousel_textLogin">
                         <p className="LoginPage_carousel_textLogin_textLoginContainer">
-                        Découvrez des profiles 
+                        Découvrez des profiles
                         <br/>
                       <span>
                           dans tous l’univers.
@@ -404,7 +424,7 @@ class Login extends Component {
             {/* Header */}
             <div className="homeDesktop">
             <div className="homeDesktop_inputContainer">
-                 <img src={logo} alt="logo" className="homeDesktop_logo" />    
+                 <img src={logo} alt="logo" className="homeDesktop_logo" />
                  <div className="homeDesktop_container">
                    <input onChange={this.emailChange} className="homeDesktop_inputItem" type="email" name="email" id="email" placeholder="Email" />
                    <input onChange={this.passwordChange} className="homeDesktop_inputItem" type="password" name="password" id="password" placeholder="Mot de passe" />

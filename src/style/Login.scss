@@ -1,6 +1,9 @@
 @import 'forsize.scss';
 $primary-color: #ed5a5a;
 $secondary-color: #0a073f;
+html{
+    outline: none;
+}
 
 .LoginPage {
 
@@ -37,6 +40,7 @@ $secondary-color: #0a073f;
             border-bottom-right-radius: 10px;
             border-bottom-left-radius: 10px;
             font-family: Comfortaa;
+            outline: none;
         }
     }
     font-family: Comfortaa;
@@ -93,8 +97,6 @@ $secondary-color: #0a073f;
             margin-left: -21px;
         }
         &_planet {
-
-
             float: left;
             margin-left: 12px;
         }
@@ -229,6 +231,7 @@ $secondary-color: #0a073f;
         height: 35px;
         border-radius: 15px;
         cursor: pointer;
+        outline: none;
     }
     &_container{
         margin: 32px 0 0 35%;
@@ -367,6 +370,9 @@ $secondary-color: #0a073f;
         }
         &_titleStep2{
             text-align: center;
+            h3{
+                 margin: 15px 0 0 0 !important;
+            }
         }
         &_titleContainerStep2{
             h3 {
@@ -405,5 +411,44 @@ $secondary-color: #0a073f;
                 color: $primary-color;
             }
         }
+        &_profileItemContainer{
+            display: flex;
+            justify-content: space-around;
+        }
+        &_inputItemFormImgContainer{
+            margin: 0 25px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background-color: #FFF;
+            display: flex;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            padding: 3px;
+            box-shadow: 0 0 15px 2px rgba(242, 241, 241, 0.644);
+        }
+        &_selectItemForm{
+            flex-direction: column;
+            width: 310px;
+            height: 35px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FFF;
+            box-shadow: 0 0 15px 2px rgba(242, 241, 241, 0.644);
+            margin-bottom: 17px;
+        }
+        &_bioContainer{
+            margin: 0 auto;
+        }
+        &_bioContent{
+            box-shadow: 0 0 15px 2px rgba(242, 241, 241, 0.644);
+            border: none;
+            width: 400px;
+            padding-bottom: 80px;
+            margin: 20px 50px;
+        }
+
 }
 

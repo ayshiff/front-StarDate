@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import { Page} from 'react-onsenui';
 import '../style/ChatHome.css';
+import '../style/Home.css';
+import '../style/forsize.css';
+import MediaQuery from 'react-responsive';
 import settings from '../icons/settings.png';
 import profilePic from '../icons/profilePic.png';
 import Chat from './Chat';
@@ -33,6 +36,7 @@ class ChatHome extends Component {
                     </div>
                 </div>
                 </MediaQuery>
+
                 <MediaQuery query="(min-width: 421px)">
                 <div className="ChatPageDesktop">
                   <div className="HomePageDesktop_sideBar">
@@ -72,6 +76,7 @@ class ChatHome extends Component {
                       </div>
                     </div>
                   </div>
+
                   <div className="ChatPageDesktop_conv">
                     <div className="ChatPageDesktop_conv_read">
                       <div className="ChatPageDesktop_conv_read_contents">
@@ -89,12 +94,15 @@ class ChatHome extends Component {
                         <div className="ChatPageDesktop_conv_read_received">
                           <img src="profilePic.png" alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
                           <p className="ChatPageDesktop_conv_read_received_message">ON EST CHAMPION !!!</p>
+
                         </div>
 
                       </div>
                     </div>
+
                     <div className="ChatPageDesktop_conv_sendingZone">
                       <input className="ChatPageDesktop_conv_sendingZone_input" type="text" name="Nouveau message" value="Nouveau message"/>
+
                     </div>
                   </div>
                 </div>
