@@ -215,9 +215,9 @@
       color: #000000;
       font-size: 18px;
       font-family: 'Comfortaa';
-      bottom: 15%;
-      width: 80%;
-      left: 11%; }
+      text-align: center;
+      bottom: 20%;
+      width: 100%; }
     .ProfilePageDesktop_modal_delete_input_left {
       border-style: none;
       position: absolute;

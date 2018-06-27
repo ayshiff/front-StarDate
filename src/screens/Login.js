@@ -219,14 +219,15 @@ class Login extends Component {
     // Homepage content step 3 register
       let content3 = () => (<div className="homeDesktop_inscriptionContainer">
           <div className="homeDesktop_containerInscription">
-              <h3 className="homeDesktop_titleStep2">
-                  Selectionner <span className="homeDesktop_coloriage">votre galaxie.</span></h3>
-              <div className="homeDesktop_buttonGalaxyContainer">
-                  <button className="homeDesktop_buttonGalaxy">Voie lactée</button>
-              </div>
-              <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
+          <h3 className="homeDesktop_titleStep2">
+          Selectionner <span className="homeDesktop_coloriage">votre galaxie.</span></h3>
+          <div className="homeDesktop_buttonGalaxyContainer">
+            <button className="homeDesktop_buttonGalaxy">Voie lactée</button>
           </div>
-      </div >);
+          <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
+          </div>
+        </div>);
+
 
         let content4 = () => (<div className="homeDesktop_inscriptionContainer">
         <div className="homeDesktop_containerInscription">
@@ -242,8 +243,6 @@ class Login extends Component {
         <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
             </div>
         </div>);
-          
-
     return (
         
         <Page className="LoginPage">
