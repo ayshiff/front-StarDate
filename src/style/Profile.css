@@ -177,7 +177,7 @@
       bottom: 0;
       left: 0;
       font-family: 'Comfortaa';
-      height: 60px;
+      height: 40px;
       width: 248px;
       background-color: #F3F3F3;
       border-bottom-left-radius: 6px; }
@@ -190,16 +190,16 @@
       bottom: 0;
       right: 0;
       font-family: 'Comfortaa';
-      height: 60px;
+      height: 40px;
       width: 249px;
-      background-color: red;
+      background-color: #ed5a5a;
       border-radius: 6px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       border-bottom-left-radius: 0; }
   .ProfilePageDesktop_modal_delete {
     position: absolute;
-    height: 325px;
+    height: 225px;
     width: 497px;
     background-color: white;
     bottom: 40vh;
@@ -216,8 +216,8 @@
       font-size: 18px;
       font-family: 'Comfortaa';
       text-align: center;
-      bottom: 30%;
-      left: 14%; }
+      bottom: 20%;
+      width: 100%; }
     .ProfilePageDesktop_modal_delete_input_left {
       border-style: none;
       position: absolute;
@@ -228,7 +228,7 @@
       bottom: 0;
       left: 0;
       font-family: 'Comfortaa';
-      height: 60px;
+      height: 40px;
       width: 248px;
       background-color: #F3F3F3;
       border-bottom-left-radius: 6px; }
@@ -241,9 +241,9 @@
       bottom: 0;
       right: 0;
       font-family: 'Comfortaa';
-      height: 60px;
+      height: 40px;
       width: 249px;
-      background-color: red;
+      background-color: #ed5a5a;
       border-radius: 6px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
