@@ -218,6 +218,8 @@ class Login extends Component {
       </div>);
     // Homepage content step 3 register
       let content3 = () => (<div className="homeDesktop_inscriptionContainer">
+          <h3 className="homeDesktop_createAccount">
+              Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
           <div className="homeDesktop_containerInscription">
               <h3 className="homeDesktop_titleStep2">
                   Selectionner <span className="homeDesktop_coloriage">votre galaxie.</span></h3>
@@ -229,18 +231,34 @@ class Login extends Component {
       </div >);
 
         let content4 = () => (<div className="homeDesktop_inscriptionContainer">
+            <h3 className="homeDesktop_createAccount">
+                Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
         <div className="homeDesktop_containerInscription">
+                <h3 className="homeDesktop_titleStep2">Dites nous en <span className="homeDesktop_coloriage">plus.</span></h3>
         <div className="homeDesktop_formInscription">
-            <div className="homeDesktop_flexName">
-                <input className="homeDesktop_inputItemForm_img" type="file" accept=".jpg, .jpeg, .png" name="img" id="img" placeholder="Choisir une photo" />
+            <div className="homeDesktop_profileContainer">
+                <div className="homeDesktop_profileItemContainer">
+                <div className="homeDesktop_profileItems">
+                    <div className="homeDesktop_inputItemFormImgContainer">
+                    <input className="homeDesktop_inputItemFormImg" type="file" accept=".jpg, .jpeg, .png" name="img" id="img"/>
+                    </div> 
+                </div>
+                <div className="homeDesktop_profileItems">
+                    <select className="homeDesktop_selectItemForm" name="Votre planete" size="" id="age" placeholder="age*" >
+                         <option className="homeDesktop_selectOption">Votre planete</option>
+                    </select>
+                    <select className="homeDesktop_selectItemForm"  name="Votre espece" size="" id="age" placeholder="age*">
+                         <option>Votre especes</option>
+                    </select>
+                </div>
+                  </div>
+                <div className="homeDesktop_bioContainer">
+                    <input className="homeDesktop_bioContent" type="text" placeholder="À propos de moi"  autofocus />
+                </div>
             </div>
-            <select className="homeDesktop_selectItemForm" name="Votre planete" size="" id="age" placeholder="age*" />
-                {/* <option>   Need to generate by BDD */}
-            <select className="homeDesktop_selectItemForm"  name="Votre espece" size="" id="age" placeholder="age*" />
-                {/* <option>   Need to generate by BDD */}
         </div>
-        <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
-            </div>
+             <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
+    </div>
         </div>);
           
 
