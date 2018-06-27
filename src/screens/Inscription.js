@@ -11,6 +11,7 @@ import male from '../icons/male.svg';
 import both from '../icons/both.svg';
 import Main from './Main';
 import * as firebase from 'firebase'
+import axios from 'axios';
 
 class Inscription extends Component {
     constructor(props){
@@ -25,7 +26,9 @@ class Inscription extends Component {
             password: "",
             passwordConfirm: "",
             age: null,
-            bio: ""
+            bio: "",
+            image: null,
+            fetch: true
 
         };
         this.backPage = this.backPage.bind(this);
@@ -42,6 +45,9 @@ class Inscription extends Component {
         this.register = this.register.bind(this)
         this.handleChangePlanete = this.handleChangePlanete.bind(this);
         this.handleChangeEspece = this.handleChangeEspece.bind(this);
+        this.fetchPositions = this.fetchPositions.bind(this);
+        this.fetchRaces = this.fetchRaces.bind(this);
+        this.fetchSectors = this.fetchSectors.bind(this);
     }
 
     register(){
@@ -49,6 +55,23 @@ class Inscription extends Component {
             firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
                 .then(function(user) {
                     that.props.navigator.pushPage({component: Main})
+                    axios.post('http://localhost:8000/api/users', {
+                        name: that.state.name,
+                        email: that.state.email,
+                        password: that.state.password,
+                        position: that.state.planete,
+                        race: that.state.espece,
+                        description: that.state.bio,
+                        gender: that.state.userState,
+                        searchGender: that.state.userSearch,
+                        image: that.state.image
+                    })
+                        .then(function (response) {
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
                 })
 
                 .catch(function(error){
@@ -151,14 +174,68 @@ class Inscription extends Component {
         }
     }
 
+    fetchRaces() {
+        let tab = []
+        axios.get('http://localhost:8000/api/races')
+            .then(function (response) {
+                console.log(response);
+                response.data['hydra:member'].map(function (e) {
+                    tab.push(e)
+                })
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        this.setState({
+            tabRaces: tab
+        })
+    }
+
+    fetchPositions() {
+        let tab = []
+        axios.get('http://localhost:8000/api/positions')
+            .then(function (response) {
+                console.log(response);
+                response.data['hydra:member'].map(function (e) {
+                    tab.push(e)
+                })
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        this.setState({
+            tabPositions: tab
+        })
+
+    }
+
+    fetchSectors() {
+        let tab = []
+        axios.get('http://localhost:8000/api/sectors')
+            .then(function (response) {
+                console.log(response);
+                response.data['hydra:member'].map(function (e) {
+                    tab.push(e)
+                })
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        this.setState({
+            tabSectors: tab
+        })
+    }
+
+
     _handleImageChange(e) {
         e.preventDefault();
 
         let reader = new FileReader();
         let file = e.target.files[0];
-
+        console.log(e.target.files[0])
         reader.onloadend = () => {
             this.setState({
+                image: file.name,
                 file: file,
                 imagePreviewUrl: reader.result
             });
@@ -177,6 +254,12 @@ class Inscription extends Component {
 
     prev() {
         this.reactSwipe.prev();
+    }
+
+    componentWillMount() {
+        this.fetchSectors();
+        this.fetchRaces();
+        this.fetchPositions();
     }
 
     render() {
@@ -205,6 +288,20 @@ class Inscription extends Component {
         var style = {
             backgroundImage: 'url(' + this.state.imagePreviewUrl + ') !important',
         };
+
+        let renderSectors = this.state.tabSectors.map((e) => (
+            <div id={e.name} onClick={that.onItemClick} className="InscriptionPage_containerInscription3_div">
+                <h1 className="InscriptionPage_containerInscription3_div_title">{e.name}</h1>
+            </div>
+        ));
+
+        let renderRaces = this.state.tabRaces.map((e) => (
+            <option value={e.name}>{e.name}</option>
+        ));
+
+        let renderPositions = this.state.tabPositions.map((e) => (
+            <option value={e.name}>{e.name}</option>
+        ));
 
         return (
             <Page key="InscriptionPage" className="InscriptionPage">
@@ -259,18 +356,7 @@ class Inscription extends Component {
                     <div>
                         <h3 className="InscriptionPage_title"> Sélectionnez votre galaxie </h3>
                         <div className="InscriptionPage_containerInscription3">
-                            <div id="Voie lactée" onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
-                                <h1 className="InscriptionPage_containerInscription3_div_title">Voie lactée</h1>
-                            </div>
-                            <div id="Andromède" onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
-                                <h1 className="InscriptionPage_containerInscription3_div_title"> Andromède </h1>
-                            </div>
-                            <div id="Têtard" onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
-                                <h1 className="InscriptionPage_containerInscription3_div_title"> Têtard </h1>
-                            </div>
-                            <div id="Autres" onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
-                                <h1 className="InscriptionPage_containerInscription3_div_title">Autres </h1>
-                            </div>
+                            {renderSectors}
                         </div>
                     </div>
 
@@ -284,17 +370,11 @@ class Inscription extends Component {
                         </div>
                         <select onChange={this.handleChangeEspece} className="InscriptionPage_containerInscription4_espece">
                         <option value="" selected disabled hidden>Votre espece</option>
-                            <option value="test1">test1</option>
-                            <option value="test2">test2</option>
-                            <option value="test3">test3</option>
-                            <option value="test4">test4</option>
+                            {renderRaces}
                         </select>
                             <select onChange={this.handleChangePlanete} className="InscriptionPage_containerInscription4_planete">
                                 <option value="" selected disabled hidden>Votre planète</option>
-                                <option value="test1">test1</option>
-                                <option value="test2">test2</option>
-                                <option value="test3">test3</option>
-                                <option value="test4">test4</option>
+                                {renderPositions}
                             </select>
                         <div className="InscriptionPage_containerInscription4_Bio">
                         <textarea onChange={this.bioChange} placeholder="Bio" rows="4" cols="50">
