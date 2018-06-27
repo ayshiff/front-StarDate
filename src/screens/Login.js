@@ -69,7 +69,7 @@ class Login extends Component {
     onItemClickState(event) {
         console.log(event.currentTarget.style.backgroundColor)
         if(event.currentTarget.style.backgroundColor === "rgb(237, 90, 90)" ) {
-            event.currentTarget.style.backgroundColor = "black"
+            event.currentTarget.style.backgroundColor = "white"
             this.setState({
                 userState: null
             })
