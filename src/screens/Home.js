@@ -10,8 +10,8 @@ import profilePic from '../icons/profilePic.png';
 import MediaQuery from 'react-responsive';
 import UserProfile from './UserProfile';
 import Inscription from "./Inscription";
-// import Profile from './Profile';
-// import axios from 'axios';
+import Profile from './Profile';
+import axios from 'axios';
 
 class Home extends Component {
 
@@ -24,21 +24,21 @@ class Home extends Component {
     this.pushProfile = this.pushProfile.bind(this)
   }
 
-  //Request => API users
-  
-  // componentWillMount() {
-  //     axios.get('http://localhost:8000/api/users')
-  //         .then(function (response) {
-  //             console.log(response);
-  //             this.setState({
-  //                 users: response
-  //             })
-  //         })
-  //         .catch(function (error) {
-  //             console.log(error);
-  //         });
+  // Request => API users
+  /*
+  componentWillMount() {
+      axios.get('http://localhost:8000/api/users')
+          .then(function (response) {
+              console.log(response);
+              this.setState({
+                  users: response
+              })
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
 
-  // } 
+  } */
 
   pushPageProfile() {
       this.props.nav.pushPage({component: UserProfile})
