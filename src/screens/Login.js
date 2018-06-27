@@ -38,6 +38,7 @@ class Login extends Component {
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.loginAction = this.loginAction.bind(this)
+        this.loginActionDesktop = this.loginActionDesktop.bind(this)
         this.passwordChange = this.passwordChange.bind(this)
         this.emailChange = this.emailChange.bind(this)
         this.registerDesktop = this.registerDesktop.bind(this)
@@ -82,7 +83,7 @@ class Login extends Component {
     loginActionDesktop (){
 
         let that = this;
-        this.props.onSubmit(this.state.email)
+        this.props.onSubmit(this.state.email);
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function(user){
             console.log(user.user.uid);
             window.location.href = "/home";
@@ -159,7 +160,7 @@ class Login extends Component {
                     return content4();
             }
     };
-
+    // Homepage Content step 1 register
     let content1 = () => (<div className="homeDesktop_inscriptionContainer">
         <h3 className="homeDesktop_createAccount">Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
         <div className="homeDesktop_containerInscription">
@@ -175,7 +176,7 @@ class Login extends Component {
             <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">S'inscrire</button>
         </div>
     </div>);
-
+    // Homepage Content Step 2 register
       let content2 = () => (<div className="homeDesktop_inscriptionContainer">
           <h3 className="homeDesktop_createAccount">
               Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
@@ -186,9 +187,15 @@ class Login extends Component {
                   </h3>
               </div>
               <div className="homeDesktop_containerInscription2">
+                  <div className="homeDesktop_logoStep2Container">
                   <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
+              </div>
+                  <div className="homeDesktop_logoStep2Container">
                   <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
-                  <h2 className="homeDesktop_logoStep2"> Autre </h2>
+                  </div>
+                  <div className="homeDesktop_logoStep2Container">
+                  <h5 className="homeDesktop_otherStep2">Autre</h5>
+                  </div>
               </div>
               <div className="homeDesktop_titleContainerStep2">
                   <h3 className="homeDesktop_titleStep2">
@@ -196,15 +203,23 @@ class Login extends Component {
                   </h3>
               </div>
               <div className="homeDesktop_containerInscription2">
+                  <div className="homeDesktop_logoStep2Container">
                   <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
+                  </div>
+                  <div className="homeDesktop_logoStep2Container">
                   <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
+                  </div>
+                  <div className="homeDesktop_logoStep2Container">
                   <img src={desktopboth} alt="logoAutre" className="homeDesktop_logoStep2" />
+                  </div>
               </div>
+              <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
           </div>
           <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
       </div>);
-
+    // Homepage content step 3 register
       let content3 = () => (<div className="homeDesktop_inscriptionContainer">
+
        <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
       </div>);
 
@@ -222,6 +237,16 @@ class Login extends Component {
         <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
             </div>
         </div>);
+          <div className="homeDesktop_containerInscription">
+          <h3 className="homeDesktop_titleStep2">
+          Selectionner <span className="homeDesktop_coloriage">votre galaxie.</span></h3>
+          <div className="homeDesktop_buttonGalaxyContainer">
+            <button className="homeDesktop_buttonGalaxy">Voie lactée</button>
+          </div>
+          <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
+          </div>
+      </div>);
+
     return (
         
         <Page className="LoginPage">
@@ -345,6 +370,8 @@ class Login extends Component {
                         {showContent()}
                       </div>
                  </div>
+                 {/* Homepage content left side step 3 */}
+
             </MediaQuery>
 
       </Page>

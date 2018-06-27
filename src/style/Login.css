@@ -201,7 +201,8 @@
 .homeDesktop_forgotten {
   color: #ed5a5a;
   font-size: 10px;
-  margin: 15px 0 0 236px; }
+  margin: 15px 0 0 236px;
+  cursor: pointer; }
 
 .homeDesktop_bigContainer {
   display: flex;
@@ -296,11 +297,45 @@
   display: flex;
   justify-content: space-around; }
 
+.homeDesktop_logoStep2Container {
+  width: 75px;
+  height: 75px;
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 3px #F1F1F1; }
+  .homeDesktop_logoStep2Container:hover {
+    background-color: #ed5a5a; }
+  .homeDesktop_logoStep2Container h5 {
+    font-size: 20px;
+    padding: 14px 13px; }
+    .homeDesktop_logoStep2Container h5:hover {
+      color: #FFF; }
+
 .homeDesktop_logoStep2 {
-  width: 60px; }
+  width: 35px;
+  height: 50px;
+  margin: 10px 20px; }
+  .homeDesktop_logoStep2:hover {
+    color: #ed5a5a; }
 
 .homeDesktop_titleStep2 {
   text-align: center; }
 
 .homeDesktop_titleContainerStep2 h3 {
+
   padding: 15px; }
+
+.homeDesktop_buttonGalaxy {
+  width: 450px;
+  height: 44px;
+  font-size: #949494;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFF;
+  margin: 15px 20px;
+  font-size: 20px;
+  box-shadow: 0 0 15px 6px #F1F1F1;
+  outline: none;
+  cursor: pointer; }
+  .homeDesktop_buttonGalaxy:hover {
+    color: #ed5a5a; }

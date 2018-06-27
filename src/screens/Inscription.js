@@ -40,6 +40,8 @@ class Inscription extends Component {
         this.passwordConfirmChange = this.passwordConfirmChange.bind(this)
         this.ageChange = this.ageChange.bind(this)
         this.register = this.register.bind(this)
+        this.handleChangePlanete = this.handleChangePlanete.bind(this);
+        this.handleChangeEspece = this.handleChangeEspece.bind(this);
     }
 
     register(){
@@ -98,6 +100,14 @@ class Inscription extends Component {
         })
     }
 
+    handleChangeEspece(e){
+        this.setState({espece:e.target.value});
+    }
+
+    handleChangePlanete(e){
+        this.setState({planete:e.target.value});
+    }
+
     onItemClickSearch(event) {
         if(event.currentTarget.style.backgroundColor === "rgb(237, 90, 90)" ) {
             event.currentTarget.style.backgroundColor = "white"
@@ -107,7 +117,7 @@ class Inscription extends Component {
         } else if (event.currentTarget.style.backgroundColor !== "rgb(237, 90, 90)" && this.state.userSearch === null) {
             event.currentTarget.style.backgroundColor = "rgb(237, 90, 90)"
             this.setState({
-                userSearch: event.currentTarget,
+                userSearch: event.currentTarget.id,
 
             })
         }
@@ -122,7 +132,7 @@ class Inscription extends Component {
         } else if (event.currentTarget.style.backgroundColor !== "rgb(237, 90, 90)" && this.state.userState === null) {
             event.currentTarget.style.backgroundColor = "rgb(237, 90, 90)"
             this.setState({
-                userState: event.currentTarget,
+                userState: event.currentTarget.id,
             })
         }
     }
@@ -136,7 +146,7 @@ class Inscription extends Component {
         } else if (event.currentTarget.style.backgroundColor !== "rgb(237, 90, 90)" && this.state.userGalaxie === null) {
             event.currentTarget.style.backgroundColor = "rgb(237, 90, 90)"
             this.setState({
-                userGalaxie: event.currentTarget,
+                userGalaxie: event.currentTarget.id,
             })
         }
     }
@@ -220,26 +230,26 @@ class Inscription extends Component {
                     <div>
                         <h3 className="InscriptionPage_title2"> Vous êtes ? </h3>
                         <div className="InscriptionPage_containerInscription2">
-                        <div onClick={this.onItemClickState} className="InscriptionPage_containerInscription2_div">
+                        <div id="female" onClick={this.onItemClickState} className="InscriptionPage_containerInscription2_div">
                             <img src={male} alt="logoFemale" className="InscriptionPage_containerInscription2_logo"/>
                         </div>
-                        <div onClick={this.onItemClickState} className="InscriptionPage_containerInscription2_div">
+                        <div id="male" onClick={this.onItemClickState} className="InscriptionPage_containerInscription2_div">
                             <img src={female} alt="logoMale" className="InscriptionPage_containerInscription2_logo"/>
                         </div>
-                        <div onClick={this.onItemClickState} className="InscriptionPage_containerInscription2_div">
+                        <div id="other" onClick={this.onItemClickState} className="InscriptionPage_containerInscription2_div">
                             <h2 className="InscriptionPage_containerInscription2_div_other"> Autre </h2>
                         </div>
                         </div>
                         <h3 className="InscriptionPage_title2"> Vous recherchez ? </h3>
                     <div className="InscriptionPage_containerInscription2">
                         <div className="InscriptionPage_containerInscription2">
-                            <div onClick={this.onItemClickSearch} className="InscriptionPage_containerInscription2_div">
+                            <div id="female" onClick={this.onItemClickSearch} className="InscriptionPage_containerInscription2_div">
                                 <img src={male} alt="logoFemale" className="InscriptionPage_containerInscription2_logo"/>
                             </div>
-                            <div onClick={this.onItemClickSearch} className="InscriptionPage_containerInscription2_div">
+                            <div id="male" onClick={this.onItemClickSearch} className="InscriptionPage_containerInscription2_div">
                                 <img src={female} alt="logoMale" className="InscriptionPage_containerInscription2_logo"/>
                             </div>
-                            <div onClick={this.onItemClickSearch} className="InscriptionPage_containerInscription2_div">
+                            <div id="other" onClick={this.onItemClickSearch} className="InscriptionPage_containerInscription2_div">
                                 <img src={both} alt="logoAutre" className="InscriptionPage_containerInscription2_logo"/>
                             </div>
                         </div>
@@ -249,16 +259,16 @@ class Inscription extends Component {
                     <div>
                         <h3 className="InscriptionPage_title"> Sélectionnez votre galaxie </h3>
                         <div className="InscriptionPage_containerInscription3">
-                            <div onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
+                            <div id="Voie lactée" onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
                                 <h1 className="InscriptionPage_containerInscription3_div_title">Voie lactée</h1>
                             </div>
-                            <div onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
+                            <div id="Andromède" onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
                                 <h1 className="InscriptionPage_containerInscription3_div_title"> Andromède </h1>
                             </div>
-                            <div onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
+                            <div id="Têtard" onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
                                 <h1 className="InscriptionPage_containerInscription3_div_title"> Têtard </h1>
                             </div>
-                            <div onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
+                            <div id="Autres" onClick={this.onItemClick} className="InscriptionPage_containerInscription3_div">
                                 <h1 className="InscriptionPage_containerInscription3_div_title">Autres </h1>
                             </div>
                         </div>
@@ -272,14 +282,14 @@ class Inscription extends Component {
 
                             <input type="file" accept="image/*" capture="camera" onChange={(e) => this._handleImageChange(e)} />
                         </div>
-                        <select className="InscriptionPage_containerInscription4_espece">
+                        <select onChange={this.handleChangeEspece} className="InscriptionPage_containerInscription4_espece">
                         <option value="" selected disabled hidden>Votre espece</option>
                             <option value="test1">test1</option>
                             <option value="test2">test2</option>
                             <option value="test3">test3</option>
                             <option value="test4">test4</option>
                         </select>
-                            <select className="InscriptionPage_containerInscription4_planete">
+                            <select onChange={this.handleChangePlanete} className="InscriptionPage_containerInscription4_planete">
                                 <option value="" selected disabled hidden>Votre planète</option>
                                 <option value="test1">test1</option>
                                 <option value="test2">test2</option>
