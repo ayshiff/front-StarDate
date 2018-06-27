@@ -114,7 +114,7 @@ class Login extends Component {
 
     registerDesktop () {
         this.setState({indexContent: this.state.indexContent +1})
-        if(this.state.indexContent === 2) {
+        if(this.state.indexContent === 3) {
             window.location.href = "/home";
         }
     }
@@ -156,6 +156,8 @@ class Login extends Component {
                     return content2();
                 case 2:
                     return content3();
+                case 3:
+                    return content4();
             }
     };
     // Homepage Content step 1 register
@@ -213,9 +215,28 @@ class Login extends Component {
               </div>
               <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
           </div>
+          <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
       </div>);
     // Homepage content step 3 register
       let content3 = () => (<div className="homeDesktop_inscriptionContainer">
+
+       <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
+      </div>);
+
+        let content4 = () => (<div className="homeDesktop_inscriptionContainer">
+        <div className="homeDesktop_containerInscription">
+        <div className="homeDesktop_formInscription">
+            <div className="homeDesktop_flexName">
+                <input className="homeDesktop_inputItemForm_img" type="file" accept=".jpg, .jpeg, .png" name="img" id="img" placeholder="Choisir une photo" />
+            </div>
+            <select className="homeDesktop_selectItemForm" name="Votre planete" size="" id="age" placeholder="age*" />
+                {/* <option>   Need to generate by BDD */}
+            <select className="homeDesktop_selectItemForm"  name="Votre espece" size="" id="age" placeholder="age*" />
+                {/* <option>   Need to generate by BDD */}
+        </div>
+        <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
+            </div>
+        </div>);
           <div className="homeDesktop_containerInscription">
           <h3 className="homeDesktop_titleStep2">
           Selectionner <span className="homeDesktop_coloriage">votre galaxie.</span></h3>
@@ -225,7 +246,6 @@ class Login extends Component {
           <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
           </div>
       </div>);
-
 
     return (
         
