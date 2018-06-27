@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Page, Toolbar, Tab, Tabbar, Modal } from 'react-onsenui';
 import '../style/Profile.css'
 import imageProfile from '../icons/imageProfile.png';
-import settings from '../icons/settings.png';
+import settings from '../icons/settings.svg';
+import confirm from '../icons/confirm.svg';
+import warning from '../icons/warning.svg';
 import MediaQuery from 'react-responsive';
 
 class Profile extends Component {
@@ -108,10 +110,10 @@ class Profile extends Component {
         <p className="ProfilePageDesktop_description_header_name">Zimbabwe, 12</p>
         <h3 className="ProfilePageDesktop_description_place">Terraria</h3>
         <p className="ProfilePageDesktop_description_about"> A propos</p>
-        <p className="ProfilePageDesktop_description_txt"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour
+        <p className="ProfilePageDesktop_description_txt"> Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de lmprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour
            réaliser un livre spécimen de polices de texte.</p>
-           <img className="ProfilePageDesktop_description_settings" src="#"/>
-           <img className="ProfilePageDesktop_description_settings_ok" src="#"/>
+           <img className="ProfilePageDesktop_description_settings" src={settings}/>
+           <img className="ProfilePageDesktop_description_settings_ok" src={confirm}/>
       </div>
       <div className="ProfilePageDesktop_description_input">
     <input onClick={this.openModal} className="ProfilePageDesktop_description_input_logout" value="Se deconnecter" type="button"/>
@@ -130,13 +132,13 @@ class Profile extends Component {
                     isOpen={this.state.modalIsOpenDelete}
                 >
     <div className="ProfilePageDesktop_modal_delete">
-      <img className="ProfilePageDesktop_modal_delete_img" src="#" alt=""/>
-      <p className="ProfilePageDesktop_modal_delete_txt">Voulez-vous vraiment vous deconnecter ?</p>
+      <img className="ProfilePageDesktop_modal_delete_img" src={warning} alt=""/>
+      <p className="ProfilePageDesktop_modal_delete_txt">Voulez-vous vraiment vous supprimer votre compte ?</p>
       <input onClick={this.closeModalDelete} value="Non" type="button" className="ProfilePageDesktop_modal_delete_input_left"/>
       <input value="Oui" type="button" className="ProfilePageDesktop_modal_delete_input_right"/>
     </div>
                 </Modal>
-           </MediaQuery> 
+           </MediaQuery>
 
         </Page>
     );

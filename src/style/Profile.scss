@@ -4,12 +4,14 @@ $secondary-color: #ed5a5a;
 
 .ProfilePage {
   font-family: Comfortaa;
+
   &_suppress {
     text-align: center;
     font-family: Comfortaa;
     color: white;
     font-size: 12px;
   }
+
   &_deconnection {
     background-color: #ed5a5a;
     margin-top: 5px;
@@ -21,6 +23,7 @@ $secondary-color: #ed5a5a;
     margin: 0 auto;
     font-family: Comfortaa;
   }
+
   &_arrow {
     fill: #ed5a5a !important;
     width: 20px;
@@ -28,22 +31,27 @@ $secondary-color: #ed5a5a;
     margin-left: 20px;
     position: absolute;
   }
-  .page__background { background-color: $primary-color;}
+
+  .page__background {
+    background-color: $primary-color;
+  }
+
   &_image {
     top: 0;
     left: 0;
     right: 0;
     width: 100vw;
     height: 40%;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 70%,
-            $primary-color), url('../icons/imageProfile.png');
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 70%, $primary-color), url("../icons/imageProfile.png");
   }
+
   &_description {
     display: flex;
     flex-direction: column;
     margin: 20px;
     color: white;
     font-family: Comfortaa;
+
     input {
       font-size: 14px;
       padding-left: 10px;
@@ -55,29 +63,35 @@ $secondary-color: #ed5a5a;
       line-height: 20px;
       font-family: Comfortaa;
     }
+
     &_description {
       overflow-wrap: break-word;
       margin-top: -10px !important;
       font-family: Comfortaa;
     }
+
     &_header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-family: Comfortaa;
+
       svg {
         fill: #ed5a5a !important;
         width: 25px;
       }
     }
+
     &_about {
       color: $secondary-color;
       font-family: Comfortaa;
     }
+
     &_response {
       color: $secondary-color;
       font-family: Comfortaa;
     }
+
     &_place {
       margin-top: -10px !important;
       font-family: Comfortaa;
@@ -86,65 +100,79 @@ $secondary-color: #ed5a5a;
 }
 // Desktop profile page
 
-.ProfilePageDesktop{
+.ProfilePageDesktop {
   background-color: #0a073f;
   height: 100vh;
-    &_image {
-      position: absolute;
-      top: 33%;
-      left: 30%;
-      right: 0;
-      width: 230px;
-      height: 230px;
-    }
 
-  &_description{
+  &_image {
+    position: absolute;
+    top: 33%;
+    left: 30%;
+    right: 0;
+    width: 230px;
+    height: 230px;
+  }
+
+  &_description {
     position: absolute;
     top: 30%;
     left: 46.3%;
     width: 42vw;
     height: 35vh;
 
-    &_header_name{
+    &_header_name {
       position: absolute;
       color: white;
-      font-family: 'Helvetica';
+      font-family: 'Comfortaa';
       font-size: 48px;
       top: -12%;
       left: 10%;
     }
-    &_about{
+
+    &_about {
       position: absolute;
       color: #ed5a5a;
-      font-family: 'Helvetica';
+      font-family: 'Comfortaa';
       font-size: 18px;
       top: 30%;
       left: 10%;
     }
-    &_place{
+
+    &_place {
       position: absolute;
       color: white;
-      font-family: 'Helvetica';
+      font-family: 'Comfortaa';
       font-size: 18px;
       top: 20%;
       left: 10%;
     }
-    &_txt{
+
+    &_txt {
       position: absolute;
       color: white;
-      font-family: 'Helvetica';
+      font-family: 'Comfortaa';
       font-size: 18px;
       top: 40%;
       left: 10%;
       line-height: 1.5;
     }
-    &_settings{
+
+    &_settings {
       position: absolute;
       height: 40px;
       width: 40px;
       right: 5%;
       top: 5%;
+      &_ok {
+        display: none;
+        position: absolute;
+        height: 40px;
+        width: 40px;
+        right: 5%;
+        top: 5%;
+      }
     }
+
     &_input {
       &_logout {
         position: absolute;
@@ -153,7 +181,7 @@ $secondary-color: #ed5a5a;
         background-color: #ed5a5a;
         border-style: none;
         width: 160px;
-        padding: 0 1% 0 1%;
+        padding: 0 1%;
         border-radius: 10px;
         display: block;
         bottom: 30%;
@@ -162,79 +190,73 @@ $secondary-color: #ed5a5a;
         height: 30px;
         width: 207px;
       }
+
+      &_delete {
+        background-color: #0a073f;
+        border-style: none;
+        position: absolute;
+        font-size: 18px;
+        color: #DCDCDC;
+        width: 160px;
+        display: block;
+        bottom: 24%;
+        left: 30.5%;
+        font-family: 'Comfortaa';
+        height: 30px;
+        width: 207px;
+      }
     }
-   &_input_delete{
-    background-color: #0a073f;
-    border-style: none;
-    position: absolute;
-    font-size: 18px;
-    color: #DCDCDC;
-    width: 160px;
-    display: block;
-    bottom: 24%;
-    left: 30.5%;
-    font-family: 'Comfortaa';
-    height: 30px;
-    width: 207px;
   }
-  &_settings_ok{
-    display: none;
+
+ &_modal {
+  &_logout {
     position: absolute;
-    height: 40px;
-    width: 40px;
-    right: 5%;
-    top: 5%;
-  }
-}
-.ProfilePageDesktop_modal_logout{
-  position: absolute;
-  height: 125px;
-  width: 497px;
-  background-color: white;
-  bottom: 40vh;
-  left: 40vw;
-  border-radius: 6px;
-  display: none;
+    height: 125px;
+    width: 497px;
+    background-color: white;
+    bottom: 40vh;
+    left: 40vw;
+    border-radius: 6px;
     &_txt{
       color: #000000;
       font-size: 18px;
       font-family: 'Comfortaa';
       text-align: center;
+    }
+    &_input{
+      &_left{
+        border-style: none;
+        position: absolute;
+        font-size: 18px;
+        color: #DCDCDC;
+        width: 160px;
+        display: block;
+        bottom: 0;
+        left: 0;
+        font-family: 'Comfortaa';
+        height: 60px;
+        width: 248px;
+        background-color: #F3F3F3;
+        border-bottom-left-radius: 6px;
       }
-
-&_input{
-  &_left{
-    border-style: none;
-    position: absolute;
-    font-size: 18px;
-    color: #DCDCDC;
-    width: 160px;
-    display: block;
-    bottom: 0%;
-    left: 0%;
-    font-family: 'Comfortaa';
-    height: 60px;
-    width: 248px;
-    background-color: #F3F3F3;
-    border-bottom-left-radius: 6px;
-  
-  }
-  &_right{
-    border-style: none;
-    position: absolute;
-    font-size: 18px;
-    color: #DCDCDC;
-    display: block;
-    bottom: 0;
-    right: 0;
-    font-family: 'Comfortaa';
-    height: 60px;
-    width: 249px;
-    background-color: red;
-    border-radius: 6px;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
+      &_right{
+        border-style: none;
+        position: absolute;
+        font-size: 18px;
+        color: #DCDCDC;
+        display: block;
+        bottom: 0;
+        right: 0;
+        font-family: 'Comfortaa';
+        height: 60px;
+        width: 249px;
+        background-color: red;
+        border-radius: 6px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
   }
   &_delete{
     position: absolute;
@@ -244,8 +266,12 @@ $secondary-color: #ed5a5a;
     bottom: 40vh;
     left: 40vw;
     border-radius: 6px;
-    display: none;
-
+    &_img {
+      position: absolute;
+      top: 19%;
+      left: 41%;
+      width: 19%;
+    }
     &_txt{
       position: absolute;
       color: #000000;
@@ -255,51 +281,40 @@ $secondary-color: #ed5a5a;
       bottom: 30%;
       left: 14%;
     }
-
-    &_input {
-     &_left{
-      border-style: none;
-      position: absolute;
-      font-size: 18px;
-      color: #DCDCDC;
-      width: 160px;
-      display: block;
-      bottom: 0%;
-      left: 0%;
-      font-family: 'Comfortaa';
-      height: 60px;
-      width: 248px;
-      background-color: #F3F3F3;
-      border-bottom-left-radius: 6px;
-     }
-     &_right{
-      border-style: none;
-      position: absolute;
-      font-size: 18px;
-      color: #DCDCDC;
-      display: block;
-      bottom: 0;
-      right: 0;
-      font-family: 'Comfortaa';
-      height: 60px;
-      width: 249px;
-      background-color: red;
-      border-radius: 6px;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border-bottom-left-radius: 0px;
+    &_input{
+      &_left{
+        border-style: none;
+        position: absolute;
+        font-size: 18px;
+        color: #DCDCDC;
+        width: 160px;
+        display: block;
+        bottom: 0;
+        left: 0;
+        font-family: 'Comfortaa';
+        height: 60px;
+        width: 248px;
+        background-color: #F3F3F3;
+        border-bottom-left-radius: 6px;
+      }
+      &_right{
+        border-style: none;
+        position: absolute;
+        font-size: 18px;
+        color: #DCDCDC;
+        display: block;
+        bottom: 0;
+        right: 0;
+        font-family: 'Comfortaa';
+        height: 60px;
+        width: 249px;
+        background-color: red;
+        border-radius: 6px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 0;
+        }
+      }
     }
-   }
-   &_img{
-    position: absolute;
-    top: 19%;
-    left: 41%;
-    width: 19%;
-  
-  }
-
   }
 }
-}
-}
-
