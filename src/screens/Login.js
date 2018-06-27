@@ -184,9 +184,15 @@ class Login extends Component {
                   </h3>
               </div>
               <div className="homeDesktop_containerInscription2">
+                  <div className="homeDesktop_logoStep2Container">
                   <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
+              </div>
+                  <div className="homeDesktop_logoStep2Container">
                   <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
-                  <h2 className="homeDesktop_logoStep2"> Autre </h2>
+                  </div>
+                  <div className="homeDesktop_logoStep2Container">
+                  <h5 className="homeDesktop_otherStep2">Autre</h5>
+                  </div>
               </div>
               <div className="homeDesktop_titleContainerStep2">
                   <h3 className="homeDesktop_titleStep2">
@@ -194,9 +200,15 @@ class Login extends Component {
                   </h3>
               </div>
               <div className="homeDesktop_containerInscription2">
+                  <div className="homeDesktop_logoStep2Container">
                   <img src={desktopmale} alt="logoFemale" className="homeDesktop_logoStep2" />
+                  </div>
+                  <div className="homeDesktop_logoStep2Container">
                   <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
+                  </div>
+                  <div className="homeDesktop_logoStep2Container">
                   <img src={desktopboth} alt="logoAutre" className="homeDesktop_logoStep2" />
+                  </div>
               </div>
               <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
           </div>
