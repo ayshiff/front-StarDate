@@ -277,7 +277,8 @@ class Login extends Component {
               </div>
               <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
           </div>
-      </div >);
+        </div>);
+
 
         let content4 = () => (<div className="homeDesktop_inscriptionContainer">
         <div className="homeDesktop_containerInscription">
@@ -293,8 +294,6 @@ class Login extends Component {
         <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
             </div>
         </div>);
-          
-
     return (
         
         <Page className="LoginPage">
