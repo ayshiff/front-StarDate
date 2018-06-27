@@ -38,6 +38,7 @@ class Login extends Component {
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.loginAction = this.loginAction.bind(this)
+        this.loginActionDesktop = this.loginActionDesktop.bind(this)
         this.passwordChange = this.passwordChange.bind(this)
         this.emailChange = this.emailChange.bind(this)
         this.registerDesktop = this.registerDesktop.bind(this)
