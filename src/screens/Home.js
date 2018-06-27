@@ -25,11 +25,11 @@ class Home extends Component {
   }
 
   // Request => API users
-  /*
+
   componentWillMount() {
       axios.get('http://localhost:8000/api/users')
           .then(function (response) {
-              console.log(response);
+              console.log(response.data['hydra:member']);
               this.setState({
                   users: response
               })
@@ -38,7 +38,7 @@ class Home extends Component {
               console.log(error);
           });
 
-  } */
+  }
 
   pushPageProfile() {
       this.props.nav.pushPage({component: UserProfile})
