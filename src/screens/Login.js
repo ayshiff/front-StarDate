@@ -157,7 +157,7 @@ class Login extends Component {
                     return content3();
             }
     };
-
+    // Homepage Content step 1 register
     let content1 = () => (<div className="homeDesktop_inscriptionContainer">
         <h3 className="homeDesktop_createAccount">Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
         <div className="homeDesktop_containerInscription">
@@ -173,7 +173,7 @@ class Login extends Component {
             <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">S'inscrire</button>
         </div>
     </div>);
-
+    // Homepage Content Step 2 register
       let content2 = () => (<div className="homeDesktop_inscriptionContainer">
           <h3 className="homeDesktop_createAccount">
               Créez vous <span className="homeDesktop_coloriage">un compte </span></h3>
@@ -198,11 +198,21 @@ class Login extends Component {
                   <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
                   <img src={desktopboth} alt="logoAutre" className="homeDesktop_logoStep2" />
               </div>
+              <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
+          </div>
+      </div>);
+    // Homepage content step 3 register
+      let content3 = () => (<div className="homeDesktop_inscriptionContainer">
+          <div className="homeDesktop_containerInscription">
+          <h3 className="homeDesktop_titleStep2">
+          Selectionner <span className="homeDesktop_coloriage">votre galaxie.</span></h3>
+          <div className="homeDesktop_buttonGalaxyContainer">
+            <button className="homeDesktop_buttonGalaxy">Voie lactée</button>
+          </div>
+          <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
           </div>
       </div>);
 
-      let content3 = () => (<div className="homeDesktop_inscriptionContainer">
-      </div>);
 
     return (
         
@@ -327,6 +337,8 @@ class Login extends Component {
                         {showContent()}
                       </div>
                  </div>
+                 {/* Homepage content left side step 3 */}
+
             </MediaQuery>
 
       </Page>
