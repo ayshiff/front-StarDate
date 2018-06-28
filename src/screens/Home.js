@@ -174,7 +174,7 @@ class Home extends Component {
                     <div className="HomePage_carousel2" style={{color: "white", height: '90vh'}}>
                         {tabUsers}
                         <div className="HomePage_carousel2_loading">
-                            <img src={mask1} className="HomePage_carousel2_loading_mask1"/>
+                            <img src={imagesFolder[this.state.imageUser]} className="HomePage_carousel2_loading_mask1"/>
                             <img src={mask2} className="HomePage_carousel2_loading_mask2"/>
                             <img src={mask3} className="HomePage_carousel2_loading_mask3"/>
                             <img src={mask4} className="HomePage_carousel2_loading_mask4"/>
