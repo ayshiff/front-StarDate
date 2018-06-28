@@ -2,6 +2,15 @@
 
 Find love in space.
 
+## Our team
+
+* [Victor Roche](https://github.com/VicoRch)
+* [Rémi Doreau ](https://github.com/Ayshiff)
+* [Dorian Gueguen](https://github.com/Doriangue)
+* [Amaury Faveriel](https://github.com/AmauryFaveriel)
+* [Réda Ouaich](https://github.com/Reda-OUAICH)
+* [Thomas Dorothée](https://github.com/ThomasDorothee)
+
 ## What it will look like ?
 
 <p align="center">
@@ -9,7 +18,28 @@ Find love in space.
 width="200px">
 </p>
 
-## Step 1
+## Our stacks
+* Symfony 4.1
+* React.js
+* Api platform
+* Redux
+### Features
+1. 
+    1. [x] Account management
+    2. [x] Real time Chat
+    3. [x] Users locaction in space 
+    4. [x] Users management
+    5. [ ] Matching algorithm
+    6. [x] Responsive design
+
+
+
+
+
+
+# How it works ?
+## Front commands
+#### Step 1
 Run ```git clone https://github.com/ayshiff/front-StarDate.git ```
 It will initialize the dependencies.
 And then ```cd front-StarDate ```
@@ -23,3 +53,14 @@ Run ``` npm start ```
 
 ## Step 4
 Go to ```localhost:3000```
+## Back commands
+#### Step 1
+```composer install```
+#### Step 2
+Change .env to your DB name and ur SQL logs
+#### Step 3
+Then run ``` php bin/console doctrine:database:create```
+#### Step 4
+Run ```php bin/console doctrine:migrations:migrate```
+#### Step 5 
+Run ```php bin/console server:run```
