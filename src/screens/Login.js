@@ -21,7 +21,6 @@ import desktopmale from '../icons/male.svg';
 import desktopboth from '../icons/both.svg';
 import axios from 'axios';
 import { findDOMNode } from 'react-dom';
-import $ from 'jquery';
 
 
 
@@ -146,7 +145,7 @@ class Login extends Component {
                         return e.email === that.state.email
                     });
                     if(respon.password === that.state.password) {
-                        window.location.href = "/home";
+                         window.location.href = "/home/"+respon.id;
                     }
                 })
                 .catch(function (error) {

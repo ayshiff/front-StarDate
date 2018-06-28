@@ -32,9 +32,9 @@ class Entry extends Component {
                     <BrowserRouter>
                         <Switch>
                             <Route exact path='/' component={Login}/>
-                            <Route path='/home' component={Home}/>
-                            <Route path='/profile' component={Profile}/>
-                            <Route path='/chat' component={ChatHome}/>
+                            <Route path='/home/:id' component={Home}/>
+                            <Route path='/profile/:id' component={UserProfile}/>
+                            <Route path='/chat/:id' component={ChatHome}/>
                         </Switch>
                     </BrowserRouter>
                 </MediaQuery>

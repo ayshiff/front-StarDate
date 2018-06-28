@@ -8,6 +8,7 @@ import warning from '../icons/warning.svg';
 import MediaQuery from 'react-responsive';
 import '../style/Home.css';
 import profilePic from '../icons/profilePic.png';
+import axios from "axios/index";
 
 class Profile extends Component {
     constructor(props) {
@@ -66,6 +67,23 @@ class Profile extends Component {
     disconnect () {
         this.props.nav.popPage()
     }
+
+    componentWillMount() {
+        let that = this
+        if(this.match.params.id) {
+        axios.get('http://localhost:8000/api/users')
+            .then(function (response) {
+                let respon = response.data['hydra:member'].find((e) => {
+                    return e.email === that.state.email
+                });
+                console.log(respon)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
+    }
+
   render() {
         let content =  (<div className="ProfilePage_description">
             <div className="ProfilePage_description_header">
