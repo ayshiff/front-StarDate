@@ -63,12 +63,14 @@ html{
             flex-direction: column;
             margin: 0 auto;
             &_img3 {
-                margin: 0 auto;
-                height: 40%;
+                margin: -10px auto;
+                width: 55%;
+                height: 100%;
+                overflow: hidden;
             }
             &_img2 {
-                margin: 0 auto;
-                width: 65%;
+                 margin: -43px auto;
+                 width: 350px;
             }
         }
         &_textLogin {
@@ -89,7 +91,7 @@ html{
         }
         &_stars1 {
             float: right;
-            margin-right: 30px;
+            margin-right: 41px;
         }
         &_stars2 {
             float: left;
@@ -98,7 +100,7 @@ html{
         }
         &_planet {
             float: left;
-            margin-left: 12px;
+            margin-left: 33px;
         }
     }
 }

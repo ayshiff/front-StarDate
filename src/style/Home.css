@@ -38,15 +38,18 @@
   width: 100%;
   height: 100vh; }
   .HomePageDesktop_sideBar {
-    height: 100%;
+    position: fixed;
+    height: 100vh;
     width: 20%;
     background-color: white;
     z-index: 2; }
     .HomePageDesktop_sideBar_profilePic {
-      width: 90px;
       margin-left: 33%;
       margin-top: 50px;
-      margin-bottom: 70px; }
+      margin-bottom: 70px;
+      border-radius: 50%;
+      width: 90px;
+      height: 90px; }
     .HomePageDesktop_sideBar_nav {
       width: 100%;
       height: 200px; }
@@ -81,6 +84,8 @@
       transform: translate(-50%, -50%); }
       .HomePageDesktop .HomePageDesktop_map_myPosition_mask1 {
         width: 70px;
+        height: 70px;
+        border-radius: 50%;
         margin-left: 70px;
         margin-top: 70px;
         position: absolute;
@@ -99,10 +104,9 @@
         position: absolute;
         z-index: 1; }
     .HomePageDesktop .HomePageDesktop_map_profiles_pic {
-      width: 100px;
+      width: 75px;
+      height: 75px;
       border-radius: 100px;
-      margin-top: 80px;
-      margin-left: 340px;
       cursor: pointer;
       transition: all 0.3s; }
       .HomePageDesktop .HomePageDesktop_map_profiles_pic:hover {
@@ -127,7 +131,10 @@
       .HomePageDesktop .HomePageDesktop_view_modal_pic {
         width: 82px;
         margin-top: 15px;
-        margin-left: 134px; }
+        margin-left: 134px;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px; }
       .HomePageDesktop .HomePageDesktop_view_modal_name {
         font-family: "Open Sans Condensed";
         font-weight: 700;

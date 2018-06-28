@@ -12,8 +12,8 @@
     display: flex;
     align-items: center; }
     .ChatPage_div_image {
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       margin-left: 10px; }
     .ChatPage_div_container {
       display: flex;
@@ -27,7 +27,9 @@
   .ChatPageDesktop_contact {
     width: 30%;
     height: 100vh;
-    background-color: #0a073f; }
+    background-color: #0a073f;
+    margin-left: 20%;
+    position: fixed; }
     .ChatPageDesktop_contact_container {
       margin-top: 70px;
       margin-bottom: 70px; }
@@ -52,33 +54,39 @@
         border-radius: 100px;
         margin-top: 10px;
         margin-left: 20px; }
-      .ChatPageDesktop_contact_card_contents_name {
+      .ChatPageDesktop_contact_card_contents_cardName {
         font-family: 'OpenSans';
         font-weight: bold;
-        margin-left: 13px;
-        margin-top: 19px; }
+        margin-left: 12px;
+        margin-top: 18px; }
       .ChatPageDesktop_contact_card_contents_lastMessage {
         font-family: 'Comfortaa';
         font-size: 12px;
-        margin-left: 13px;
+        margin-left: 12px;
         margin-top: -15px;
         color: rgba(0, 0, 0, 0.4); }
   .ChatPageDesktop_conv {
     width: 50%;
-    height: 100vh; }
+    height: auto;
+    background-color: white;
+    margin-left: 50%;
+    overflow: hidden; }
     .ChatPageDesktop_conv_read {
       width: 100%;
-      height: 88vh; }
+      height: auto;
+      position: relative; }
       .ChatPageDesktop_conv_read_contents {
-        margin: 50px 60px; }
+        margin: 100px 60px; }
       .ChatPageDesktop_conv_read_received {
         height: 100px;
         width: 100%;
-        display: flex; }
+        display: flex;
+        position: relative; }
         .ChatPageDesktop_conv_read_received_pic {
           width: 45px;
           height: 45px;
-          margin-top: 30px; }
+          margin-top: 30px;
+          border-radius: 50%; }
         .ChatPageDesktop_conv_read_received_message {
           background-color: #F3F3F3;
           color: black;
@@ -90,7 +98,8 @@
         height: auto;
         width: 100%;
         display: flex;
-        justify-content: flex-end; }
+        justify-content: flex-end;
+        position: relative; }
         .ChatPageDesktop_conv_read_send_message {
           background-color: #F04240;
           color: white;
@@ -101,12 +110,15 @@
         .ChatPageDesktop_conv_read_send_pic {
           width: 45px;
           height: 45px;
-          margin-top: 30px; }
-    .ChatPageDesktop_conv_sendindZone {
-      width: 100%;
-      height: 7vh;
-      background-color: #F3F3F3; }
-      .ChatPageDesktop_conv_sendindZone_input {
+          margin-top: 30px;
+          border-radius: 50%; }
+    .ChatPageDesktop_conv_sendingZone {
+      width: 50%;
+      height: 100px;
+      background-color: #F3F3F3;
+      position: fixed;
+      bottom: 0; }
+      .ChatPageDesktop_conv_sendingZone_input {
         width: 90%;
         height: auto;
         border-radius: 20px;

@@ -58,16 +58,19 @@
   width: 100%;
   height: 100vh;
   &_sideBar {
-    height: 100%;
+    position: fixed;
+    height: 100vh;
     width: 20%;
     background-color: white;
     z-index: 2;
 
     &_profilePic {
-      width: 90px;
       margin-left: 33%;
       margin-top: 50px;
-      margin-bottom: 70px
+      margin-bottom: 70px;
+      border-radius: 50%;
+      width: 90px;
+      height: 90px;
     }
 
     &_nav {
@@ -117,6 +120,8 @@
     transform: translate(-50%, -50%);
       &_mask1 {
         width: 70px;
+        height: 70px;
+        border-radius: 50%;
         margin-left: 70px;
         margin-top: 70px;
         position: absolute;
@@ -144,10 +149,9 @@
     }
     &_profiles{
       &_pic{
-        width: 100px;
+        width: 75px;
+        height: 75px;
         border-radius: 100px;
-        margin-top: 80px;
-        margin-left: 340px;
         cursor: pointer;
         transition: all 0.3s;
         &:hover{
@@ -178,6 +182,9 @@
         width: 82px;
         margin-top: 15px;
         margin-left: 134px;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
       }
       &_name{
         font-family: "Open Sans Condensed";
