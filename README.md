@@ -38,7 +38,8 @@ width="200px">
 
 
 # How it works ?
-## Step 1
+## Front commands
+#### Step 1
 Run ```git clone https://github.com/ayshiff/front-StarDate.git ```
 It will initialize the dependencies.
 And then ```cd front-StarDate ```
@@ -52,3 +53,14 @@ Run ``` npm start ```
 
 ## Step 4
 Go to ```localhost:3000```
+## Back commands
+#### Step 1
+```composer install```
+#### Step 2
+Change .env to your DB name and ur SQL logs
+#### Step 3
+Then run ``` php bin/console doctrine:database:create```
+#### Step 4
+Run ```php bin/console doctrine:migrations:migrate```
+#### Step 5 
+Run ```php bin/console server:run```
