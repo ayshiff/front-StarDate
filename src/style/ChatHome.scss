@@ -76,17 +76,17 @@ $secondary-color: #ed5a5a;
       }
 
       &_contents {
-        &_name {
+        &_cardName{
           font-family: 'OpenSans';
           font-weight: bold;
-          margin-left: 13px;
-          margin-top: 19px;
+          margin-left: 12px;
+          margin-top: 18px;
         }
 
-        &_lastMessage {
+        &_lastMessage{
           font-family: 'Comfortaa';
           font-size: 12px;
-          margin-left: 13px;
+          margin-left: 12px;
           margin-top: -15px;
           color: rgba(0,0,0,0.4);
         }
@@ -97,6 +97,7 @@ $secondary-color: #ed5a5a;
   &_conv {
     width: 50%;
     height: 100vh;
+    background-color: white;
 
     &_read {
       width: 100%;
