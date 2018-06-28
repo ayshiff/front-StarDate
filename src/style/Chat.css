@@ -1,5 +1,8 @@
 .Chat {
   font-family: Comfortaa; }
+  .Chat_input {
+    position: fixed;
+    bottom: 0; }
   .Chat .page__background {
     background-color: white; }
   .Chat_arrow {
@@ -7,4 +10,25 @@
     width: 20px;
     margin-top: 20px;
     margin-left: 20px;
-    position: absolute; }
+    position: fixed; }
+  .Chat_message {
+    width: 200px;
+    border-radius: 10px;
+    border: #0a073f;
+    padding: 7px;
+    border: solid;
+    border-width: 1px;
+    float: left;
+    margin: 5px;
+    font-size: 12px; }
+    .Chat_message_user {
+      background: #ed5a5a;
+      width: 200px;
+      border-radius: 10px;
+      border: #0a073f;
+      padding: 7px;
+      border: solid;
+      border-width: 1px;
+      float: right;
+      margin: 5px;
+      font-size: 12px; }

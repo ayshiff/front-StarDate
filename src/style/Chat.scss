@@ -3,6 +3,10 @@ $primary-color: #0a073f;
 $secondary-color: #ed5a5a;
 
 .Chat {
+  &_input {
+    position: fixed;
+    bottom: 0;
+  }
   font-family: Comfortaa;
   .page__background { background-color: white;}
   &_arrow {
@@ -10,7 +14,30 @@ $secondary-color: #ed5a5a;
     width: 20px;
     margin-top: 20px;
     margin-left: 20px;
-    position: absolute;
+    position: fixed;
   }
 
+  &_message {
+    width: 200px;
+    border-radius: 10px;
+    border: #0a073f;
+    padding: 7px;
+    border: solid;
+    border-width: 1px;
+    float: left;
+    margin: 5px;
+    font-size: 12px;
+    &_user {
+      background: #ed5a5a;
+      width: 200px;
+      border-radius: 10px;
+      border: #0a073f;
+      padding: 7px;
+      border: solid;
+      border-width: 1px;
+      float: right;
+      margin: 5px;
+      font-size: 12px;
+    }
+  }
 }

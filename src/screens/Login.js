@@ -20,6 +20,7 @@ import desktopfemale from '../icons/female.svg';
 import desktopmale from '../icons/male.svg';
 import desktopboth from '../icons/both.svg';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom'
 
 
 
@@ -144,7 +145,7 @@ class Login extends Component {
                         return e.email === that.state.email
                     });
                     if(respon.password === that.state.password) {
-                        window.location.href = "/home";
+                         window.location.href = "/home/"+respon.id;
                     }
                 })
                 .catch(function (error) {
