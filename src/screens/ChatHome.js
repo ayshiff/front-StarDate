@@ -85,6 +85,7 @@ class ChatHome extends Component {
                   <div className="ChatPageDesktop_conv">
                     <div className="ChatPageDesktop_conv_read">
                       <div className="ChatPageDesktop_conv_read_contents">
+
                         <div className="ChatPageDesktop_conv_read_received">
                           <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
                           <p className="ChatPageDesktop_conv_read_received_message">On est quoi ?</p>
@@ -92,6 +93,34 @@ class ChatHome extends Component {
                         <div className="ChatPageDesktop_conv_read_send">
                           <p className="ChatPageDesktop_conv_read_send_message">Champion mon frère.</p>
                           <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_send_pic"/>
+                        </div>
+                        <div className="ChatPageDesktop_conv_read_received">
+                          <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                          <p className="ChatPageDesktop_conv_read_received_message">ON EST CHAMPION !!!</p>
+                        </div>
+                        <div className="ChatPageDesktop_conv_read_received">
+                          <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                          <p className="ChatPageDesktop_conv_read_received_message">ON EST CHAMPION !!!</p>
+                        </div>
+                        <div className="ChatPageDesktop_conv_read_received">
+                          <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                          <p className="ChatPageDesktop_conv_read_received_message">ON EST CHAMPION !!!</p>
+                        </div>
+                        <div className="ChatPageDesktop_conv_read_received">
+                          <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                          <p className="ChatPageDesktop_conv_read_received_message">ON EST CHAMPION !!!</p>
+                        </div>
+                        <div className="ChatPageDesktop_conv_read_received">
+                          <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                          <p className="ChatPageDesktop_conv_read_received_message">ON EST CHAMPION !!!</p>
+                        </div>
+                        <div className="ChatPageDesktop_conv_read_received">
+                          <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                          <p className="ChatPageDesktop_conv_read_received_message">ON EST CHAMPION !!!</p>
+                        </div>
+                        <div className="ChatPageDesktop_conv_read_received">
+                          <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                          <p className="ChatPageDesktop_conv_read_received_message">ON EST CHAMPION !!!</p>
                         </div>
                         <div className="ChatPageDesktop_conv_read_received">
                           <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
