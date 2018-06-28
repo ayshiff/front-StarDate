@@ -139,7 +139,8 @@ class Profile extends Component {
                                     position: e.data.name,
                                     name: respon.name,
                                     age: respon.age,
-                                    description: respon.description
+                                    description: respon.description,
+                                    image: respon.image
                                 })
                             })
                             .catch((error) => console.log(error));
@@ -175,7 +176,7 @@ class Profile extends Component {
         <Page key="ProfilePage" className="ProfilePage">
 
             <MediaQuery query="(max-width: 420px)">
-            <div className="ProfilePage_image"></div>
+                <img className="ProfilePage_image" src={imagesFolder[this.state.image]} alt="profilePic"/>
             {this.state.edit? editContent: content}
             {this.state.edit? <button onClick={this.edit} className="ProfilePage_deconnection">
                 Modifier

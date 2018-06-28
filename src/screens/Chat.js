@@ -96,6 +96,7 @@ class Chat extends Component {
             let dbCon = firebase.database().ref('/messages');
             dbCon.push({
                 message: e.target.value,
+                email: this.state.email,
                 image: this.state.image
             });
             this.setState({
@@ -105,18 +106,19 @@ class Chat extends Component {
     }
 
     render() {
-        let messageNodes = this.state.messageReceived.map((message, index) => {
+        let messageNodes = this.state.messageReceived.map((message) => {
             if(this.state.id !== null) {
-                if (message.email == this.state.email) {
+                console.log(message.email)
+                if (message.email === this.state.email) {
                     return (
-                        <div key={index} className="ChatPageDesktop_conv_read_send">
+                        <div  className="ChatPageDesktop_conv_read_send">
                             <p className="ChatPageDesktop_conv_read_send_message">{message.message}</p>
                             <img src={imagesFolder[this.state.image]} alt="profilePic" className="ChatPageDesktop_conv_read_send_pic"/>
                         </div>
                     )
                 } else {
                     return (
-                            <div key={index} className="ChatPageDesktop_conv_read_received">
+                            <div  className="ChatPageDesktop_conv_read_received">
                                 <img src={imagesFolder[message.image]} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
                                 <p className="ChatPageDesktop_conv_read_received_message">{message.message}</p>
                             </div>

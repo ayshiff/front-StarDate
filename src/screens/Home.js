@@ -66,6 +66,7 @@ class Home extends Component {
 
   componentWillMount() {
       let that = this;
+      if(this.state.id !== null){
           axios.get('http://localhost:8000/api/users')
               .then(function (response) {
                   let respon = response.data['hydra:member'].find((e) => {
@@ -80,6 +81,23 @@ class Home extends Component {
               .catch(function (error) {
                   console.log(error);
               });
+      } else {
+          axios.get('http://localhost:8000/api/users')
+              .then(function (response) {
+                  let respon = response.data['hydra:member'].find((e) => {
+                      return e.email == that.state.email
+                  });
+                  that.setState({
+                      users: response.data['hydra:member'],
+                      imageUser: respon.image
+                  });
+
+              })
+              .catch(function (error) {
+                  console.log(error);
+              });
+      }
+
 
   }
 
@@ -101,7 +119,7 @@ class Home extends Component {
       this.state.users.map((e) => {
           let randomPositionX = Math.floor(Math.random() * (300 - 0 + 1)) + 0;
           let randomPositionY = Math.floor(Math.random() * (400 - 0 + 1)) + 0;
-          tabUsers.push(<img className="HomePageDesktop_map_profiles_pic"  src={imagesFolder[e.image]} onClick={this.pushPageProfile.bind(this, e)} style={{top: randomPositionY, left: randomPositionX, position: 'absolute', borderRadius: '50%', zIndex: 50}} alt="profilePic"/>)
+          tabUsers.push(<img className="HomePageDesktop_map_profiles_pic"  src={imagesFolder[e.image]} onClick={this.pushPageProfile.bind(this, e)} style={{top: randomPositionY, left: randomPositionX, position: 'absolute', borderRadius: '50%', width: '45px',height:'45px', zIndex:50}} alt="profilePic"/>)
       });
 
       let tabUsersDesktop = [];
