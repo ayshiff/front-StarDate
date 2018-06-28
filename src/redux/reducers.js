@@ -5,15 +5,25 @@ let initialState = {
     email: ''
 };
 
+let initialStateProfile = {
+    id: null
+};
+
 
 function getLogin (state = initialState, action) {
     return Object.assign({}, state, {email: action.email} )
 }
 
+function getProfile (state = initialStateProfile, action) {
+    return Object.assign({}, state, {id: action.id})
+}
+
 
 const reducers = combineReducers({
     getLogin,
+    getProfile
 });
+
 
 export const store = createStore(
     reducers,
