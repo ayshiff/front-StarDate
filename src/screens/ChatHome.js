@@ -68,14 +68,14 @@ class ChatHome extends Component {
                         <div className="ChatPageDesktop_contact_card_notif"></div>
                         <img src={profilePic} alt="profilePic" className="ChatPageDesktop_contact_card_pic"/>
                         <div className="ChatPageDesktop_contact_card_contents">
-                          <h4 className="ChatPageDesktop_contact_card_contents_name">Johnny</h4>
+                          <p className="ChatPageDesktop_contact_card_contents_cardName">Johnny</p>
                           <p className="ChatPageDesktop_contact_card_contents_lastMessage">On est champion !!</p>
                         </div>
                       </div>
                       <div className="ChatPageDesktop_contact_card">
                         <img src={profilePic} alt="profilePic" className="ChatPageDesktop_contact_card_pic"/>
                         <div className="ChatPageDesktop_contact_card_contents">
-                          <h4 className="ChatPageDesktop_contact_card_contents_name">Zizou</h4>
+                          <p className="ChatPageDesktop_contact_card_contents_cardName">Zizou</p>
                           <p className="ChatPageDesktop_contact_card_contents_lastMessage">Coup de boule</p>
                         </div>
                       </div>
@@ -85,36 +85,27 @@ class ChatHome extends Component {
                   <div className="ChatPageDesktop_conv">
                     <div className="ChatPageDesktop_conv_read">
                       <div className="ChatPageDesktop_conv_read_contents">
-
                         <div className="ChatPageDesktop_conv_read_received">
-                          <img src="profilePic.png" alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                          <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
                           <p className="ChatPageDesktop_conv_read_received_message">On est quoi ?</p>
                         </div>
-
                         <div className="ChatPageDesktop_conv_read_send">
                           <p className="ChatPageDesktop_conv_read_send_message">Champion mon frère.</p>
-                          <img src="profilePic.png" alt="profilePic" className="ChatPageDesktop_conv_read_send_pic"/>
+                          <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_send_pic"/>
                         </div>
-
                         <div className="ChatPageDesktop_conv_read_received">
-                          <img src="profilePic.png" alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                          <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
                           <p className="ChatPageDesktop_conv_read_received_message">ON EST CHAMPION !!!</p>
-
                         </div>
-
                       </div>
                     </div>
-
                     <div className="ChatPageDesktop_conv_sendingZone">
                       <input className="ChatPageDesktop_conv_sendingZone_input" type="text" name="Nouveau message" value="Nouveau message"/>
-
                     </div>
                   </div>
+
                 </div>
-
-
                 </MediaQuery>
-
             </Page>
         )
     }
