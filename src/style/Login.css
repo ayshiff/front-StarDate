@@ -6,7 +6,7 @@ html {
   .LoginPage_modal {
     background: white;
     width: 300px;
-    height: 150px;
+    height: 148px;
     margin: 0 auto;
     border-radius: 10px;
     color: black; }
@@ -185,7 +185,10 @@ html {
 .homeDesktop_inputItem {
   width: 200px;
   height: 24px;
-  margin-right: 28px; }
+  margin-right: 28px;
+  border-radius: 4px;
+  outline: none;
+  border: none; }
 
 .homeDesktop_btnConnexion {
   background-color: #ed5a5a;
@@ -294,6 +297,7 @@ html {
   margin-left: 18px;
   margin-right: 15px;
   line-height: 20px;
+  font-size: 12px;
   width: 447px;
   height: 35px;
   padding: 5px; }
@@ -379,6 +383,9 @@ html {
   padding: 3px;
   box-shadow: 0 0 15px 2px rgba(242, 241, 241, 0.644); }
 
+.homeDesktop_inputItemFormImg {
+  display: none; }
+
 .homeDesktop_selectItemForm {
   flex-direction: column;
   width: 310px;
@@ -398,3 +405,15 @@ html {
   width: 400px;
   padding-bottom: 80px;
   margin: 20px 50px; }
+
+.homeDesktop label {
+  cursor: pointer;
+  color: #ed5a5a;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center; }
+
+.homeDesktop #upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1; }
