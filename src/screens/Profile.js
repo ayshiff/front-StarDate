@@ -27,7 +27,7 @@ class Profile extends Component {
             modalIsOpen: false,
             modalIsOpenDelete: false,
             id: this.props.match? this.props.match.params.id : null,
-            profile: store.getState().getProfile.id,
+            profile: store.getState().getLogin.id,
         };
         this.disconnect = this.disconnect.bind(this);
         this.editProfile = this.editProfile.bind(this);
@@ -36,7 +36,6 @@ class Profile extends Component {
         this.closeModal = this.closeModal.bind(this);
         this.closeModalDeleteFalse = this.closeModalDeleteFalse.bind(this)
         this.closeModalDeleteTrue = this.closeModalDeleteTrue.bind(this);
-        console.log(store.getState().getProfile.id)
     }
 
     editProfile() {
@@ -131,7 +130,7 @@ class Profile extends Component {
                 axios.get('http://localhost:8000/api/users')
                     .then(function (response) {
                         let respon = response.data['hydra:member'].find((e) => {
-                            return e.id == store.getState().getProfile.id
+                            return e.email == store.getState().getLogin.email
                         });
                         axios.get('http://localhost:8000'+respon.position)
                             .then(function(e) {
@@ -154,22 +153,22 @@ class Profile extends Component {
   render() {
         let content =  (<div className="ProfilePage_description">
             <div className="ProfilePage_description_header">
-                <h1 className="ProfilePage_description_header_Name"> DarkVador, 50</h1>
+                <h1 className="ProfilePage_description_header_Name"> {this.state.name}, {this.state.age}</h1>
                 <img onClick={this.editProfile} src={settings} alt="settings" className="ProfilePage_description_header_settings"/>
             </div>
             <h3 className="ProfilePage_description_place">Terraria</h3>
             <p className="ProfilePage_description_about"> A propos</p>
-            <p className="ProfilePage_description_description"> ezfezfezfzefzefzfefsdfssdfsdfsdfsdfsdgfdsgdfgdgezfeezefz</p>
+            <p className="ProfilePage_description_description"> {this.state.description}</p>
         </div>);
 
         let editContent =  (<form className="ProfilePage_description">
           <div className="ProfilePage_description_header">
-              <input className="ProfilePage_description_header_Name" value="DarkVador"/>
+              <input className="ProfilePage_description_header_Name" value={this.state.name}/>
           </div>
                 <p className="ProfilePage_description_about">Planète</p>
           <input className="ProfilePage_description_place" value="Terraria"/>
           <p className="ProfilePage_description_about"> A propos</p>
-          <input className="ProfilePage_description_description" value="hgktkfyututiuytiutuyduy" />
+          <input className="ProfilePage_description_description" value={this.state.description} />
       </form>
         )
     return (

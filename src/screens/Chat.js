@@ -25,7 +25,7 @@ class Chat extends Component {
         this.state = {
             message: "",
             messageReceived: [],
-            emailUser: store.getState().getLogin.email,
+            email: store.getState().getLogin.email,
             id: this.props.match? this.props.match.params.id : null
         };
         let app = firebase.database().ref('messages');
@@ -43,27 +43,53 @@ class Chat extends Component {
         app.on('value', snapshot => {
             this.getData(snapshot.val());
         });
-        axios.get('http://localhost:8000/api/users')
-            .then(function (response) {
-                let respon = response.data['hydra:member'].find((e) => {
-                    return e.id == that.state.id
-                });
-                axios.get('http://localhost:8000'+respon.position)
-                    .then(function(e) {
-                        that.setState({
-                            position: e.data.name,
-                            name: respon.name,
-                            age: respon.age,
-                            email: respon.email,
-                            description: respon.description,
-                            image: respon.image
+        if(this.state.id) {
+            axios.get('http://localhost:8000/api/users')
+                .then(function (response) {
+                    let respon = response.data['hydra:member'].find((e) => {
+                        return e.id == that.state.id
+                    });
+                    axios.get('http://localhost:8000'+respon.position)
+                        .then(function(e) {
+                            that.setState({
+                                position: e.data.name,
+                                name: respon.name,
+                                age: respon.age,
+                                email: respon.email,
+                                description: respon.description,
+                                image: respon.image
+                            })
                         })
-                    })
-                    .catch((error) => console.log(error));
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+                        .catch((error) => console.log(error));
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        } else {
+            axios.get('http://localhost:8000/api/users')
+                .then(function (response) {
+                    let respon = response.data['hydra:member'].find((e) => {
+                        return e.email == that.state.email
+                    });
+                    axios.get('http://localhost:8000'+respon.position)
+                        .then(function(e) {
+                            that.setState({
+                                position: e.data.name,
+                                name: respon.name,
+                                age: respon.age,
+                                email: respon.email,
+                                description: respon.description,
+                                image: respon.image
+                            })
+                        })
+                        .catch((error) => console.log(error));
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+
+
     }
 
     getData(values){
@@ -127,18 +153,16 @@ class Chat extends Component {
             } else {
                 if (message.email === this.state.email) {
                     return (
-                        <div key={message.email} className="Chat_message_user">
-                            <div className="card-content">
-                                <p>{message.message}</p>
-                            </div>
+                        <div  className="ChatPageDesktop_conv_read_send">
+                            <p className="ChatPageDesktop_conv_read_send_message">{message.message}</p>
+                            <img src={imagesFolder[this.state.image]} alt="profilePic" className="ChatPageDesktop_conv_read_send_pic"/>
                         </div>
                     )
                 } else {
                     return (
-                        <div key={message.email} className="Chat_message">
-                            <div className="card-content">
-                                <p>{message.message}</p>
-                            </div>
+                        <div  className="ChatPageDesktop_conv_read_received">
+                            <img src={imagesFolder[message.image]} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                            <p className="ChatPageDesktop_conv_read_received_message">{message.message}</p>
                         </div>
                     )
                 }
@@ -149,7 +173,7 @@ class Chat extends Component {
 
             <Page key="ChatPage" className="Chat">
                 <MediaQuery query="(max-width: 420px)">
-                <svg onClick={this.disconnect} className="Chat_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+                <svg style={{position: 'fixed', zIndex:50}} onClick={this.disconnect} className="Chat_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
                 {messageNodes}
                 <form>
                     <textarea

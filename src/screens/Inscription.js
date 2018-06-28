@@ -74,7 +74,13 @@ class Inscription extends Component {
             }
         })
                         .then(function (response) {
-                            that.props.navigator.pushPage({component: Main})
+                            firebase.auth().createUserWithEmailAndPassword(that.state.email, that.state.password)
+                                .then(function(e) {
+                                    that.props.navigator.pushPage({component: Main})
+                                })
+                                .catch(function(error){
+                                    console.log(error.code + '' + error.message)
+                            });
                             console.log(response);
                         })
                         .catch(function (error) {

@@ -2,7 +2,8 @@ import React from 'react'
 import {createStore, combineReducers, compose} from 'redux'
 
 let initialState = {
-    email: ''
+    email: '',
+    id: null
 };
 
 let initialStateProfile = {
@@ -11,7 +12,7 @@ let initialStateProfile = {
 
 
 function getLogin (state = initialState, action) {
-    return Object.assign({}, state, {email: action.email} )
+    return Object.assign({}, state, {email: action.email,id: action.id } )
 }
 
 function getProfile (state = initialStateProfile, action) {
@@ -20,8 +21,7 @@ function getProfile (state = initialStateProfile, action) {
 
 
 const reducers = combineReducers({
-    getLogin,
-    getProfile
+    getLogin
 });
 
 

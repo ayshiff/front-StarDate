@@ -1,7 +1,8 @@
-export const getLoginAction = (email) => {
+export const getLoginAction = (email, id) => {
     return {
         type: 'GET_LOGIN',
-        email
+        email,
+        id
     }
 };
 
