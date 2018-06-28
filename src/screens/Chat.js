@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Page} from 'react-onsenui';
 import '../style/Chat.css';
+import '../style/ChatHome.css';
 import '../style/Home.css';
 import profilePic from '../icons/profilePic.png';
 import * as firebase from 'firebase'
@@ -86,6 +87,7 @@ class Chat extends Component {
             let dbCon = firebase.database().ref('/messages');
             dbCon.push({
                 message: e.target.value,
+                email: this.state.email
             });
             this.setState({
                 message: ''
@@ -96,7 +98,7 @@ class Chat extends Component {
     render() {
         let messageNodes = this.state.messageReceived.map((message, index) => {
             if(this.state.id !== null) {
-                if (message.email !== this.state.email) {
+                if (message.email == this.state.email) {
                     return (
                         <div key={index} className="ChatPageDesktop_conv_read_send">
                             <p className="ChatPageDesktop_conv_read_send_message">{message.message}</p>
@@ -112,7 +114,7 @@ class Chat extends Component {
                     )
                 }
             } else {
-                if (message.email === this.state.emailUser) {
+                if (message.email === this.state.email) {
                     return (
                         <div key={message.email} className="Chat_message_user">
                             <div className="card-content">
@@ -191,14 +193,13 @@ class Chat extends Component {
                             </div>
                             <div className="ChatPageDesktop_conv_sendingZone">
                                 <form>
-                    <input
-                        type="text"
+                    <textarea
                         className="ChatPageDesktop_conv_sendingZone_input"
                         placeholder="Nouveau Message"
                         onChange={this.onChange}
                         onKeyUp={this.onKeyup.bind(this)}
                         value={this.state.message}>
-                    </input>
+                    </textarea>
                                 </form>
                             </div>
                         </div>
