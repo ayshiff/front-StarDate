@@ -39,10 +39,14 @@ $secondary-color: #ed5a5a;
 .ChatPageDesktop {
   display: flex;
 
+
   &_contact {
     width: 30%;
     height: 100vh;
     background-color: #0a073f;
+    margin-left: 20%;
+    position: fixed;
+
 
     &_container {
       margin-top: 70px;
@@ -96,12 +100,15 @@ $secondary-color: #ed5a5a;
 
   &_conv {
     width: 50%;
-    height: 100vh;
+    height: auto;
     background-color: white;
+    margin-left: 50%;
+    overflow: hidden;
 
     &_read {
       width: 100%;
-      height: 88vh;
+      height: auto;
+      position: relative;
 
       &_contents {
         margin: 50px 60px;
@@ -111,6 +118,7 @@ $secondary-color: #ed5a5a;
         height: 100px;
         width: 100%;
         display: flex;
+        position: relative;
 
         &_pic {
           width: 45px;
@@ -133,6 +141,7 @@ $secondary-color: #ed5a5a;
         width: 100%;
         display: flex;
         justify-content: flex-end;
+        position: relative;
 
         &_message {
           background-color: #F04240;
@@ -152,9 +161,15 @@ $secondary-color: #ed5a5a;
     }
 
     &_sendingZone {
-      width: 100%;
-      height: 7vh;
+      width: 50%;
+      height: 100px;
       background-color: #F3F3F3;
+      position: fixed;
+      bottom: 0;
+
+
+
+
 
       &_input {
         width: 90%;

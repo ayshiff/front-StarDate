@@ -371,7 +371,7 @@ class Login extends Component {
                 <div>
                     <div className="LoginPage_carousel_textLogin">
                             <p className="LoginPage_carousel_textLogin_textLoginContainer">
-                                Bienvenue sur Star Date <br/>
+                                Bienvenue sur StarDate <br/>
                                 le <span>1er site de rencontre <br/>
                                 intergalactique.</span>
                         </p>
