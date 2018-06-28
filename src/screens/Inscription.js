@@ -12,6 +12,8 @@ import both from '../icons/both.svg';
 import Main from './Main';
 import * as firebase from 'firebase'
 import axios from 'axios';
+import {getLoginAction} from "../redux/action";
+import {connect} from "react-redux";
 
 class Inscription extends Component {
     constructor(props){
@@ -74,7 +76,14 @@ class Inscription extends Component {
             }
         })
                         .then(function (response) {
-                            that.props.navigator.pushPage({component: Main})
+                            firebase.auth().createUserWithEmailAndPassword(that.state.email, that.state.password)
+                                .then(function(e) {
+                                    that.props.onSubmit(that.state.email);
+                                    that.props.navigator.pushPage({component: Main})
+                                })
+                                .catch(function(error){
+                                    console.log(error.code + '' + error.message)
+                            });
                             console.log(response);
                         })
                         .catch(function (error) {
@@ -397,4 +406,17 @@ class Inscription extends Component {
     }
 }
 
-export default Inscription
+const mapStateToProps = (state) => {
+    return {
+        //email: state.email,
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSubmit: (email) => {
+            dispatch(getLoginAction(email))
+        }
+    }
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Inscription)

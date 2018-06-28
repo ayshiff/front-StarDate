@@ -14,7 +14,7 @@ import Profile from './Profile';
 import axios from 'axios';
 import PARASITE from '../img/PARASITE.jpg';
 import {store} from "../redux/reducers";
-import { getProfileAction} from "../redux/action";
+import {getLoginAction, getProfileAction} from "../redux/action";
 import {connect} from "react-redux";
 
 function importAll(r) {
@@ -104,7 +104,7 @@ class Home extends Component {
   pushPageProfile(e) {
       if(this.state.id == null) {
           console.log(e.id)
-          this.props.onProfile(e.id)
+          this.props.onProfile(this.state.email, e.id )
       }
       this.props.nav.pushPage({component: UserProfile})
   }
@@ -192,7 +192,7 @@ class Home extends Component {
                     <div className="HomePage_carousel2" style={{color: "white", height: '90vh'}}>
                         {tabUsers}
                         <div className="HomePage_carousel2_loading">
-                            <img src={imagesFolder[this.state.imageUser]} className="HomePage_carousel2_loading_mask1"/>
+                            <img src={imagesFolder[this.state.imageUser]} style={{width: '60px', height: '60px', borderRadius: '50%'}} className="HomePage_carousel2_loading_mask1"/>
                             <img src={mask2} className="HomePage_carousel2_loading_mask2"/>
                             <img src={mask3} className="HomePage_carousel2_loading_mask3"/>
                             <img src={mask4} className="HomePage_carousel2_loading_mask4"/>
@@ -218,8 +218,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onProfile: (id) => {
-            dispatch(getProfileAction(id))
+        onProfile: (email, id) => {
+            dispatch(getLoginAction(email, id))
         }
     }
 };

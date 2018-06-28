@@ -67,7 +67,7 @@ class UserProfile extends Component {
             axios.get('http://localhost:8000/api/users')
                 .then(function (response) {
                     let respon = response.data['hydra:member'].find((e) => {
-                        return e.id == store.getState().getProfile.id
+                        return e.id == store.getState().getLogin.id
                     });
                     axios.get('http://localhost:8000'+respon.position)
                         .then(function(e) {
