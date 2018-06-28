@@ -20,6 +20,8 @@ import desktopfemale from '../icons/female.svg';
 import desktopmale from '../icons/male.svg';
 import desktopboth from '../icons/both.svg';
 import axios from 'axios';
+import { findDOMNode } from 'react-dom';
+import $ from 'jquery';
 
 
 
@@ -246,11 +248,11 @@ class Login extends Component {
                     <input className="homeDesktop_inputItemForm" type="text" name="email" id="nom" placeholder="Nom*" />
                 </div>
                 <input className="homeDesktop_inputItemForm" type="email" name="email" id="email" placeholder="Email*" />
-                <input className="homeDesktop_inputItemForm" type="number" name="age" id="age" placeholder="age*" />
+                <input className="homeDesktop_inputItemForm" type="number" name="age" id="age" placeholder="Age*" />
                 <input className="homeDesktop_inputItemForm" type="password" name="password" id="password" placeholder="Mot de passe*" />
-                <input className="homeDesktop_inputItemForm" type="password" name="password" id="password2" placeholder="Ressaisir le mot de passe*" />
+                <input className="homeDesktop_inputItemForm" type="password" name="password" id="password2" placeholder="Comfirmer le mot de passe*" />
             </form>
-            <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Sinscrire</button>
+            <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">S'inscrire</button>
         </div>
      </div>);
     // Homepage Content Step 2 register
@@ -287,7 +289,7 @@ class Login extends Component {
                   <img src={desktopfemale} alt="logoMale" className="homeDesktop_logoStep2" />
                   </div>
                   <div onClick={this.onItemClickSearch} className="homeDesktop_logoStep2Container">
-                  <img src={desktopboth} alt="logoAutre" className="homeDesktop_logoStep2" />
+                  <h5 className="homeDesktop_otherStep2">Autre</h5>
                   </div>
               </div>
               <button onClick={this.registerDesktop} className="homeDesktop_inscriptionBtn">Suivant</button>
@@ -318,7 +320,8 @@ class Login extends Component {
                 <div className="homeDesktop_profileItemContainer">
                 <div className="homeDesktop_profileItems">
                     <div className="homeDesktop_inputItemFormImgContainer">
-                    <input className="homeDesktop_inputItemFormImg" type="file" accept=".jpg, .jpeg, .png" name="img" id="img"/>
+                    <label for="upload-photo">Choisir une photo</label>
+                    <input className="homeDesktop_inputItemFormImg" type="file" accept=".jpg, .jpeg, .png" name="photo" id="upload-photo"/>
                     </div> 
                 </div>
                 <div className="homeDesktop_profileItems">
