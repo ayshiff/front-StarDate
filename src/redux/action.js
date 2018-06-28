@@ -4,3 +4,10 @@ export const getLoginAction = (email) => {
         email
     }
 };
+
+export const getProfileAction = (id) => {
+    return {
+        type: 'PROFILE',
+        id
+    }
+};
