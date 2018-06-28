@@ -64,7 +64,6 @@ class ChatHome extends Component {
                 </div>
                 </MediaQuery>
 
-
             </Page>
         )
     }

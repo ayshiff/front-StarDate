@@ -54,11 +54,13 @@ html {
       flex-direction: column;
       margin: 0 auto; }
       .LoginPage_carousel_div_img3 {
-        margin: 0 auto;
-        height: 40%; }
+        margin: -10px auto;
+        width: 55%;
+        height: 100%;
+        overflow: hidden; }
       .LoginPage_carousel_div_img2 {
-        margin: 0 auto;
-        width: 65%; }
+        margin: -43px auto;
+        width: 350px; }
     .LoginPage_carousel_textLogin {
       color: white;
       text-align: center; }
@@ -73,14 +75,14 @@ html {
       margin: 36px -9px; }
     .LoginPage_carousel_stars1 {
       float: right;
-      margin-right: 30px; }
+      margin-right: 41px; }
     .LoginPage_carousel_stars2 {
       float: left;
       margin-top: 28%;
       margin-left: -21px; }
     .LoginPage_carousel_planet {
       float: left;
-      margin-left: 12px; }
+      margin-left: 33px; }
 
 .containerLogin {
   background-color: white;
