@@ -12,11 +12,18 @@ import UserProfile from './UserProfile';
 import Inscription from "./Inscription";
 import Profile from './Profile';
 import axios from 'axios';
-import PARASITE from '../img/PARASITE.jpeg';
+import PARASITE from '../img/PARASITE.jpg';
 import {store} from "../redux/reducers";
 import { getProfileAction} from "../redux/action";
 import {connect} from "react-redux";
 
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
+
+const imagesFolder = importAll(require.context('../img', false, /\.(png|jpg|svg)$/));
 
 class Home extends Component {
 
@@ -42,7 +49,8 @@ class Home extends Component {
                   isToggle: !that.state.isToggle,
                   name: element.name,
                   age: element.age,
-                  description: element.description
+                  description: element.description,
+                  image: element.image
               })
           })
           .catch((error) => console.log(error));
@@ -60,10 +68,14 @@ class Home extends Component {
       let that = this;
           axios.get('http://localhost:8000/api/users')
               .then(function (response) {
-                  console.log(response.data['hydra:member']);
+                  let respon = response.data['hydra:member'].find((e) => {
+                      return e.id == that.state.id
+                  });
                   that.setState({
-                      users: response.data['hydra:member']
-                  })
+                      users: response.data['hydra:member'],
+                      imageUser: respon.image
+                  });
+
               })
               .catch(function (error) {
                   console.log(error);
@@ -89,19 +101,19 @@ class Home extends Component {
       this.state.users.map((e) => {
           let randomPositionX = Math.floor(Math.random() * (300 - 0 + 1)) + 0;
           let randomPositionY = Math.floor(Math.random() * (400 - 0 + 1)) + 0;
-          tabUsers.push(<img className="HomePageDesktop_map_profiles_pic"  src={PARASITE} onClick={this.pushPageProfile.bind(this, e)} style={{top: randomPositionY, left: randomPositionX, position: 'absolute', width: '40px', borderRadius: '50%', zIndex: 50}} alt="profilePic"/>)
+          tabUsers.push(<img className="HomePageDesktop_map_profiles_pic"  src={imagesFolder[e.image]} onClick={this.pushPageProfile.bind(this, e)} style={{top: randomPositionY, left: randomPositionX, position: 'absolute', borderRadius: '50%', zIndex: 50}} alt="profilePic"/>)
       });
 
       let tabUsersDesktop = [];
       this.state.users.map((e) => {
           let randomPositionX = Math.floor(Math.random() * (97 - 30 + 1)) + 30+"%";
           let randomPositionY = Math.floor(Math.random() * (90 - 0 + 1)) + 0+"%";
-          tabUsersDesktop.push(<img className="HomePageDesktop_map_profiles_pic" src={PARASITE} onClick={() => this.handleClick(e)} style={{top: randomPositionY, left: randomPositionX, position: 'absolute', width: '40px', borderRadius: '50%'}} alt="profilePic"/>)
+          tabUsersDesktop.push(<img className="HomePageDesktop_map_profiles_pic" src={imagesFolder[e.image]} onClick={() => this.handleClick(e)} style={{top: randomPositionY, left: randomPositionX, position: 'absolute', borderRadius: '50%'}} alt="profilePic"/>)
       });
 
       let modal = (
           <div className="HomePageDesktop_view_modal">
-              <img className="HomePageDesktop_view_modal_pic" src={profilePic} alt="profilePic"/>
+              <img className="HomePageDesktop_view_modal_pic" src={imagesFolder[this.state.image]} alt="profilePic"/>
               <h2 className="HomePageDesktop_view_modal_name">{this.state.name}, <span className="HomePageDesktop_view_modal_age">{this.state.age}</span></h2>
               <p className="HomePageDesktop_view_modal_planet">{this.state.position}</p>
               <h4 className="HomePageDesktop_view_modal_about">À propos</h4>
@@ -115,7 +127,7 @@ class Home extends Component {
 
             <div className="HomePageDesktop">
                 <div className="HomePageDesktop_sideBar">
-                  <img className="HomePageDesktop_sideBar_profilePic" src={profilePic} alt="profilePic"/>
+                  <img className="HomePageDesktop_sideBar_profilePic" src={imagesFolder[this.state.imageUser]} alt="profilePic"/>
                   <div className="HomePageDesktop_sideBar_nav">
                     <div className="HomePageDesktop_sideBar_items">
                       <svg className="HomePageDesktop_sideBar_items_icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="35" height="28"><path fill="rgba(204,204,206,0.46)" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg>
@@ -134,7 +146,7 @@ class Home extends Component {
                 </div>
                 <div className="HomePageDesktop_map">
                   <div className="HomePageDesktop_map_myPosition">
-                      <img src={profilePic} className="HomePageDesktop_map_myPosition_mask1"/>
+                      <img src={imagesFolder[this.state.imageUser]} className="HomePageDesktop_map_myPosition_mask1"/>
                       <img src={mask2} className="HomePageDesktop_map_myPosition_mask2"/>
                       <img src={mask3} className="HomePageDesktop_map_myPosition_mask3"/>
                       <img src={mask4} className="HomePageDesktop_map_myPosition_mask4"/>
