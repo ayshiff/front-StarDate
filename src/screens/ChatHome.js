@@ -13,8 +13,8 @@ class ChatHome extends Component {
     constructor(props){
         super(props);
         this.state = {
-
-        }
+            id: this.props.match? this.props.match.params.id : null
+        };
         this.pushChat = this.pushChat.bind(this)
     }
 
@@ -23,13 +23,35 @@ class ChatHome extends Component {
     }
 
     componentWillMount () {
-        if(this.props.match.params.id) {
 
-        }
     }
 
 
     render() {
+        if(this.state.id !== null) {
+            let messageNodes = this.state.messageReceived.map((message) => {
+                if(message.email === this.state.emailUser){
+                    return (
+                        <div key={message.email} className="Chat_message_user">
+                            <div className="card-content">
+                                <p>{message.email}</p>
+                                <p>{message.message}</p>
+                            </div>
+                        </div>
+                    )
+                } else {
+                    return(
+                        <div key={message.email} className="Chat_message">
+                            <div className="card-content">
+                                <p>{message.email}</p>
+                                <p>{message.message}</p>
+                            </div>
+                        </div>
+                    )
+                }
+
+            })
+        }
         return(
             <Page key="ChatPage" className="ChatPage">
                 <MediaQuery query="(max-width: 420px)">
@@ -41,6 +63,7 @@ class ChatHome extends Component {
                     </div>
                 </div>
                 </MediaQuery>
+
 
                 <MediaQuery query="(min-width: 421px)">
                 <div className="ChatPageDesktop">
@@ -133,8 +156,6 @@ class ChatHome extends Component {
                     </div>
                   </div>
 
-                </div>
-                </MediaQuery>
             </Page>
         )
     }

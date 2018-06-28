@@ -102,8 +102,6 @@
     .HomePageDesktop .HomePageDesktop_map_profiles_pic {
       width: 100px;
       border-radius: 100px;
-      margin-top: 80px;
-      margin-left: 340px;
       cursor: pointer;
       transition: all 0.3s; }
       .HomePageDesktop .HomePageDesktop_map_profiles_pic:hover {

@@ -8,7 +8,7 @@ import * as firebase from 'firebase'
 import { Switch, Route, Router, BrowserRouter } from 'react-router-dom'
 import Home from './Home';
 import Profile from './Profile';
-import ChatHome from './ChatHome';
+import Chat from './Chat';
 import UserProfile from "./UserProfile";
 
 
@@ -33,8 +33,8 @@ class Entry extends Component {
                         <Switch>
                             <Route exact path='/' component={Login}/>
                             <Route path='/home/:id' component={Home}/>
-                            <Route path='/profile/:id' component={UserProfile}/>
-                            <Route path='/chat/:id' component={ChatHome}/>
+                            <Route path='/profile/:id' component={Profile}/>
+                            <Route path='/chat/:id' component={Chat}/>
                         </Switch>
                     </BrowserRouter>
                 </MediaQuery>
