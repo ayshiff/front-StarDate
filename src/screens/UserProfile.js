@@ -13,6 +13,14 @@ import warning from '../icons/warning.svg';
 import profilePic from '../icons/profilePic.png';
 import {store} from "../redux/reducers";
 
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
+
+const imagesFolder = importAll(require.context('../img', false, /\.(png|jpg|svg)$/));
+
 class UserProfile extends Component {
 
     constructor(props){
@@ -67,7 +75,8 @@ class UserProfile extends Component {
                                 position: e.data.name,
                                 name: respon.name,
                                 age: respon.age,
-                                description: respon.description
+                                description: respon.description,
+                                image: respon.image
                             })
                         })
                         .catch((error) => console.log(error));
@@ -85,8 +94,8 @@ class UserProfile extends Component {
             <Page key="ProfilePage" className="ProfilePage">
 
                 <MediaQuery query="(max-width: 420px)">
-                <svg onClick={this.backPage} className="ProfilePage_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
-                <div className="ProfilePage_image"></div>
+                    <svg onClick={this.backPage} className="ProfilePage_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+                    <img className="ProfilePage_image" src={imagesFolder[this.state.image]} alt="profilePic"/>
                 <div className="ProfilePage_description">
                     <div className="ProfilePage_description_header">
                         <h1 className="ProfilePage_description_header_Name"> {this.state.name}, {this.state.age}</h1>

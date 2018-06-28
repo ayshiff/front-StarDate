@@ -77,7 +77,8 @@
     left: 30%;
     right: 0;
     width: 230px;
-    height: 230px; }
+    height: 230px;
+    border-radius: 50%; }
   .ProfilePageDesktop_description {
     position: absolute;
     top: 30%;

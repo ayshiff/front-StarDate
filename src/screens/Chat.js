@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import { Page} from 'react-onsenui';
 import '../style/Chat.css';
+import '../style/ChatHome.css';
 import '../style/Home.css';
 import profilePic from '../icons/profilePic.png';
 import * as firebase from 'firebase'
@@ -8,6 +9,14 @@ import _ from 'lodash';
 import {store} from '../redux/reducers';
 import MediaQuery from 'react-responsive';
 import axios from "axios/index";
+
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
+
+const imagesFolder = importAll(require.context('../img', false, /\.(png|jpg|svg)$/));
 
 class Chat extends Component {
 
@@ -37,7 +46,7 @@ class Chat extends Component {
         axios.get('http://localhost:8000/api/users')
             .then(function (response) {
                 let respon = response.data['hydra:member'].find((e) => {
-                    return e.id == that.props.match.params.id
+                    return e.id == that.state.id
                 });
                 axios.get('http://localhost:8000'+respon.position)
                     .then(function(e) {
@@ -46,7 +55,8 @@ class Chat extends Component {
                             name: respon.name,
                             age: respon.age,
                             email: respon.email,
-                            description: respon.description
+                            description: respon.description,
+                            image: respon.image
                         })
                     })
                     .catch((error) => console.log(error));
@@ -86,6 +96,8 @@ class Chat extends Component {
             let dbCon = firebase.database().ref('/messages');
             dbCon.push({
                 message: e.target.value,
+                email: this.state.email,
+                image: this.state.image
             });
             this.setState({
                 message: ''
@@ -94,25 +106,26 @@ class Chat extends Component {
     }
 
     render() {
-        let messageNodes = this.state.messageReceived.map((message, index) => {
+        let messageNodes = this.state.messageReceived.map((message) => {
             if(this.state.id !== null) {
-                if (message.email !== this.state.email) {
+                console.log(message.email)
+                if (message.email === this.state.email) {
                     return (
-                        <div key={index} className="ChatPageDesktop_conv_read_send">
+                        <div  className="ChatPageDesktop_conv_read_send">
                             <p className="ChatPageDesktop_conv_read_send_message">{message.message}</p>
-                            <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_send_pic"/>
+                            <img src={imagesFolder[this.state.image]} alt="profilePic" className="ChatPageDesktop_conv_read_send_pic"/>
                         </div>
                     )
                 } else {
                     return (
-                            <div key={index} className="ChatPageDesktop_conv_read_received">
-                                <img src={profilePic} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
+                            <div  className="ChatPageDesktop_conv_read_received">
+                                <img src={imagesFolder[message.image]} alt="profilePic" className="ChatPageDesktop_conv_read_received_pic"/>
                                 <p className="ChatPageDesktop_conv_read_received_message">{message.message}</p>
                             </div>
                     )
                 }
             } else {
-                if (message.email === this.state.emailUser) {
+                if (message.email === this.state.email) {
                     return (
                         <div key={message.email} className="Chat_message_user">
                             <div className="card-content">
@@ -153,7 +166,7 @@ class Chat extends Component {
                 <MediaQuery query="(min-width: 421px)">
                     <div className="ChatPageDesktop">
                         <div className="HomePageDesktop_sideBar">
-                            <img className="HomePageDesktop_sideBar_profilePic" src={profilePic} alt="profilePic"/>
+                            <img className="HomePageDesktop_sideBar_profilePic" src={imagesFolder[this.state.image]} alt="profilePic"/>
                             <div className="HomePageDesktop_sideBar_nav">
                                 <div className="HomePageDesktop_sideBar_items">
                                     <svg className="HomePageDesktop_sideBar_items_icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="35" height="28"><path fill="rgba(204,204,206,0.46)"  d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg>
@@ -191,14 +204,13 @@ class Chat extends Component {
                             </div>
                             <div className="ChatPageDesktop_conv_sendingZone">
                                 <form>
-                    <input
-                        type="text"
+                    <textarea
                         className="ChatPageDesktop_conv_sendingZone_input"
                         placeholder="Nouveau Message"
                         onChange={this.onChange}
                         onKeyUp={this.onKeyup.bind(this)}
                         value={this.state.message}>
-                    </input>
+                    </textarea>
                                 </form>
                             </div>
                         </div>

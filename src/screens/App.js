@@ -6,15 +6,13 @@ import { Navigator } from 'react-onsenui';
 import MediaQuery from 'react-responsive';
 import * as firebase from 'firebase'
 import Entry from './Entry';
-
+import config from '../config';
 
 
 class App extends Component {
     constructor(props) {
         super(props);
-        var config = {
 
-        };
         firebase.initializeApp(config);
     }
 

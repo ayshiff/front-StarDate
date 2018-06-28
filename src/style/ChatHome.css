@@ -76,7 +76,7 @@
       height: auto;
       position: relative; }
       .ChatPageDesktop_conv_read_contents {
-        margin: 50px 60px; }
+        margin: 100px 60px; }
       .ChatPageDesktop_conv_read_received {
         height: 100px;
         width: 100%;
@@ -85,7 +85,8 @@
         .ChatPageDesktop_conv_read_received_pic {
           width: 45px;
           height: 45px;
-          margin-top: 30px; }
+          margin-top: 30px;
+          border-radius: 50%; }
         .ChatPageDesktop_conv_read_received_message {
           background-color: #F3F3F3;
           color: black;
@@ -109,7 +110,8 @@
         .ChatPageDesktop_conv_read_send_pic {
           width: 45px;
           height: 45px;
-          margin-top: 30px; }
+          margin-top: 30px;
+          border-radius: 50%; }
     .ChatPageDesktop_conv_sendingZone {
       width: 50%;
       height: 100px;
